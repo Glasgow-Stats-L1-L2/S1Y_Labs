@@ -1,0 +1,16 @@
+---
+title: "S1Y: Introduction to Statistics"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+---
+
+# Links to S1Y Labs
+
+- [Lab 1]()
+- [Lab 2]()
+- [Lab 3]()
+- [Lab 4]()
+- [Lab 5]()
