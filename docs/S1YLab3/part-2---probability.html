@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution</title>
+  <meta name="description" content="Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="part-1---exploring-crime-data.html"/>
+<link rel="next" href="group-exercises.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to Lab 3</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i><b>1.0.1</b> Learning Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="part-1---exploring-crime-data.html"><a href="part-1---exploring-crime-data.html"><i class="fa fa-check"></i><b>2</b> Part 1 - Exploring crime data</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="part-1---exploring-crime-data.html"><a href="part-1---exploring-crime-data.html#plotting-the-data"><i class="fa fa-check"></i><b>2.0.1</b> Plotting the data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="part-2---probability.html"><a href="part-2---probability.html"><i class="fa fa-check"></i><b>3</b> Part 2 - Probability</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="part-2---probability.html"><a href="part-2---probability.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.0.1</b> The normal distribution</a></li>
+<li class="chapter" data-level="3.0.2" data-path="part-2---probability.html"><a href="part-2---probability.html#discrete-distributions"><i class="fa fa-check"></i><b>3.0.2</b> Discrete distributions</a></li>
+<li class="chapter" data-level="3.0.3" data-path="part-2---probability.html"><a href="part-2---probability.html#using-the-normal-distribution-to-approximate-a-binomial-distribution"><i class="fa fa-check"></i><b>3.0.3</b> Using the normal distribution to approximate a binomial distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="group-exercises.html"><a href="group-exercises.html"><i class="fa fa-check"></i><b>4</b> Group Exercises</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="group-exercises.html"><a href="group-exercises.html#checking-the-normality-assumption"><i class="fa fa-check"></i><b>4.0.1</b> Checking the normality assumption</a></li>
+<li class="chapter" data-level="4.0.2" data-path="group-exercises.html"><a href="group-exercises.html#heights-in-the-scottish-population"><i class="fa fa-check"></i><b>4.0.2</b> Heights in the Scottish population</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S1Y Lab 3: Probability and the normal distribution</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="part-2---probability" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Part 2 - Probability<a href="part-2---probability.html#part-2---probability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><br></p>
+<p><img src="images/not_normal.png" width="500"/></p>
+<p><br></p>
+<div id="the-normal-distribution" class="section level3 hasAnchor" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> The normal distribution<a href="part-2---probability.html#the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br></p>
+<p>In the lecture, you were introduced to the normal distribution and how to use the Z-table to look up cumulative proabilities or percentiles of the standard normal distribution <span class="math inline">\(N(\mu=0,\sigma=1)\)</span>. These tables were particularly useful before computers were invented or whenever they are unavailable to you (for example, when you are stranded on an island... or when you are sitting a closed-book exam).</p>
+<p>In <code>R</code>, you can compute cumulative probabilities and percentiles directly from the normal distribution, rather than having to approximate them using the tables. You can get an overview of the different functions available by calling the help function:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-2---probability.html#cb29-1" tabindex="-1"></a>?Normal</span></code></pre></div>
+<p>If you want to compute the cumulative probability of a variable <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=3,\sigma=2)\)</span>, e.g. <span class="math inline">\(P(X \leq 2)\)</span>, this can be done using the following line of code:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="part-2---probability.html#cb30-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">2</span>,<span class="at">mean=</span><span class="dv">3</span>,<span class="at">sd=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3085375</code></pre>
+<p>To confirm this result, you can compute the Z-score <span class="math inline">\(\left(Z=\frac{X-\mu}{\sigma}\right)\)</span> of <span class="math inline">\(X=2\)</span> and look up the cumulative probability in the Z-table.</p>
+<p>If you want to find the 95th percentile of the variable <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=3,\sigma=2)\)</span>, you can do so by typing the following:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="part-2---probability.html#cb32-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">3</span>,<span class="at">sd=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 6.289707</code></pre>
+<p>Again, you can confirm the result by looking up the Z-score belonging to the 95th percentile of the standard normal distribution and back-transform to obtain the corresponding value of <span class="math inline">\(X\)</span>.</p>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=82,\sigma=7)\)</span>, what is <span class="math inline">\(P(X&lt;90)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>pnorm(q=?,mean=?,sd=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.8735",".8735"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="part-2---probability.html#cb34-1" tabindex="-1"></a><span class="co">#P(X&lt;90)=P(X≤90) for continuous variables</span></span>
+<span id="cb34-2"><a href="part-2---probability.html#cb34-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">90</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 0.873451</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=82,\sigma=7)\)</span>, what is <span class="math inline">\(P(X&gt;73)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint 1
+</button>
+<p>What is the complement of <span class="math inline">\(X&gt;73\)</span>?</p>
+</div>
+<div class="webex-solution">
+<button>
+Hint 2
+</button>
+<p>Apply pnorm() to the complementary event, i.e. compute
+1-pnorm(q=?,mean=?,sd=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.9007",".9007"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="part-2---probability.html#cb36-1" tabindex="-1"></a><span class="co">#P(X&gt;73)=1-P(X&lt;73)=1-P(X≤73)</span></span>
+<span id="cb36-2"><a href="part-2---probability.html#cb36-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9007286</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="part-2---probability.html#cb38-1" tabindex="-1"></a><span class="co">#or alternatively, you can specify lower.tail=FALSE to compute P(X&gt;73) directly:</span></span>
+<span id="cb38-2"><a href="part-2---probability.html#cb38-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9007286</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=82,\sigma=7)\)</span>, what is <span class="math inline">\(P(73&lt;X&lt;90)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>pnorm(q=?,mean=?,sd=?) - pnorm(q=?,mean=?,sd=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.7742",".7742"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="part-2---probability.html#cb40-1" tabindex="-1"></a><span class="co">#P(73&lt;X&lt;90)</span></span>
+<span id="cb40-2"><a href="part-2---probability.html#cb40-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">90</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 0.7741796</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=12,\sigma=3)\)</span>, what is the 95th percentile? (Round to 2 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>qnorm(p=?,mean=?,sd=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='5' data-answer='["16.93"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="part-2---probability.html#cb42-1" tabindex="-1"></a><span class="co">#95th percentile</span></span>
+<span id="cb42-2"><a href="part-2---probability.html#cb42-2" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">12</span>,<span class="at">sd=</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 16.93456</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=12,\sigma=3)\)</span>, what is the 10th percentile? (Round to 2 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>qnorm(p=?,mean=?,sd=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='4' data-answer='["8.12"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="part-2---probability.html#cb44-1" tabindex="-1"></a><span class="co">#10th percentile</span></span>
+<span id="cb44-2"><a href="part-2---probability.html#cb44-2" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.1</span>,<span class="at">mean=</span><span class="dv">12</span>,<span class="at">sd=</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 8.155345</code></pre>
+</div>
+</div>
+<div id="discrete-distributions" class="section level3 hasAnchor" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> Discrete distributions<a href="part-2---probability.html#discrete-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br></p>
+<p>Similar to the normal distribution, you can use <code>R</code> to compute cumulative probabilities and percentiles for the binomial and Poisson distributions. Additionally, you can evaluate the probability mass functions of these distributions for particular values that the random variables might take on. The probability mass functions are evaluated with the functions <code>dbinom()</code> and <code>dpois()</code>. The cumulative probabilities are computed with <code>pbinom()</code> and <code>ppois()</code>, and the percentiles are computed with <code>qbinom()</code> and <code>qpois()</code>. You can call the help functions below to get additional info on how to use these functions:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="part-2---probability.html#cb46-1" tabindex="-1"></a>?Binomial</span>
+<span id="cb46-2"><a href="part-2---probability.html#cb46-2" tabindex="-1"></a>?Poisson</span></code></pre></div>
+<p>Note that functions for the geometric and negative binomial distributions exist in the standard <code>R</code> package. However, in <code>R</code>, these distributions are defined slightly differently from how we covered them in the lecture. Hence, I recommend you use the built-in function and instead use the lines of code provided in the exercises below.</p>
+<p><br></p>
+<div id="binomial" class="section level4 hasAnchor" number="3.0.2.1">
+<h4><span class="header-section-number">3.0.2.1</span> Binomial<a href="part-2---probability.html#binomial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<p><img src="images/Binomial.png" width="500"/></p>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=30,\theta=0.1)\)</span>, what is <span class="math inline">\(P(X=4)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>dbinom(x=?,size=?,prob=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.1771",".1771"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="part-2---probability.html#cb47-1" tabindex="-1"></a><span class="co">#P(X=4)</span></span>
+<span id="cb47-2"><a href="part-2---probability.html#cb47-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1770659</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=10,\theta=0.3)\)</span>, what is <span class="math inline">\(P(X&lt;5)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>pbinom(x=?,size=?,prob=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.8497",".8497"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="part-2---probability.html#cb49-1" tabindex="-1"></a><span class="co">#P(X&lt;5)=P(X≤4) for discrete variables</span></span>
+<span id="cb49-2"><a href="part-2---probability.html#cb49-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8497317</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=10,\theta=0.3)\)</span>, what is <span class="math inline">\(P(X&gt;1)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint 1
+</button>
+<p>What is the complementary event of <span class="math inline">\(X&gt;1\)</span>?</p>
+</div>
+<div class="webex-solution">
+<button>
+Hint 2
+</button>
+<p>Apply pbinom() to the complementary event, i.e. compute
+1-pbinom(q=?,size=?,prob=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.8507",".8507"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="part-2---probability.html#cb51-1" tabindex="-1"></a><span class="co">#P(X&gt;1)=1-P(X≤1)</span></span>
+<span id="cb51-2"><a href="part-2---probability.html#cb51-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8506917</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=10,\theta=0.3)\)</span>, what is <span class="math inline">\(P(1&lt;X&lt;5)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>pbinom(q=?,size=?,prob=?)-pbinom(q=?,size=?,prob=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.7004",".7004"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="part-2---probability.html#cb53-1" tabindex="-1"></a><span class="co">#P(1&lt;X&lt;5)</span></span>
+<span id="cb53-2"><a href="part-2---probability.html#cb53-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)<span class="sc">-</span><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.7004233</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=40,\theta=0.2)\)</span>, what is the 90th percentile? (As a whole number)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>qbinom(p=?,size=?,prob=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='2' data-answer='["11"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="part-2---probability.html#cb55-1" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="at">p=</span><span class="fl">0.9</span>,<span class="at">size=</span><span class="dv">40</span>,<span class="at">prob=</span><span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>## [1] 11</code></pre>
+</div>
+<p><br></p>
+</div>
+<div id="geometric" class="section level4 hasAnchor" number="3.0.2.2">
+<h4><span class="header-section-number">3.0.2.2</span> Geometric<a href="part-2---probability.html#geometric" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<p><img src="images/Geometric.png" width="500"/></p>
+<p><br></p>
+<p>The geometric distribution is defined differently in <code>R</code> than in our course. Hence, I recommend you compute probabilities from the geometric distribution using the formulas in the notes rather than the built-in functions. Luckily, the PMF and CDF of the geometric distribution are quickly computed without any built-in functions.</p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.2)\)</span>, what is <span class="math inline">\(P(X=3)\)</span>? (Round to 3 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Recall the PMF of a geometric random variable <span class="math inline">\(X\)</span>: <span class="math inline">\(P(X=x)=(1-\theta)^{(x-1)}\times \theta\)</span></p>
+</div>
+<p><input class='webex-solveme nospaces' size='5' data-answer='["0.128",".128"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="part-2---probability.html#cb57-1" tabindex="-1"></a><span class="fl">0.8</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fl">0.2</span></span></code></pre></div>
+<pre><code>## [1] 0.128</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.02)\)</span>, what is <span class="math inline">\(P(X&gt;4)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Recall that for a geometric random variable <span class="math inline">\(X\)</span>, you can compute <span class="math inline">\(P(X&gt;x)=(1-\theta)^{x}\)</span>.</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.9224",".9224"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="part-2---probability.html#cb59-1" tabindex="-1"></a>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">4</span></span></code></pre></div>
+<pre><code>## [1] 0.9223682</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.02)\)</span>, what is <span class="math inline">\(P(X&lt;20)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>For a geometric random variable <span class="math inline">\(X\)</span>, it is easier to compute the probability of <span class="math inline">\(X\)</span> being greater than some value <span class="math inline">\(x\)</span>: <span class="math inline">\(P(X&gt;x)=(1-\theta)^{x}\)</span>. Now, you can compute <span class="math inline">\(P(X&lt;20)=1-P(X&gt;19)\)</span>.</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.3188",".3188"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="part-2---probability.html#cb61-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">19</span></span></code></pre></div>
+<pre><code>## [1] 0.3187674</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.02)\)</span>, what is <span class="math inline">\(P(4&lt;X&lt;20)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p><span class="math inline">\(P(4&lt;X&lt;20)=P(X&lt;20)-P(X \leq 4)=(1-P(X&gt;19))-(1-P(X&gt;4))\)</span></p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.2411",".2411"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="part-2---probability.html#cb63-1" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">19</span>)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.2411355</code></pre>
+</div>
+<p><br></p>
+</div>
+<div id="negative-binomial" class="section level4 hasAnchor" number="3.0.2.3">
+<h4><span class="header-section-number">3.0.2.3</span> Negative binomial<a href="part-2---probability.html#negative-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<p>Recall that for a negative binomial random variable <span class="math inline">\(X \sim \mbox{Neg.Bin.}(\theta)\)</span>, the PMF can be written as <span class="math display">\[\begin{align*}
+  P(X=x)&amp;=\binom{x-1}{k-1}(1-\theta)^{(x-k)}\theta^{k}\\
+  &amp;=\binom{x-1}{k-1}(1-\theta)^{(x-k)}\theta^{k-1} \times \theta\\
+  &amp;=P(X_{1}=(k-1)) \times P(X_{2}=1),
+\end{align*}\]</span></p>
+<p>where <span class="math inline">\(X_{1} \sim \mbox{Bin}(n=(x-1),\theta)\)</span> and <span class="math inline">\(X_{2} \sim \mbox{Bern}(\theta)\)</span>. You can use that trick to compute probabilities from the negative binomial distribution in <code>R</code>.</p>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Neg.Bin.}(\theta=0.1)\)</span> and <span class="math inline">\(k=4\)</span>, what is <span class="math inline">\(P(X=10)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p><span class="math inline">\(P(X=10)=P(X_{1}=3) \times P(X_{2}=1)\)</span>, for <span class="math inline">\(X_{1}\sim \mbox{Bin}(n=(x-1),\theta)\)</span> and <span class="math inline">\(X_{2}\sim \mbox{Bern}(\theta)\)</span>.</p>
+<p>Alternatively, you can use the formula for the negative binomial PMF.</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.0045",".0045"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="part-2---probability.html#cb65-1" tabindex="-1"></a><span class="co">#using the hint:</span></span>
+<span id="cb65-2"><a href="part-2---probability.html#cb65-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x=</span><span class="dv">3</span>,<span class="at">size=</span><span class="dv">9</span>,<span class="at">prob=</span><span class="fl">0.1</span>)<span class="sc">*</span><span class="fl">0.1</span></span></code></pre></div>
+<pre><code>## [1] 0.004464104</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="part-2---probability.html#cb67-1" tabindex="-1"></a><span class="co">#or:</span></span>
+<span id="cb67-2"><a href="part-2---probability.html#cb67-2" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">9</span>,<span class="dv">3</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.1</span>)<span class="sc">^</span><span class="dv">6</span><span class="sc">*</span><span class="fl">0.1</span><span class="sc">^</span><span class="dv">4</span></span></code></pre></div>
+<pre><code>## [1] 0.004464104</code></pre>
+</div>
+<p><br></p>
+</div>
+<div id="poisson" class="section level4 hasAnchor" number="3.0.2.4">
+<h4><span class="header-section-number">3.0.2.4</span> Poisson<a href="part-2---probability.html#poisson" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Pois}(\lambda=3)\)</span>, what is what is <span class="math inline">\(P(X=2)\)</span>? (Round to 3 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>dpois(x=?,lambda=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='5' data-answer='["0.224",".224"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="part-2---probability.html#cb69-1" tabindex="-1"></a><span class="fu">dpois</span>(<span class="at">x=</span><span class="dv">2</span>,<span class="at">lambda=</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.2240418</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\sim \mbox{Pois}(\lambda=10)\)</span>, what is what is <span class="math inline">\(P(X&lt;12)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>ppois(q=?,lambda=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.6968",".6968"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="part-2---probability.html#cb71-1" tabindex="-1"></a><span class="co">#P(X&lt;12)=P(X≤11) for discrete variables</span></span>
+<span id="cb71-2"><a href="part-2---probability.html#cb71-2" tabindex="-1"></a><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">11</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 0.6967761</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\sim \mbox{Pois}(\lambda=10)\)</span>, what is what is <span class="math inline">\(P(X&gt;7)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>What is the complement of <span class="math inline">\(X&gt;7\)</span>?</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.7798",".7798"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="part-2---probability.html#cb73-1" tabindex="-1"></a><span class="co">#P(X&gt;7)=1-P(X≤7)</span></span>
+<span id="cb73-2"><a href="part-2---probability.html#cb73-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">7</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 0.7797794</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\sim \mbox{Pois}(\lambda=10)\)</span>, what is what is <span class="math inline">\(P(7&lt;X&lt;12)\)</span>? (Round to 4 decimal places)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>ppois(q=?,lambda=?) - ppois(q=?,lambda=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='6' data-answer='["0.4766",".4766"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="part-2---probability.html#cb75-1" tabindex="-1"></a><span class="co">#P(7&lt;X&lt;12)</span></span>
+<span id="cb75-2"><a href="part-2---probability.html#cb75-2" tabindex="-1"></a><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">11</span>,<span class="at">lambda=</span><span class="dv">10</span>)<span class="sc">-</span><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">7</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 0.4765555</code></pre>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X\sim \mbox{Pois}(\lambda=7)\)</span>, what is what is the 95th percentile? (As a whole number)</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>qpois(p=?,lambda=?)</p>
+</div>
+<p><input class='webex-solveme nospaces' size='2' data-answer='["12"]'/></p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="part-2---probability.html#cb77-1" tabindex="-1"></a><span class="fu">qpois</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">lambda=</span><span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="using-the-normal-distribution-to-approximate-a-binomial-distribution" class="section level3 hasAnchor" number="3.0.3">
+<h3><span class="header-section-number">3.0.3</span> Using the normal distribution to approximate a binomial distribution<a href="part-2---probability.html#using-the-normal-distribution-to-approximate-a-binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br></p>
+<p>In lecture 16, you saw that the binomial distribution can be approximated by a normal distribution. Specifically, if <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span>, then <span class="math inline">\(X \sim \mbox{Bin}(n,\theta)\)</span> can be approximated by
+<span class="math display">\[\begin{align*}
+Y \sim N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)
+\end{align*}\]</span></p>
+<p><br></p>
+<p><strong>For a binomial distribution with sample size 30 and probability of success equal to 0.2, would you suggest approximating the distribution by a normal distribution?</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Check if the assumptions <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span> hold.</p>
+</div>
+<div id="radio_QIPZVSIXRX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QIPZVSIXRX" value=""></input> <span>Sure, why not?!</span></label><label><input type="radio" autocomplete="off" name="radio_QIPZVSIXRX" value=""></input> <span>No, because we can't assume the binomial and normal distributions to be independent.</span></label><label><input type="radio" autocomplete="off" name="radio_QIPZVSIXRX" value="answer"></input> <span>No, the expected number of successes is too small, so the normal approximation should not be used.</span></label>
+</div>
+<p><br></p>
+<p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=400,\theta=0.1)\)</span>, fill in the blanks for the Normal approximation you would use:</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Recall that <span class="math inline">\(X\)</span>~Binomial(<span class="math inline">\(n,\theta\)</span>) can be approximated by <span class="math inline">\(Y\)</span>~<span class="math inline">\(N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)\)</span>.</p>
+</div>
+<p><span class="math inline">\(N(\mu=\)</span><input class='webex-solveme nospaces' size='2' data-answer='["40"]'/><span class="math inline">\(,\sigma=\)</span><input class='webex-solveme nospaces' size='1' data-answer='["6"]'/><span class="math inline">\()\)</span>.</p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p><span class="math inline">\(\mu=n \times \theta=40\)</span>, <span class="math inline">\(\sigma=\sqrt{n \times \theta \times (1-\theta)}=\sqrt{36}=6\)</span></p>
+</div>
+<p><br></p>
+<div id="graphical-exploration" class="section level4 hasAnchor" number="3.0.3.1">
+<h4><span class="header-section-number">3.0.3.1</span> Graphical exploration<a href="part-2---probability.html#graphical-exploration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<p>For the random variable <span class="math inline">\(X \sim \mbox{Bin}(n=600,\theta=0.4)\)</span>, you get <span class="math inline">\(n \times \theta=240&gt;10\)</span> and <span class="math inline">\(n \times (1-\theta)=360&gt;10\)</span>, so it is appropriate to approximate the distribution using a normal distribution with mean <span class="math inline">\(\mu=n \times \theta=240\)</span> and standard deviation <span class="math inline">\(\sigma=\sqrt{n \times \theta \times (1-\theta)}=\sqrt{144}=12\)</span>. To get a visual idea for how well the normal distribution approximates the binomial, you can create a plot that overlays the cumulative densities of the two distributions. You will need a sequence of numbers at which to evaluate the respective cumulative density functions (CDFs). This can be done using the <code>seq()</code> function, as demonstrated below:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="part-2---probability.html#cb79-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">10</span>,<span class="at">by=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
+<p>You can then compute the CDF at all possible values in the range of the binomial variable, for both the binomial and normal distributions and place them on the same plot:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="part-2---probability.html#cb81-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">600</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb81-2"><a href="part-2---probability.html#cb81-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">600</span>,<span class="at">prob=</span><span class="fl">0.4</span>)</span>
+<span id="cb81-3"><a href="part-2---probability.html#cb81-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">240</span>,<span class="at">sd=</span><span class="dv">12</span>)</span>
+<span id="cb81-4"><a href="part-2---probability.html#cb81-4" tabindex="-1"></a></span>
+<span id="cb81-5"><a href="part-2---probability.html#cb81-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
+<span id="cb81-6"><a href="part-2---probability.html#cb81-6" tabindex="-1"></a></span>
+<span id="cb81-7"><a href="part-2---probability.html#cb81-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
+<p><img src="_main_files/figure-html/normal_binom_approx-1.png" width="672" /></p>
+<p>Visually, the CDFs appear to be very close to each other. You can compute their maximum difference to get a better idea how much they differ:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="part-2---probability.html#cb82-1" tabindex="-1"></a><span class="co">#what&#39;s the biggest difference between the two CDFs?</span></span>
+<span id="cb82-2"><a href="part-2---probability.html#cb82-2" tabindex="-1"></a><span class="fu">max</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf))</span></code></pre></div>
+<pre><code>## [1] 0.01772144</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="part-2---probability.html#cb84-1" tabindex="-1"></a><span class="co">#for what value of x do they differ the most?</span></span>
+<span id="cb84-2"><a href="part-2---probability.html#cb84-2" tabindex="-1"></a>x_vals[<span class="fu">which</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf)<span class="sc">==</span><span class="fu">max</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf)))]</span></code></pre></div>
+<pre><code>## [1] 240</code></pre>
+<p>Hence, the two CDFs are furthest apart for <span class="math inline">\(x=240\)</span>, with an absolute difference of 0.0177.</p>
+<p>Now, try to approximate the variable <span class="math inline">\(X \sim \mbox{Bin}(n=30,\theta=0.2)\)</span> with the distribution <span class="math inline">\(Y \sim N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)\)</span>. Compute the CDFs as in the code chunk above, and place the two CDFs on the same plot to answer the question that is to follow.</p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="part-2---probability.html#cb86-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">30</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb86-2"><a href="part-2---probability.html#cb86-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.2</span>)</span>
+<span id="cb86-3"><a href="part-2---probability.html#cb86-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">6</span>,<span class="at">sd=</span><span class="fl">2.19089</span>)</span>
+<span id="cb86-4"><a href="part-2---probability.html#cb86-4" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="part-2---probability.html#cb86-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
+<span id="cb86-6"><a href="part-2---probability.html#cb86-6" tabindex="-1"></a></span>
+<span id="cb86-7"><a href="part-2---probability.html#cb86-7" tabindex="-1"></a><span class="co">#Now use these to make the appropriate plot.</span></span></code></pre></div>
+</div>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="part-2---probability.html#cb87-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<p><br></p>
+<p><strong>Which of the following best describes the normal approximation for the binomial example under consideration?</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Is one of the coloured lines consistently higher than the other? If so, which one?</p>
+</div>
+<div id="radio_FCPBWEEPGK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FCPBWEEPGK" value="answer"></input> <span>The binomial CDF returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_FCPBWEEPGK" value=""></input> <span>The binomial CDF returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_FCPBWEEPGK" value=""></input> <span>While the approximation is not very accurate, sometimes the binomial CDF returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
+</div>
+<p><br></p>
+<p>Let's see how the probability of success <span class="math inline">\(\theta\)</span> influences the dynamic of the normal approximation. Try to approximate the variable <span class="math inline">\(X \sim \mbox{Bin}(n=30,\theta=0.8)\)</span> by <span class="math inline">\(Y \sim N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)\)</span> and answer the question that is to follow.</p>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="part-2---probability.html#cb88-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">30</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb88-2"><a href="part-2---probability.html#cb88-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.8</span>)</span>
+<span id="cb88-3"><a href="part-2---probability.html#cb88-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">24</span>,<span class="at">sd=</span><span class="fl">2.19089</span>)</span>
+<span id="cb88-4"><a href="part-2---probability.html#cb88-4" tabindex="-1"></a></span>
+<span id="cb88-5"><a href="part-2---probability.html#cb88-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
+<span id="cb88-6"><a href="part-2---probability.html#cb88-6" tabindex="-1"></a></span>
+<span id="cb88-7"><a href="part-2---probability.html#cb88-7" tabindex="-1"></a><span class="co">#Now use these to make the appropriate plot.</span></span></code></pre></div>
+</div>
+<p><br></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="part-2---probability.html#cb89-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<p><br></p>
+<p><strong>Now that we have increased the probability of success to <span class="math inline">\(\theta=0.8\)</span>, which of the following best describes the Normal approximation for the Binomial example under consideration?</strong></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Is one of the coloured lines consistently higher than the other? If so, which one?</p>
+</div>
+<div id="radio_WEEYPQLCRC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WEEYPQLCRC" value="answer"></input> <span>The binomial CDF still returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_WEEYPQLCRC" value=""></input> <span>The binomial CDF now returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_WEEYPQLCRC" value=""></input> <span>While the approximation is still not very accurate, now the binomial CDF sometimes returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
+</div>
+<p><br></p>
+<p>Sometimes, when computations become increasingly expensive, it can be quite useful to approximate the binomial distribution by a normal distribution. Hopefully, this part of the lab helped you understand why the normal approximation is only appropriate when the number of observations <span class="math inline">\(n\)</span> is sufficiently large for a given probability of success <span class="math inline">\(\theta\)</span>. Keeping this in mind, you should always check the assumptions <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span> before applying the normal approximation and compute the binomial probabilities directly if the assumptions do not hold.</p>
+<p><br></p>
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="part-1---exploring-crime-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="group-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true,
+"edit": null
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
