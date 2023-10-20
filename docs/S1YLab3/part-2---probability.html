@@ -298,7 +298,7 @@ Solution
 <p>Similar to the normal distribution, you can use <code>R</code> to compute cumulative probabilities and percentiles for the binomial and Poisson distributions. Additionally, you can evaluate the probability mass functions of these distributions for particular values that the random variables might take on. The probability mass functions are evaluated with the functions <code>dbinom()</code> and <code>dpois()</code>. The cumulative probabilities are computed with <code>pbinom()</code> and <code>ppois()</code>, and the percentiles are computed with <code>qbinom()</code> and <code>qpois()</code>. You can call the help functions below to get additional info on how to use these functions:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="part-2---probability.html#cb46-1" tabindex="-1"></a>?Binomial</span>
 <span id="cb46-2"><a href="part-2---probability.html#cb46-2" tabindex="-1"></a>?Poisson</span></code></pre></div>
-<p>Note that functions for the geometric and negative binomial distributions exist in the standard <code>R</code> package. However, in <code>R</code>, these distributions are defined slightly differently from how we covered them in the lecture. Hence, I recommend you use the built-in function and instead use the lines of code provided in the exercises below.</p>
+<p>Note that functions for the geometric and negative binomial distributions exist in the standard <code>R</code> package. However, in <code>R</code>, these distributions are defined slightly differently from how we covered them in the lecture. Hence, we recommend you <strong>do not</strong> use the built-in function and instead use the lines of code provided in the exercises below.</p>
 <p><br></p>
 <div id="binomial" class="section level4 hasAnchor" number="3.0.2.1">
 <h4><span class="header-section-number">3.0.2.1</span> Binomial<a href="part-2---probability.html#binomial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -618,8 +618,8 @@ Hint
 </button>
 <p>Check if the assumptions <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span> hold.</p>
 </div>
-<div id="radio_QIPZVSIXRX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QIPZVSIXRX" value=""></input> <span>Sure, why not?!</span></label><label><input type="radio" autocomplete="off" name="radio_QIPZVSIXRX" value=""></input> <span>No, because we can't assume the binomial and normal distributions to be independent.</span></label><label><input type="radio" autocomplete="off" name="radio_QIPZVSIXRX" value="answer"></input> <span>No, the expected number of successes is too small, so the normal approximation should not be used.</span></label>
+<div id="radio_VWOYGZCQTQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VWOYGZCQTQ" value=""></input> <span>Sure, why not?!</span></label><label><input type="radio" autocomplete="off" name="radio_VWOYGZCQTQ" value=""></input> <span>No, because we can't assume the binomial and normal distributions to be independent.</span></label><label><input type="radio" autocomplete="off" name="radio_VWOYGZCQTQ" value="answer"></input> <span>No, the expected number of successes is too small, so the normal approximation should not be used.</span></label>
 </div>
 <p><br></p>
 <p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=400,\theta=0.1)\)</span>, fill in the blanks for the Normal approximation you would use:</strong></p>
@@ -691,8 +691,8 @@ Hint
 </button>
 <p>Is one of the coloured lines consistently higher than the other? If so, which one?</p>
 </div>
-<div id="radio_FCPBWEEPGK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FCPBWEEPGK" value="answer"></input> <span>The binomial CDF returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_FCPBWEEPGK" value=""></input> <span>The binomial CDF returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_FCPBWEEPGK" value=""></input> <span>While the approximation is not very accurate, sometimes the binomial CDF returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
+<div id="radio_IAGCLHIPTR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IAGCLHIPTR" value="answer"></input> <span>The binomial CDF returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_IAGCLHIPTR" value=""></input> <span>The binomial CDF returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_IAGCLHIPTR" value=""></input> <span>While the approximation is not very accurate, sometimes the binomial CDF returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
 </div>
 <p><br></p>
 <p>Let's see how the probability of success <span class="math inline">\(\theta\)</span> influences the dynamic of the normal approximation. Try to approximate the variable <span class="math inline">\(X \sim \mbox{Bin}(n=30,\theta=0.8)\)</span> by <span class="math inline">\(Y \sim N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)\)</span> and answer the question that is to follow.</p>
@@ -725,8 +725,8 @@ Hint
 </button>
 <p>Is one of the coloured lines consistently higher than the other? If so, which one?</p>
 </div>
-<div id="radio_WEEYPQLCRC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WEEYPQLCRC" value="answer"></input> <span>The binomial CDF still returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_WEEYPQLCRC" value=""></input> <span>The binomial CDF now returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_WEEYPQLCRC" value=""></input> <span>While the approximation is still not very accurate, now the binomial CDF sometimes returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
+<div id="radio_FELJYXDRVU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FELJYXDRVU" value="answer"></input> <span>The binomial CDF still returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_FELJYXDRVU" value=""></input> <span>The binomial CDF now returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_FELJYXDRVU" value=""></input> <span>While the approximation is still not very accurate, now the binomial CDF sometimes returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
 </div>
 <p><br></p>
 <p>Sometimes, when computations become increasingly expensive, it can be quite useful to approximate the binomial distribution by a normal distribution. Hopefully, this part of the lab helped you understand why the normal approximation is only appropriate when the number of observations <span class="math inline">\(n\)</span> is sufficiently large for a given probability of success <span class="math inline">\(\theta\)</span>. Keeping this in mind, you should always check the assumptions <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span> before applying the normal approximation and compute the binomial probabilities directly if the assumptions do not hold.</p>
