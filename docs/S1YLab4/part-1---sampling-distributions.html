@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Part 1 - Sampling Distributions | S1Y Lab 4</title>
   <meta name="description" content="Part 1 - Sampling Distributions | S1Y Lab 4" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Part 1 - Sampling Distributions | S1Y Lab 4" />
   <meta property="og:type" content="book" />
@@ -220,8 +220,8 @@ We will first create our population assuming a population size of 100,000 (which
 <p>The name of the data frame is <code>global_monitor</code> and the name of the variable that contains responses to the question <em>"Do you believe that the work scientists do benefit people like you?"</em> is <code>scientist_work</code>.</p>
 <p><br></p>
 <p><strong>What would this line of code return? <code>c(rep(x, 1000), rep(y, 500))</code></strong></p>
-<div id="radio_ATRSJEHRZD" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ATRSJEHRZD" value=""></input> <span>vector of length 1000 all x</span></label><label><input type="radio" autocomplete="off" name="radio_ATRSJEHRZD" value="answer"></input> <span>vector of length 1500 with 1000 values of x and 500 values of y</span></label><label><input type="radio" autocomplete="off" name="radio_ATRSJEHRZD" value=""></input> <span>vector of length 500 all y</span></label><label><input type="radio" autocomplete="off" name="radio_ATRSJEHRZD" value=""></input> <span>matrix with 1000 rows of x and 500 columns of y</span></label>
+<div id="radio_QDGKFCEMBM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QDGKFCEMBM" value=""></input> <span>vector of length 500 all y</span></label><label><input type="radio" autocomplete="off" name="radio_QDGKFCEMBM" value="answer"></input> <span>vector of length 1500 with 1000 values of x and 500 values of y</span></label><label><input type="radio" autocomplete="off" name="radio_QDGKFCEMBM" value=""></input> <span>matrix with 1000 rows of x and 500 columns of y</span></label><label><input type="radio" autocomplete="off" name="radio_QDGKFCEMBM" value=""></input> <span>vector of length 1000 all x</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -282,8 +282,8 @@ Solution
 </div>
 <p><br></p>
 <p><strong>Think about how the proportions in your sample compare with the distribution of the population. Would you expect the sample distribution to be?</strong></p>
-<div id="radio_NBXYSMNLMF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NBXYSMNLMF" value="answer"></input> <span>Similar to the population distribution</span></label><label><input type="radio" autocomplete="off" name="radio_NBXYSMNLMF" value=""></input> <span>Very different to the population distribution</span></label>
+<div id="radio_MVJAKRYVWT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MVJAKRYVWT" value="answer"></input> <span>Similar to the population distribution</span></label><label><input type="radio" autocomplete="off" name="radio_MVJAKRYVWT" value=""></input> <span>Very different to the population distribution</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -304,8 +304,8 @@ Hint
 <p>Depending on the 50 people selected, your estimate could be a bit above or a bit below the population proportion of 0.2. In general, though, the sample proportion turns out to be a pretty good estimate of the true population proportion, and you were able to get it by sampling less than 1% of the population, 50 out of 100000.</p>
 <p><br></p>
 <p><strong>Would you expect the sample proportion to match the sample proportion of another student's sample?</strong></p>
-<div id="radio_SRGJYVPGOV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SRGJYVPGOV" value="answer"></input> <span>Similar but not necessarily the same</span></label><label><input type="radio" autocomplete="off" name="radio_SRGJYVPGOV" value=""></input> <span>Completely different</span></label><label><input type="radio" autocomplete="off" name="radio_SRGJYVPGOV" value=""></input> <span>Exactly the same</span></label>
+<div id="radio_GDTYPPSPNT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GDTYPPSPNT" value=""></input> <span>Exactly the same</span></label><label><input type="radio" autocomplete="off" name="radio_GDTYPPSPNT" value=""></input> <span>Completely different</span></label><label><input type="radio" autocomplete="off" name="radio_GDTYPPSPNT" value="answer"></input> <span>Similar but not necessarily the same</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -337,8 +337,8 @@ Solution
 <pre><code>## # A tibble: 2 × 3
 ##   scientist_work      n p_hat
 ##   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-## 1 Benefits           39  0.78
-## 2 Doesn&#39;t benefit    11  0.22</code></pre>
+## 1 Benefits           41  0.82
+## 2 Doesn&#39;t benefit     9  0.18</code></pre>
 </div>
 <p><br></p>
 <p>Create 2 more samples, of size 100 and 1000 calling them <code>sample3</code> and <code>sample4</code>, and compare the proportion of people who do not believe that the work scientists do benefits them across all four samples.</p>
@@ -361,8 +361,8 @@ Solution
 <pre><code>## # A tibble: 2 × 3
 ##   scientist_work      n p_hat
 ##   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-## 1 Benefits           77  0.77
-## 2 Doesn&#39;t benefit    23  0.23</code></pre>
+## 1 Benefits           81  0.81
+## 2 Doesn&#39;t benefit    19  0.19</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="part-1---sampling-distributions.html#cb14-1" tabindex="-1"></a>sample4 <span class="ot">&lt;-</span> global_monitor <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="part-1---sampling-distributions.html#cb14-2" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">1000</span>)</span>
 <span id="cb14-3"><a href="part-1---sampling-distributions.html#cb14-3" tabindex="-1"></a></span>
@@ -372,13 +372,13 @@ Solution
 <pre><code>## # A tibble: 2 × 3
 ##   scientist_work      n p_hat
 ##   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-## 1 Benefits          798 0.798
-## 2 Doesn&#39;t benefit   202 0.202</code></pre>
+## 1 Benefits          789 0.789
+## 2 Doesn&#39;t benefit   211 0.211</code></pre>
 </div>
 <p><br></p>
 <p><strong>Looking at the new samples, of size 100 and 1000. Which would you think would provide a more precise estimate of the population mean?</strong></p>
-<div id="radio_QVUGFVOTRK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QVUGFVOTRK" value=""></input> <span>Sample size 50</span></label><label><input type="radio" autocomplete="off" name="radio_QVUGFVOTRK" value=""></input> <span>Sample size 100</span></label><label><input type="radio" autocomplete="off" name="radio_QVUGFVOTRK" value="answer"></input> <span>Sample size 1000</span></label>
+<div id="radio_AQXQUBXEQH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_AQXQUBXEQH" value=""></input> <span>Sample size 50</span></label><label><input type="radio" autocomplete="off" name="radio_AQXQUBXEQH" value=""></input> <span>Sample size 100</span></label><label><input type="radio" autocomplete="off" name="radio_AQXQUBXEQH" value="answer"></input> <span>Sample size 1000</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -389,29 +389,30 @@ Hint
 <p><br></p>
 <p>Not surprisingly, every time we take another random sample, you might get a different sample proportion. It's useful to get a sense of just how much variability in the sample proportions we should expect from sample to sample when estimating the population mean proportion in this way. The distribution of sample proportions, called the <em>sampling distribution (of the proportion)</em>, can help us understand this variability. See Section 5.1.2 <a href="https://www.openintro.org/redirect.php?go=os4_tablet&referrer=/stat/os4.php#page=181" target="_blank">OpenIntro Page 181</a></p>
 <p>Remember that in this lab we unusually had access to the population and therefore we can get an idea of the sampling distribution for the sample proportion by repeating the above steps many times.</p>
-<p>Here, we use the function <code>rep_sample_n</code> to take 15,000 different samples of size 50 from the population, calculate the proportion of <em>Science doesn't benefit</em> responses in each sample and store each result in a vector called <code>sample_props50</code>. The distribution of the proportions can then be visualised with a histogram.</p>
+<p>Here, we use the function <code>rep_sample_n</code>, which can be called from the <code>infer</code> package, to take 15,000 different samples of size 50 from the population, calculate the proportion of <em>Science doesn't benefit</em> responses in each sample and store each result in a vector called <code>sample_props50</code>. The distribution of the proportions can then be visualised with a histogram.</p>
 <p><strong>Note</strong> We specify that <code>replace = TRUE</code> since sampling distributions are constructed by sampling with replacement.</p>
 <p><br></p>
 </div>
 <div id="exercise-3" class="section level3 unnumbered hasAnchor">
 <h3>Exercise 3<a href="part-1---sampling-distributions.html#exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Run the following code to iterate 15000 samples of size 50 from the population.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="part-1---sampling-distributions.html#cb16-1" tabindex="-1"></a>sample_props50 <span class="ot">&lt;-</span> global_monitor <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="part-1---sampling-distributions.html#cb16-2" tabindex="-1"></a>                    <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">50</span>, <span class="at">reps =</span> <span class="dv">15000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="part-1---sampling-distributions.html#cb16-3" tabindex="-1"></a>                    <span class="fu">count</span>(scientist_work) <span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="part-1---sampling-distributions.html#cb16-4" tabindex="-1"></a>                    <span class="fu">mutate</span>(<span class="at">p_hat =</span> n <span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-5"><a href="part-1---sampling-distributions.html#cb16-5" tabindex="-1"></a>                    <span class="fu">filter</span>(scientist_work <span class="sc">==</span> <span class="st">&quot;Doesn&#39;t benefit&quot;</span>)</span>
-<span id="cb16-6"><a href="part-1---sampling-distributions.html#cb16-6" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="part-1---sampling-distributions.html#cb16-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> sample_props50, <span class="fu">aes</span>(<span class="at">x =</span> p_hat)) <span class="sc">+</span></span>
-<span id="cb16-8"><a href="part-1---sampling-distributions.html#cb16-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">fill =</span> <span class="st">&quot;seagreen3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb16-9"><a href="part-1---sampling-distributions.html#cb16-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;p_hat (Doesn&#39;t benefit)&quot;</span>,</span>
-<span id="cb16-10"><a href="part-1---sampling-distributions.html#cb16-10" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Sampling distribution of p_hat&quot;</span>,</span>
-<span id="cb16-11"><a href="part-1---sampling-distributions.html#cb16-11" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Sample size = 50, Number of samples = 150&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="part-1---sampling-distributions.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
+<span id="cb16-2"><a href="part-1---sampling-distributions.html#cb16-2" tabindex="-1"></a>sample_props50 <span class="ot">&lt;-</span> global_monitor <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="part-1---sampling-distributions.html#cb16-3" tabindex="-1"></a>                    <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">50</span>, <span class="at">reps =</span> <span class="dv">15000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="part-1---sampling-distributions.html#cb16-4" tabindex="-1"></a>                    <span class="fu">count</span>(scientist_work) <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="part-1---sampling-distributions.html#cb16-5" tabindex="-1"></a>                    <span class="fu">mutate</span>(<span class="at">p_hat =</span> n <span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="part-1---sampling-distributions.html#cb16-6" tabindex="-1"></a>                    <span class="fu">filter</span>(scientist_work <span class="sc">==</span> <span class="st">&quot;Doesn&#39;t benefit&quot;</span>)</span>
+<span id="cb16-7"><a href="part-1---sampling-distributions.html#cb16-7" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="part-1---sampling-distributions.html#cb16-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> sample_props50, <span class="fu">aes</span>(<span class="at">x =</span> p_hat)) <span class="sc">+</span></span>
+<span id="cb16-9"><a href="part-1---sampling-distributions.html#cb16-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">fill =</span> <span class="st">&quot;seagreen3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-10"><a href="part-1---sampling-distributions.html#cb16-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;p_hat (Doesn&#39;t benefit)&quot;</span>,</span>
+<span id="cb16-11"><a href="part-1---sampling-distributions.html#cb16-11" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Sampling distribution of p_hat&quot;</span>,</span>
+<span id="cb16-12"><a href="part-1---sampling-distributions.html#cb16-12" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Sample size = 50, Number of samples = 150&quot;</span>)</span></code></pre></div>
 <p>If you would like to adjust the bin width of your histogram to show a little more detail, you can do so by changing the <code>binwidth</code> argument in <code>geom_histogram</code>.</p>
 <p><br></p>
 <p><strong>How many elements are there in <code>sample_props50</code>?</strong></p>
-<div id="radio_FNJLOVSFIZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FNJLOVSFIZ" value=""></input> <span>50</span></label><label><input type="radio" autocomplete="off" name="radio_FNJLOVSFIZ" value=""></input> <span>100</span></label><label><input type="radio" autocomplete="off" name="radio_FNJLOVSFIZ" value=""></input> <span>1500</span></label><label><input type="radio" autocomplete="off" name="radio_FNJLOVSFIZ" value=""></input> <span>1000</span></label><label><input type="radio" autocomplete="off" name="radio_FNJLOVSFIZ" value="answer"></input> <span>15000</span></label>
+<div id="radio_ATHGSKHRTO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ATHGSKHRTO" value=""></input> <span>50</span></label><label><input type="radio" autocomplete="off" name="radio_ATHGSKHRTO" value=""></input> <span>100</span></label><label><input type="radio" autocomplete="off" name="radio_ATHGSKHRTO" value=""></input> <span>1500</span></label><label><input type="radio" autocomplete="off" name="radio_ATHGSKHRTO" value=""></input> <span>1000</span></label><label><input type="radio" autocomplete="off" name="radio_ATHGSKHRTO" value="answer"></input> <span>15000</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -421,8 +422,8 @@ Hint
 </div>
 <p><br></p>
 <p><strong>What distribution does the shape of the histogram most resemble?</strong></p>
-<div id="radio_JDXEGCNZYG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_JDXEGCNZYG" value=""></input> <span>Poisson</span></label><label><input type="radio" autocomplete="off" name="radio_JDXEGCNZYG" value=""></input> <span>Geometric</span></label><label><input type="radio" autocomplete="off" name="radio_JDXEGCNZYG" value=""></input> <span>Binomial</span></label><label><input type="radio" autocomplete="off" name="radio_JDXEGCNZYG" value="answer"></input> <span>Normal</span></label>
+<div id="radio_KYLXRDAFVZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KYLXRDAFVZ" value="answer"></input> <span>Normal</span></label><label><input type="radio" autocomplete="off" name="radio_KYLXRDAFVZ" value=""></input> <span>Poisson</span></label><label><input type="radio" autocomplete="off" name="radio_KYLXRDAFVZ" value=""></input> <span>Binomial</span></label><label><input type="radio" autocomplete="off" name="radio_KYLXRDAFVZ" value=""></input> <span>Geometric</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -448,8 +449,8 @@ Hint
 <span id="cb17-11"><a href="part-1---sampling-distributions.html#cb17-11" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Sample size = 50&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <p><strong>Would you expect the distribution to significantly change if 50,000 samples were collected?</strong></p>
-<div id="radio_LXKDYZLUSE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LXKDYZLUSE" value=""></input> <span>Yes</span></label><label><input type="radio" autocomplete="off" name="radio_LXKDYZLUSE" value="answer"></input> <span>No</span></label>
+<div id="radio_MSCXKAEIPB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MSCXKAEIPB" value=""></input> <span>Yes</span></label><label><input type="radio" autocomplete="off" name="radio_MSCXKAEIPB" value="answer"></input> <span>No</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -526,8 +527,8 @@ Solution
 </div>
 <p><br></p>
 <p><strong>When the sample size is larger, what happens to the center?</strong></p>
-<div id="radio_UGIHAXNUJX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UGIHAXNUJX" value=""></input> <span>Increases</span></label><label><input type="radio" autocomplete="off" name="radio_UGIHAXNUJX" value=""></input> <span>Decreases</span></label><label><input type="radio" autocomplete="off" name="radio_UGIHAXNUJX" value="answer"></input> <span>Stays constant</span></label>
+<div id="radio_GAOXIWCTPY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GAOXIWCTPY" value=""></input> <span>Increases</span></label><label><input type="radio" autocomplete="off" name="radio_GAOXIWCTPY" value=""></input> <span>Decreases</span></label><label><input type="radio" autocomplete="off" name="radio_GAOXIWCTPY" value="answer"></input> <span>Stays constant</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -537,8 +538,8 @@ Hint
 </div>
 <p><br></p>
 <p><strong>When the sample size is larger, what happens to the spread?</strong></p>
-<div id="radio_HQMSWKJEIG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HQMSWKJEIG" value=""></input> <span>Increases</span></label><label><input type="radio" autocomplete="off" name="radio_HQMSWKJEIG" value="answer"></input> <span>Decreases</span></label><label><input type="radio" autocomplete="off" name="radio_HQMSWKJEIG" value=""></input> <span>Stays constant</span></label>
+<div id="radio_RAVEAVKLXR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RAVEAVKLXR" value=""></input> <span>Increases</span></label><label><input type="radio" autocomplete="off" name="radio_RAVEAVKLXR" value="answer"></input> <span>Decreases</span></label><label><input type="radio" autocomplete="off" name="radio_RAVEAVKLXR" value=""></input> <span>Stays constant</span></label>
 </div>
 <div class="webex-solution">
 <button>
