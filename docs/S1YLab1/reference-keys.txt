@@ -7,7 +7,6 @@ intro-installing-r
 installing-r
 installing-rstudio
 rstudio_ide
-skip-to-section-3-part-2---analysing-data
 credit-where-credit-is-due
 getting-started-using-rstudio
 packages
@@ -19,7 +18,7 @@ function-help
 arguments
 argument-names
 tab-auto-complete
-objects-and-the-assign---operator
+objects-and-the-assign---operator-optional
 the-operator
 code-comments
 pipes
