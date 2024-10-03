@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Part 2 - Analyzing Data | S1Y Lab 1</title>
   <meta name="description" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
   <meta property="og:type" content="book" />
@@ -64,7 +64,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -469,9 +469,9 @@ Optional: other ways of looking at data
 <p>All of the summaries considered above are relevant for numercial/continuous variables but there also categorical variables in the ratings data.</p>
 <p><strong>Identify the type of each of the variables in the <code>ratings</code> data:</strong></p>
 <ul>
-<li><code>series</code>: <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value=''>continuous</option><option value=''>nominal</option><option value='answer'>ordinal</option></select></li>
-<li><code>episode</code>: <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value=''>continuous</option><option value=''>nominal</option><option value='answer'>ordinal</option></select></li>
-<li><code>viewers_7day</code> <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value='answer'>continuous</option><option value=''>nominal</option><option value=''>ordinal</option></select></li>
+<li><code>series</code>: <select class='webex-select'><option value='blank'></option><option value='answer'>discrete</option><option value=''>continuous</option><option value=''>nominal</option><option value=''>ordinal</option></select></li>
+<li><code>episode</code>: <select class='webex-select'><option value='blank'></option><option value='answer'>discrete</option><option value=''>continuous</option><option value=''>nominal</option><option value=''>ordinal</option></select></li>
+<li><code>viewers_7day</code> <select class='webex-select'><option value='blank'></option><option value='answer'>discrete</option><option value='answer'>continuous</option><option value=''>nominal</option><option value=''>ordinal</option></select></li>
 <li><code>channel</code> <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value=''>continuous</option><option value='answer'>nominal</option><option value=''>ordinal</option></select></li>
 </ul>
 <p>The <code>count()</code> function counts the number of rows that are the same. This will give you a new table with each combination of the counted rows and a column called <code>n</code> containing the number of observations from that group.</p>
