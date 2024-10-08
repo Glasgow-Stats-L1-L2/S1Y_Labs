@@ -54,7 +54,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -150,22 +150,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#column-plot"><i class="fa fa-check"></i><b>1.4.2</b> Column plot</a></li>
 <li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-understanding"><i class="fa fa-check"></i><b>1.4.3</b> <strong>Test your understanding</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#one-continuous-variable"><i class="fa fa-check"></i><b>1.5</b> One continuous variable</a>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#one-numerical-variable"><i class="fa fa-check"></i><b>1.5</b> One numerical variable</a>
 <ul>
 <li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#histogram"><i class="fa fa-check"></i><b>1.5.1</b> Histogram</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#grouped-continuous-variables"><i class="fa fa-check"></i><b>1.6</b> Grouped continuous variables</a>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#grouped-numerical-variables"><i class="fa fa-check"></i><b>1.6</b> Grouped numerical variables</a>
 <ul>
 <li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#subdividing-distributions"><i class="fa fa-check"></i><b>1.6.1</b> Subdividing distributions</a></li>
 <li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#violin-plot"><i class="fa fa-check"></i><b>1.6.2</b> Violin plot</a></li>
 <li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#boxplot"><i class="fa fa-check"></i><b>1.6.3</b> Boxplot</a></li>
 <li class="chapter" data-level="1.6.4" data-path="index.html"><a href="index.html#test-your-understanding-1"><i class="fa fa-check"></i><b>1.6.4</b> Test your understanding</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#two-continuous-variables"><i class="fa fa-check"></i><b>1.7</b> Two continuous variables</a>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#two-numerical-variables"><i class="fa fa-check"></i><b>1.7</b> Two numerical variables</a>
 <ul>
 <li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#scatterplot"><i class="fa fa-check"></i><b>1.7.1</b> Scatterplot</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#two-continuous-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>1.8</b> Two continuous variables and a categorical variable</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#two-numerical-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>1.8</b> Two numerical variables and a categorical variable</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="group-exercises.html"><a href="group-exercises.html"><i class="fa fa-check"></i><b>2</b> Group Exercises</a>
 <ul>
@@ -205,13 +205,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this lab, we will revisit the Great British Bake Off dataset which we worked with in Lab 1. Refer to Lab 1 for a reminder of the dataset structure if you need to.</p>
 <div id="reading-data-in" class="section level3 hasAnchor" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Reading data in<a href="index.html#reading-data-in" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The file <code>ratings_seasons_Lab2.csv</code> contains data on the first 10 series (2010-2019) and includes all the additional variables we created in Lab 1</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ratings_seasons_Lab2.csv&#39;</span>)</span></code></pre></div>
+<p>The file <code>ratings_seasons_Lab2.csv</code> contains data on the first 10 series (2010-2019) and includes all the additional variables we created in Lab 1. You can load the data in like Lab 1 below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Y_Data/main/ratings_seasons.csv&quot;</span>)</span></code></pre></div>
+<p>We can also read the <code>ratings_seasons.csv</code> file in locally to RStudio if we download a copy of the file onto our own device. You can find this file in the 'Lab 1' section on Moodle.</p>
+<p>Once you have downloaded and saved the csv file to your device (it is usually a good idea to save data in the same place as your R script), we will then have to set the working directory (where your file is located).</p>
+<p>In order to do this go to:</p>
+<ul>
+<li>Session &gt; Set Working Directory &gt; Choose Directory...</li>
+</ul>
+<p>The file explorer will then open, and you can locate the folder your data is stored in. Once this has been found, select 'Open".</p>
+<p>Once our working directory has been set, we now have to read our data into RStudio. We can do this using the following command</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ratings_seasons_Lab2.csv&#39;</span>)</span></code></pre></div>
 <p>We will once again have to change the variables <code>series</code>, <code>episode</code> and <code>channel</code> to factors which we can do using the code below.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series =</span> <span class="fu">as.factor</span>(series),</span>
-<span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a>         <span class="at">episode =</span> <span class="fu">as.factor</span>(episode),</span>
-<span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a>         <span class="at">channel =</span> <span class="fu">as.factor</span>(channel))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series =</span> <span class="fu">as.factor</span>(series),</span>
+<span id="cb3-3"><a href="index.html#cb3-3" tabindex="-1"></a>         <span class="at">episode =</span> <span class="fu">as.factor</span>(episode),</span>
+<span id="cb3-4"><a href="index.html#cb3-4" tabindex="-1"></a>         <span class="at">channel =</span> <span class="fu">as.factor</span>(channel))</span></code></pre></div>
 </div>
 </div>
 <div id="building-plots" class="section level2 hasAnchor" number="1.3">
@@ -219,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are multiple approaches to data visualisation in R; in this course we will use the popular package <code>ggplot2</code>, which is part of the larger <code>tidyverse</code> collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <code>ggplot2</code> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other.</p>
 <p>Figure 1 displays the steps to create a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a geom) that is desired for these variables is specified (layer 3) - in this case geom_point() is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).</p>
 <div class="figure"><span style="display:block;" id="fig:img-layers"></span>
-<img src="images/plot_layers.png" alt="Steps to create a layered plot"  />
+<img src="images/plot_layers.png" alt="Steps to create a layered plot" width="504" />
 <p class="caption">
 Figure 1.1: Steps to create a layered plot
 </p>
@@ -234,12 +244,12 @@ Figure 1.1: Steps to create a layered plot
 <div id="bar-plot" class="section level3 hasAnchor" number="1.4.1">
 <h3><span class="header-section-number">1.4.1</span> Bar plot<a href="index.html#bar-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you want to count the number of things per category, you can use <code>geom_bar()</code>. You only need to provide an x mapping to <code>geom_bar()</code> because by default <code>geom_bar()</code> uses the number of observations in each group of x as the value for y, so you don't need to tell it what to put on the y-axis.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="index.html#cb4-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Notice that layers are added using the plus <code>+</code> symbol at the end of the previous line, not at the start of the next line. For example if you make this mistake:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel))</span>
-<span id="cb4-2"><a href="index.html#cb4-2" tabindex="-1"></a>  <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel))</span>
+<span id="cb5-2"><a href="index.html#cb5-2" tabindex="-1"></a>  <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div>
 <p>...it will produce an empty 'base layer' and then an error like this:</p>
 <p><img src="main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre><code>## Error:
@@ -250,20 +260,20 @@ Figure 1.1: Steps to create a layered plot
 <ul>
 <li><strong>Inspect the code below and try running it layer by layer to figure out how things like the order of the columns and their labels change.</strong></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, </span>
-<span id="cb6-2"><a href="index.html#cb6-2" tabindex="-1"></a>                <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="index.html#cb6-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb6-4"><a href="index.html#cb6-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Number of episodes of GBBO broadcast on each channel&quot;</span>)<span class="sc">+</span> <span class="co"># adds a plot title</span></span>
-<span id="cb6-5"><a href="index.html#cb6-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Episodes&quot;</span>)<span class="sc">+</span> <span class="co"># adds an axis label</span></span>
-<span id="cb6-6"><a href="index.html#cb6-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span> <span class="co"># removes the legend</span></span>
-<span id="cb6-7"><a href="index.html#cb6-7" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
-<span id="cb6-8"><a href="index.html#cb6-8" tabindex="-1"></a>    <span class="co"># change axis label</span></span>
-<span id="cb6-9"><a href="index.html#cb6-9" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Broadcast Channels (in chronological order)&quot;</span>, </span>
-<span id="cb6-10"><a href="index.html#cb6-10" tabindex="-1"></a>    <span class="co"># change to chronological order</span></span>
-<span id="cb6-11"><a href="index.html#cb6-11" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;BBC2&quot;</span>, <span class="st">&quot;BBC1&quot;</span>, <span class="st">&quot;C4&quot;</span>), </span>
-<span id="cb6-12"><a href="index.html#cb6-12" tabindex="-1"></a>    <span class="co"># change labels</span></span>
-<span id="cb6-13"><a href="index.html#cb6-13" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;BBC 2&quot;</span>, <span class="st">&quot;BBC 1&quot;</span>, <span class="st">&quot;Channel 4&quot;</span>)</span>
-<span id="cb6-14"><a href="index.html#cb6-14" tabindex="-1"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, </span>
+<span id="cb7-2"><a href="index.html#cb7-2" tabindex="-1"></a>                <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="index.html#cb7-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="index.html#cb7-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Number of episodes of GBBO broadcast on each channel&quot;</span>)<span class="sc">+</span> <span class="co"># adds a plot title</span></span>
+<span id="cb7-5"><a href="index.html#cb7-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Episodes&quot;</span>)<span class="sc">+</span> <span class="co"># adds an axis label</span></span>
+<span id="cb7-6"><a href="index.html#cb7-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span> <span class="co"># removes the legend</span></span>
+<span id="cb7-7"><a href="index.html#cb7-7" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb7-8"><a href="index.html#cb7-8" tabindex="-1"></a>    <span class="co"># change axis label</span></span>
+<span id="cb7-9"><a href="index.html#cb7-9" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Broadcast Channels (in chronological order)&quot;</span>, </span>
+<span id="cb7-10"><a href="index.html#cb7-10" tabindex="-1"></a>    <span class="co"># change to chronological order</span></span>
+<span id="cb7-11"><a href="index.html#cb7-11" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;BBC2&quot;</span>, <span class="st">&quot;BBC1&quot;</span>, <span class="st">&quot;C4&quot;</span>), </span>
+<span id="cb7-12"><a href="index.html#cb7-12" tabindex="-1"></a>    <span class="co"># change labels</span></span>
+<span id="cb7-13"><a href="index.html#cb7-13" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;BBC 2&quot;</span>, <span class="st">&quot;BBC 1&quot;</span>, <span class="st">&quot;Channel 4&quot;</span>)</span>
+<span id="cb7-14"><a href="index.html#cb7-14" tabindex="-1"></a>    )</span></code></pre></div>
 <p><img src="main_files/figure-html/custom-bar-1.png" width="672" /></p>
 <p> </p>
 <ul>
@@ -273,19 +283,19 @@ Figure 1.1: Steps to create a layered plot
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> series, </span>
-<span id="cb7-2"><a href="index.html#cb7-2" tabindex="-1"></a>                <span class="at">fill =</span> series)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="index.html#cb7-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb7-4"><a href="index.html#cb7-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Number of episodes of GBBO broadcast in each series&quot;</span>)<span class="sc">+</span>  <span class="co"># adds a plot title</span></span>
-<span id="cb7-5"><a href="index.html#cb7-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Episodes&quot;</span>)<span class="sc">+</span>      <span class="co"># adds an axis label</span></span>
-<span id="cb7-6"><a href="index.html#cb7-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Series&quot;</span>)<span class="sc">+</span>                  <span class="co"># adds an axis label</span></span>
-<span id="cb7-7"><a href="index.html#cb7-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span> <span class="co"># removes the legend</span></span>
-<span id="cb7-8"><a href="index.html#cb7-8" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
-<span id="cb7-9"><a href="index.html#cb7-9" tabindex="-1"></a>    <span class="co"># change to categorical labels</span></span>
-<span id="cb7-10"><a href="index.html#cb7-10" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;10&quot;</span>), </span>
-<span id="cb7-11"><a href="index.html#cb7-11" tabindex="-1"></a>    <span class="co"># change labels</span></span>
-<span id="cb7-12"><a href="index.html#cb7-12" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;10&quot;</span>)</span>
-<span id="cb7-13"><a href="index.html#cb7-13" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> series, </span>
+<span id="cb8-2"><a href="index.html#cb8-2" tabindex="-1"></a>                <span class="at">fill =</span> series)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="index.html#cb8-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="index.html#cb8-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Number of episodes of GBBO broadcast in each series&quot;</span>)<span class="sc">+</span>  <span class="co"># adds a plot title</span></span>
+<span id="cb8-5"><a href="index.html#cb8-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Episodes&quot;</span>)<span class="sc">+</span>      <span class="co"># adds an axis label</span></span>
+<span id="cb8-6"><a href="index.html#cb8-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Series&quot;</span>)<span class="sc">+</span>                  <span class="co"># adds an axis label</span></span>
+<span id="cb8-7"><a href="index.html#cb8-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span> <span class="co"># removes the legend</span></span>
+<span id="cb8-8"><a href="index.html#cb8-8" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb8-9"><a href="index.html#cb8-9" tabindex="-1"></a>    <span class="co"># change to categorical labels</span></span>
+<span id="cb8-10"><a href="index.html#cb8-10" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;10&quot;</span>), </span>
+<span id="cb8-11"><a href="index.html#cb8-11" tabindex="-1"></a>    <span class="co"># change labels</span></span>
+<span id="cb8-12"><a href="index.html#cb8-12" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;10&quot;</span>)</span>
+<span id="cb8-13"><a href="index.html#cb8-13" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="main_files/figure-html/ex-bar-1.png" width="672" /></p>
 </div>
 </div>
@@ -300,7 +310,7 @@ Solution
 <button>
 Explanation
 </button>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" tabindex="-1"></a><span class="fu">select</span>(ratings,series,episode)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a><span class="fu">select</span>(ratings,series,episode)</span></code></pre></div>
 <pre><code>## # A tibble: 94 × 2
 ##    series episode
 ##    &lt;fct&gt;  &lt;fct&gt;  
@@ -315,23 +325,23 @@ Explanation
 ##  9 2      3      
 ## 10 2      4      
 ## # ℹ 84 more rows</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" tabindex="-1"></a><span class="co"># Notice that neither series nor episode contain unique values, which would be necessary to define the position on the x-axis for each of the columns with height equal to the ratings (viewers_7day)</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a><span class="co"># Notice that neither series nor episode contain unique values, which would be necessary to define the position on the x-axis for each of the columns with height equal to the ratings (viewers_7day)</span></span></code></pre></div>
 </div>
 <p>So before we can create the column plot, we need to create a new variable:</p>
 <ul>
 <li><strong>Run this code to create a new variable <code>ep_id</code> which is the unique index indicating the chronological order of each episode (using the <code>row_number()</code> function and the fact that it's the same as the order it appears in the <code>ratings</code> data).</strong></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ep_id =</span> <span class="fu">row_number</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ep_id =</span> <span class="fu">row_number</span>())</span></code></pre></div>
 <p>Now we have the two variables we need to make the column plot.</p>
 <ul>
 <li><strong>Inspect and run this code to produce the plot below.</strong></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day, <span class="at">fill =</span> series)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="index.html#cb12-2" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb12-3"><a href="index.html#cb12-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;7-Day Viewers across All Series/Episodes&quot;</span>)<span class="sc">+</span></span>
-<span id="cb12-4"><a href="index.html#cb12-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of viewers (millions)&quot;</span>)<span class="sc">+</span>      <span class="co"># adds an axis label</span></span>
-<span id="cb12-5"><a href="index.html#cb12-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Episode Index&quot;</span>)<span class="sc">+</span>                     <span class="co"># adds an axis label</span></span>
-<span id="cb12-6"><a href="index.html#cb12-6" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name=</span><span class="st">&quot;Series&quot;</span>)         <span class="co"># set the name of the legend  </span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day, <span class="at">fill =</span> series)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="index.html#cb13-2" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="index.html#cb13-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;7-Day Viewers across All Series/Episodes&quot;</span>)<span class="sc">+</span></span>
+<span id="cb13-4"><a href="index.html#cb13-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of viewers (millions)&quot;</span>)<span class="sc">+</span>      <span class="co"># adds an axis label</span></span>
+<span id="cb13-5"><a href="index.html#cb13-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Episode Index&quot;</span>)<span class="sc">+</span>                     <span class="co"># adds an axis label</span></span>
+<span id="cb13-6"><a href="index.html#cb13-6" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name=</span><span class="st">&quot;Series&quot;</span>)         <span class="co"># set the name of the legend  </span></span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="test-your-understanding" class="section level3 hasAnchor" number="1.4.3">
@@ -387,14 +397,14 @@ Explanation
 </ul>
 </div>
 </div>
-<div id="one-continuous-variable" class="section level2 hasAnchor" number="1.5">
-<h2><span class="header-section-number">1.5</span> One continuous variable<a href="index.html#one-continuous-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you have a continuous variable, like the number of views 7 days after each broadcast, you can use <code>geom_histogram()</code> or <code>geom_density()</code> to show the distribution. Just like <code>geom_bar()</code> you are only required to specify the <code>x</code> variable.</p>
+<div id="one-numerical-variable" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> One numerical variable<a href="index.html#one-numerical-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have a numerical variable, like the number of views 7 days after each broadcast, you can use <code>geom_histogram()</code> or <code>geom_density()</code> to show the distribution. Just like <code>geom_bar()</code> you are only required to specify the <code>x</code> variable.</p>
 <div id="histogram" class="section level3 hasAnchor" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Histogram<a href="index.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A histogram splits the data into "bins" along the x-axis and shows the count of how many observations are in each bin along the y-axis.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb13-2"><a href="index.html#cb13-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="index.html#cb14-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="main_files/figure-html/unnamed-chunk-11-1.png" alt="Histogram of ratings." width="672" />
@@ -411,46 +421,46 @@ Figure 1.2: Histogram of ratings.
 <ul>
 <li><strong>Try changing the values of <code>binwidth</code> and <code>bins</code> below to see what works best.</strong></li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a><span class="co"># adjust width of each bar</span></span>
-<span id="cb15-2"><a href="index.html#cb15-2" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="index.html#cb15-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span>
-<span id="cb15-4"><a href="index.html#cb15-4" tabindex="-1"></a><span class="co"># adjust number of bars</span></span>
-<span id="cb15-5"><a href="index.html#cb15-5" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="index.html#cb15-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="index.html#cb16-1" tabindex="-1"></a><span class="co"># adjust width of each bar</span></span>
+<span id="cb16-2"><a href="index.html#cb16-2" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="index.html#cb16-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span>
+<span id="cb16-4"><a href="index.html#cb16-4" tabindex="-1"></a><span class="co"># adjust number of bars</span></span>
+<span id="cb16-5"><a href="index.html#cb16-5" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="index.html#cb16-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p>Finally, the default style of grey bars is a bit boring, so you can change that by setting the <code>fill</code> and <code>colour</code>, as well as using <code>scale_x_continuous()</code> to update the axis labels.</p>
 <ul>
 <li><strong>Adapt and run this code to control the appearance of the histogram</strong></li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="index.html#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="index.html#cb16-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
-<span id="cb16-3"><a href="index.html#cb16-3" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
-<span id="cb16-4"><a href="index.html#cb16-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, </span>
-<span id="cb16-5"><a href="index.html#cb16-5" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb16-6"><a href="index.html#cb16-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of viewers 7 days after broadcast (in millions)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="index.html#cb17-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb17-3"><a href="index.html#cb17-3" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
+<span id="cb17-4"><a href="index.html#cb17-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb17-5"><a href="index.html#cb17-5" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="index.html#cb17-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of viewers 7 days after broadcast (in millions)&quot;</span>)</span></code></pre></div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="index.html#cb17-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
-<span id="cb17-3"><a href="index.html#cb17-3" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
-<span id="cb17-4"><a href="index.html#cb17-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>,   <span class="co"># Can change the colour here for the bars</span></span>
-<span id="cb17-5"><a href="index.html#cb17-5" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># Can change the colour of the outline of the bars</span></span>
-<span id="cb17-6"><a href="index.html#cb17-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of viewers 7 days after broadcast (in millions)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="index.html#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="index.html#cb18-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb18-3"><a href="index.html#cb18-3" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
+<span id="cb18-4"><a href="index.html#cb18-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>,   <span class="co"># Can change the colour here for the bars</span></span>
+<span id="cb18-5"><a href="index.html#cb18-5" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># Can change the colour of the outline of the bars</span></span>
+<span id="cb18-6"><a href="index.html#cb18-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of viewers 7 days after broadcast (in millions)&quot;</span>)</span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 </div>
 </div>
-<div id="grouped-continuous-variables" class="section level2 hasAnchor" number="1.6">
-<h2><span class="header-section-number">1.6</span> Grouped continuous variables<a href="index.html#grouped-continuous-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are several ways to compare continuous data across groups. Which you choose depends on what point you are trying to make with the plot.</p>
+<div id="grouped-numerical-variables" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Grouped numerical variables<a href="index.html#grouped-numerical-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are several ways to compare numerical data across groups. Which you choose depends on what point you are trying to make with the plot.</p>
 <div id="subdividing-distributions" class="section level3 hasAnchor" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> Subdividing distributions<a href="index.html#subdividing-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In previous plots, we have used <code>fill</code> purely for visual reasons, e.g., we have changed the colour of the histogram bars to make them look nicer. However, you can also use <code>fill</code> to represent another variable so that the colours become meaningful.</p>
 <p>Setting the <code>fill</code> aesthetic in the mapping will produce different coloured bars for each category of the <code>fill</code> variable, in this case <code>issue_category</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="index.html#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day, <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="index.html#cb18-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>,</span>
-<span id="cb18-3"><a href="index.html#cb18-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day, <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="index.html#cb19-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>,</span>
+<span id="cb19-3"><a href="index.html#cb19-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="main_files/figure-html/unnamed-chunk-15-1.png" alt="Histogram with categories represented by fill." width="672" />
 <p class="caption">
@@ -461,25 +471,25 @@ Figure 1.3: Histogram with categories represented by fill.
 <div id="violin-plot" class="section level3 hasAnchor" number="1.6.2">
 <h3><span class="header-section-number">1.6.2</span> Violin plot<a href="index.html#violin-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another way to compare groups of continuous variables is the violin plot. This is like a density plot, but rotated 90 degrees and mirrored - the fatter the violin, the larger proportion of data points there are at that value.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="index.html#cb19-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb19-3"><a href="index.html#cb19-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;scale = &quot;area&quot;&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="index.html#cb20-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="index.html#cb20-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb20-3"><a href="index.html#cb20-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;scale = &quot;area&quot;&#39;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:violin-plot"></span>
 <img src="main_files/figure-html/violin-plot-1.png" alt="The default violin plot gives each shape the same area. Set scale='count' to make the size proportional to the number of observations." width="768" />
 <p class="caption">
 Figure 1.4: The default violin plot gives each shape the same area. Set scale='count' to make the size proportional to the number of observations.
 </p>
 </div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="index.html#cb20-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb20-2"><a href="index.html#cb20-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">&quot;count&quot;</span>) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="index.html#cb20-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;scale = &quot;count&quot;&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="index.html#cb21-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">&quot;count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="index.html#cb21-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;scale = &quot;count&quot;&#39;</span>)</span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-16-1.png" width="768" /></p>
 </div>
 <div id="boxplot" class="section level3 hasAnchor" number="1.6.3">
 <h3><span class="header-section-number">1.6.3</span> Boxplot<a href="index.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Boxplots serve a similar purpose to violin plots. They don't show you the shape of the distribution, but rather some statistics about it. The middle line represents the median; half the data are above this line and half below it. The box encloses the 25th to 75th percentiles of the data, so 50% of the data falls inside the box. The "whiskers" extending above and below the box extend 1.5 times the height of the box, although you can change this with the <code>coef</code> argument. The points show outliers -- individual data points that fall outside of this range.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="index.html#cb21-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="index.html#cb22-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="index.html#cb22-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:box-plot"></span>
 <img src="main_files/figure-html/box-plot-1.png" alt="Basic boxplot." width="672" />
 <p class="caption">
@@ -504,14 +514,14 @@ Figure 1.5: Basic boxplot.
 </ul>
 </div>
 </div>
-<div id="two-continuous-variables" class="section level2 hasAnchor" number="1.7">
-<h2><span class="header-section-number">1.7</span> Two continuous variables<a href="index.html#two-continuous-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>When you want to see how two continuous variables are related, set one as the x-axis and the other as the y-axis. For example, what if we want to see the changes in ratings over the episodes/series in chronological order.</p>
+<div id="two-numerical-variables" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Two numerical variables<a href="index.html#two-numerical-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you want to see how two numerical variables are related, set one as the x-axis and the other as the y-axis. For example, what if we want to see the changes in ratings over the episodes/series in chronological order.</p>
 <div id="scatterplot" class="section level3 hasAnchor" number="1.7.1">
 <h3><span class="header-section-number">1.7.1</span> Scatterplot<a href="index.html#scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The function to create a scatterplot is called <code>geom_point()</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="index.html#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb22-2"><a href="index.html#cb22-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="index.html#cb23-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:demo-point"></span>
 <img src="main_files/figure-html/demo-point-1.png" alt="Scatterplot with geom_point()." width="672" />
 <p class="caption">
@@ -525,30 +535,30 @@ Figure 1.6: Scatterplot with geom_point().
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb23-2"><a href="index.html#cb23-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb23-3"><a href="index.html#cb23-3" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb23-4"><a href="index.html#cb23-4" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Scatterplot with both points and lines&quot;</span>)</span></code></pre></div>
-<p><img src="main_files/figure-html/demo-line-1.png" width="672" /></p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="index.html#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
-<span id="cb24-2"><a href="index.html#cb24-2" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb24-3"><a href="index.html#cb24-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Scatterplot with just lines&quot;</span>)</span></code></pre></div>
+<span id="cb24-2"><a href="index.html#cb24-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb24-3"><a href="index.html#cb24-3" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb24-4"><a href="index.html#cb24-4" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Scatterplot with both points and lines&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/demo-line-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="index.html#cb25-2" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb25-3"><a href="index.html#cb25-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Scatterplot with just lines&quot;</span>)</span></code></pre></div>
 <p><img src="main_files/figure-html/demo-line-2.png" width="672" /></p>
 </div>
 <p>These plots show each individual episodes' ratings and are perhaps more detailed than we need. If we were just interested in looking at the ratings across series, then we could create summaries for each series and plot these.</p>
 <ul>
 <li><strong>Examine and run this code to produce a lineplot of the average ratings for each series</strong></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" tabindex="-1"></a>avg_ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="index.html#cb25-2" tabindex="-1"></a>  <span class="fu">select</span>(series, episode, viewers_7day) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="index.html#cb25-3" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span></span>
-<span id="cb25-4"><a href="index.html#cb25-4" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_viewers_7day =</span> <span class="fu">mean</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
-<span id="cb25-5"><a href="index.html#cb25-5" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb25-6"><a href="index.html#cb25-6" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="index.html#cb25-7" tabindex="-1"></a><span class="fu">ggplot</span>(avg_ratings, <span class="fu">aes</span>(<span class="at">x =</span> series, <span class="at">y =</span> avg_viewers_7day, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb25-8"><a href="index.html#cb25-8" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb25-9"><a href="index.html#cb25-9" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb25-10"><a href="index.html#cb25-10" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Great British Bake Off Average Ratings&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1" tabindex="-1"></a>avg_ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="index.html#cb26-2" tabindex="-1"></a>  <span class="fu">select</span>(series, episode, viewers_7day) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="index.html#cb26-3" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="index.html#cb26-4" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_viewers_7day =</span> <span class="fu">mean</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="index.html#cb26-5" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb26-6"><a href="index.html#cb26-6" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="index.html#cb26-7" tabindex="-1"></a><span class="fu">ggplot</span>(avg_ratings, <span class="fu">aes</span>(<span class="at">x =</span> series, <span class="at">y =</span> avg_viewers_7day, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="index.html#cb26-8" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-9"><a href="index.html#cb26-9" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb26-10"><a href="index.html#cb26-10" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Great British Bake Off Average Ratings&quot;</span>)</span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <div class="webex-solution">
 <button>
@@ -559,29 +569,29 @@ Optional: Why do we need group=1
 <p> </p>
 </div>
 </div>
-<div id="two-continuous-variables-and-a-categorical-variable" class="section level2 hasAnchor" number="1.8">
-<h2><span class="header-section-number">1.8</span> Two continuous variables and a categorical variable<a href="index.html#two-continuous-variables-and-a-categorical-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="two-numerical-variables-and-a-categorical-variable" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Two numerical variables and a categorical variable<a href="index.html#two-numerical-variables-and-a-categorical-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is often the case that we are interested in relationships between more then two variables.</p>
 <p>The code below illustrates how to build more complex graphical summaries, in this case number of viewers of the first and last episode in each series.</p>
 <ul>
 <li><strong>You do not need to produce this plot but have a look and see if you can follow the code that is used to create it.</strong></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="index.html#cb26-2" tabindex="-1"></a>  <span class="fu">select</span>(series, episode, viewers_7day) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-3"><a href="index.html#cb26-3" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span></span>
-<span id="cb26-4"><a href="index.html#cb26-4" tabindex="-1"></a>  <span class="fu">filter</span>(episode <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> episode <span class="sc">==</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(episode))) <span class="sc">%&gt;%</span></span>
-<span id="cb26-5"><a href="index.html#cb26-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">episode =</span> <span class="fu">recode</span>(episode, <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;first&quot;</span>, <span class="at">.default =</span> <span class="st">&quot;last&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb26-6"><a href="index.html#cb26-6" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb26-7"><a href="index.html#cb26-7" tabindex="-1"></a></span>
-<span id="cb26-8"><a href="index.html#cb26-8" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> series,</span>
-<span id="cb26-9"><a href="index.html#cb26-9" tabindex="-1"></a>                      <span class="at">y =</span> viewers_7day,</span>
-<span id="cb26-10"><a href="index.html#cb26-10" tabindex="-1"></a>                      <span class="at">color =</span> episode, </span>
-<span id="cb26-11"><a href="index.html#cb26-11" tabindex="-1"></a>                      <span class="at">group =</span> episode</span>
-<span id="cb26-12"><a href="index.html#cb26-12" tabindex="-1"></a>                      )) <span class="sc">+</span></span>
-<span id="cb26-13"><a href="index.html#cb26-13" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb26-14"><a href="index.html#cb26-14" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb26-15"><a href="index.html#cb26-15" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Great British Bake Off Finales Get More Viewers than Premiers&quot;</span>) <span class="sc">+</span></span>
-<span id="cb26-16"><a href="index.html#cb26-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Episode&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="index.html#cb27-2" tabindex="-1"></a>  <span class="fu">select</span>(series, episode, viewers_7day) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="index.html#cb27-3" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="index.html#cb27-4" tabindex="-1"></a>  <span class="fu">filter</span>(episode <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> episode <span class="sc">==</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(episode))) <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="index.html#cb27-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">episode =</span> <span class="fu">recode</span>(episode, <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;first&quot;</span>, <span class="at">.default =</span> <span class="st">&quot;last&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-6"><a href="index.html#cb27-6" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb27-7"><a href="index.html#cb27-7" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="index.html#cb27-8" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> series,</span>
+<span id="cb27-9"><a href="index.html#cb27-9" tabindex="-1"></a>                      <span class="at">y =</span> viewers_7day,</span>
+<span id="cb27-10"><a href="index.html#cb27-10" tabindex="-1"></a>                      <span class="at">color =</span> episode, </span>
+<span id="cb27-11"><a href="index.html#cb27-11" tabindex="-1"></a>                      <span class="at">group =</span> episode</span>
+<span id="cb27-12"><a href="index.html#cb27-12" tabindex="-1"></a>                      )) <span class="sc">+</span></span>
+<span id="cb27-13"><a href="index.html#cb27-13" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb27-14"><a href="index.html#cb27-14" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb27-15"><a href="index.html#cb27-15" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Great British Bake Off Finales Get More Viewers than Premiers&quot;</span>) <span class="sc">+</span></span>
+<span id="cb27-16"><a href="index.html#cb27-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Episode&quot;</span>)</span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 
 </div>
