@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>S1Y Lab 2</title>
   <meta name="description" content="S1Y Lab 2" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="S1Y Lab 2" />
   <meta property="og:type" content="book" />
@@ -64,7 +64,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -207,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">1.2.1</span> Reading data in<a href="index.html#reading-data-in" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The file <code>ratings_seasons_Lab2.csv</code> contains data on the first 10 series (2010-2019) and includes all the additional variables we created in Lab 1. You can load the data in like Lab 1 below:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Y_Data/main/ratings_seasons.csv&quot;</span>)</span></code></pre></div>
+<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Y_Data/main/ratings_seasons_Lab2.csv&quot;</span>)</span></code></pre></div>
 <p>We can also read the <code>ratings_seasons.csv</code> file in locally to RStudio if we download a copy of the file onto our own device. You can find this file in the 'Lab 1' section on Moodle.</p>
 <p>Once you have downloaded and saved the csv file to your device (it is usually a good idea to save data in the same place as your R script), we will then have to set the working directory (where your file is located).</p>
 <p>In order to do this go to:</p>
@@ -253,7 +253,7 @@ Figure 1.1: Steps to create a layered plot
 <p>...it will produce an empty 'base layer' and then an error like this:</p>
 <p><img src="main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre><code>## Error:
-## ! Cannot use `+` with a single argument
+## ! Cannot use `+` with a single argument.
 ## ℹ Did you accidentally put `+` on a new line?</code></pre>
 <p> 
  </p>
@@ -457,7 +457,7 @@ Solution
 <div id="subdividing-distributions" class="section level3 hasAnchor" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> Subdividing distributions<a href="index.html#subdividing-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In previous plots, we have used <code>fill</code> purely for visual reasons, e.g., we have changed the colour of the histogram bars to make them look nicer. However, you can also use <code>fill</code> to represent another variable so that the colours become meaningful.</p>
-<p>Setting the <code>fill</code> aesthetic in the mapping will produce different coloured bars for each category of the <code>fill</code> variable, in this case <code>issue_category</code>.</p>
+<p>Setting the <code>fill</code> aesthetic in the mapping will produce different coloured bars for each category of the <code>fill</code> variable, in this case <code>channel</code>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day, <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
 <span id="cb19-2"><a href="index.html#cb19-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>,</span>
 <span id="cb19-3"><a href="index.html#cb19-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
