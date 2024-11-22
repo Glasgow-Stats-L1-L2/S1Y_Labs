@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Inference on Proportions | S1Y Lab 5</title>
   <meta name="description" content="Inference on Proportions | S1Y Lab 5" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Inference on Proportions | S1Y Lab 5" />
   <meta property="og:type" content="book" />
@@ -54,7 +54,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,7 +64,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -218,8 +218,8 @@ Solution
 </div>
 <p><br></p>
 <strong>What could you interpret from this confidence interval?</strong>
-<div id="radio_XNGIRZYXQX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XNGIRZYXQX" value=""></input> <span>We are 95% confident the true proportion of non-helmet wearing students that texted while driving in all 30 of the previous 30 days is exactly 0.076, since this is inside the confidence interval.</span></label><label><input type="radio" autocomplete="off" name="radio_XNGIRZYXQX" value="answer"></input> <span>We are 95% confident the true proportion of non-helmet wearing students that texted while driving in all 30 of the previous 30 days is somewhere between 0.069 and 0.084.</span></label><label><input type="radio" autocomplete="off" name="radio_XNGIRZYXQX" value=""></input> <span>We are 90% confident the true proportion of non-helmet wearing students that texted while driving in all 30 of the previous 30 days is somewhere between 0.069 and 0.084.</span></label><label><input type="radio" autocomplete="off" name="radio_XNGIRZYXQX" value=""></input> <span>The proportion we calculated in outside of the interval calculated here, therefore we cannot make any valid interpretations.</span></label>
+<div id="radio_TITMSPPUMC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TITMSPPUMC" value=""></input> <span>The proportion we calculated in outside of the interval calculated here, therefore we cannot make any valid interpretations.</span></label><label><input type="radio" autocomplete="off" name="radio_TITMSPPUMC" value="answer"></input> <span>We are 95% confident the true proportion of non-helmet wearing students that texted while driving in all 30 of the previous 30 days is somewhere between 0.069 and 0.084.</span></label><label><input type="radio" autocomplete="off" name="radio_TITMSPPUMC" value=""></input> <span>We are 90% confident the true proportion of non-helmet wearing students that texted while driving in all 30 of the previous 30 days is somewhere between 0.069 and 0.084.</span></label><label><input type="radio" autocomplete="off" name="radio_TITMSPPUMC" value=""></input> <span>We are 95% confident the true proportion of non-helmet wearing students that texted while driving in all 30 of the previous 30 days is exactly 0.076, since this is inside the confidence interval.</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -253,22 +253,17 @@ Hint
 </div>
 <div id="exercise-5" class="section level3 unnumbered hasAnchor">
 <h3>Exercise 5<a href="inference-on-proportions.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Using the same method as seen above, repeat the process of constructing a confidence interval for the proportion of students who never wore a bike helmet and</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Had less than 5 hours sleep, then</p></li>
-<li><p>Strength trained every day,</p></li>
-</ol>
-<p>instead of texted while driving every day of the past 30 days. You should construct two confidence intervals, one for a) and one for b).</p>
+<p>Using the same method as seen above, repeat the process of constructing a confidence interval for the proportion of students who never wore a bike helmet and had less than 5 hours sleep instead of texted while driving every day of the past 30 days.</p>
 <p>You will need to answer the problem in two steps. Firstly, to construct a new "yes" or "no" variable, by adapting some code above and considering which variable to change and which category of that variable to change also i.e. what the <code>==</code> part equals. Secondly, you will need to construct a confidence interval in the same way as above, by working out your new <span class="math inline">\(p\)</span> and <span class="math inline">\(n\)</span> values using the same methods as before.</p>
 <div class="webex-solution">
 <button>
 Hint
 </button>
-<p>We have already created the dataset <code>no_helmet</code> and want to mutate it to add a new variable which indicates whether a student had less than 5 hours sleep (the number of hours slept is shown by the <code>school_night_hours_sleep</code> variable). Then, count the number of "yes"'s in this new variable and use this to calculate an estimate of the proportion <code>p</code>.</p>
+<p>We have already created the dataset <code>no_helmet</code> and want to mutate it to add a new variable which indicates whether a student had less than 5 hours sleep (the number of hours slept is shown by the <code>school_night_hours_sleep</code> variable). Then, count the number of "yes"'s in this new variable and use this to calculate an estimate of the proportion <code>p</code>. Note, you will need to use the relation <code>&lt;5</code> to collect those with less than 5 hours sleep.</p>
 </div>
 <div class="webex-solution">
 <button>
-Solution (a)
+Solution
 </button>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="inference-on-proportions.html#cb16-1" tabindex="-1"></a>no_helmet <span class="ot">&lt;-</span> no_helmet <span class="sc">%&gt;%</span></span>
 <span id="cb16-2"><a href="inference-on-proportions.html#cb16-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">less5_hours_sleep =</span> <span class="fu">ifelse</span>(school_night_hours_sleep <span class="sc">==</span> <span class="st">&quot;&lt;5&quot;</span>, <span class="st">&quot;yes&quot;</span>, <span class="st">&quot;no&quot;</span>))</span>
@@ -293,52 +288,6 @@ Solution (a)
 <pre><code>## [1] 0.06633464</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="inference-on-proportions.html#cb20-1" tabindex="-1"></a>upper.bound</span></code></pre></div>
 <pre><code>## [1] 0.08191582</code></pre>
-</div>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Within <code>mutate</code>, change the <code>ifelse()</code> statement to <code>ifelse(physically_active_7d==7, "yes", "no")</code> to create a new variable in <code>no_helmet</code> that takes the value "yes" if a student has strength trained every day for the past 7 days, and "no" otherwise.</p>
-</div>
-<div class="webex-solution">
-<button>
-Solution (b)
-</button>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="inference-on-proportions.html#cb22-1" tabindex="-1"></a>no_helmet <span class="ot">&lt;-</span> no_helmet <span class="sc">%&gt;%</span></span>
-<span id="cb22-2"><a href="inference-on-proportions.html#cb22-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">train_every_day =</span> <span class="fu">ifelse</span>(physically_active_7d<span class="sc">==</span><span class="dv">7</span>,<span class="st">&quot;yes&quot;</span>,<span class="st">&quot;no&quot;</span>))</span>
-<span id="cb22-3"><a href="inference-on-proportions.html#cb22-3" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="inference-on-proportions.html#cb22-4" tabindex="-1"></a>no_helmet <span class="sc">%&gt;%</span></span>
-<span id="cb22-5"><a href="inference-on-proportions.html#cb22-5" tabindex="-1"></a>  <span class="fu">group_by</span>(train_every_day) <span class="sc">%&gt;%</span></span>
-<span id="cb22-6"><a href="inference-on-proportions.html#cb22-6" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>## # A tibble: 2 × 2
-##   train_every_day count
-##   &lt;chr&gt;           &lt;int&gt;
-## 1 no               3014
-## 2 yes              1330</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="inference-on-proportions.html#cb24-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1330</span><span class="sc">/</span>(<span class="dv">1330</span><span class="sc">+</span><span class="dv">3014</span>)</span>
-<span id="cb24-2"><a href="inference-on-proportions.html#cb24-2" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="inference-on-proportions.html#cb24-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1330</span><span class="sc">+</span><span class="dv">3014</span></span>
-<span id="cb24-4"><a href="inference-on-proportions.html#cb24-4" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="inference-on-proportions.html#cb24-5" tabindex="-1"></a>upper.bound <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span>
-<span id="cb24-6"><a href="inference-on-proportions.html#cb24-6" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="inference-on-proportions.html#cb24-7" tabindex="-1"></a>lower.bound <span class="ot">&lt;-</span> p <span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span>
-<span id="cb24-8"><a href="inference-on-proportions.html#cb24-8" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="inference-on-proportions.html#cb24-9" tabindex="-1"></a>lower.bound</span></code></pre></div>
-<pre><code>## [1] 0.2924632</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="inference-on-proportions.html#cb26-1" tabindex="-1"></a>upper.bound</span></code></pre></div>
-<pre><code>## [1] 0.3198757</code></pre>
-</div>
-<p><br></p>
-<strong>How could you compare the two CI for proportions calculated above?</strong>
-<div id="radio_FTKUOSSJEL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FTKUOSSJEL" value=""></input> <span>The CI for the proportion of non-helmet wearing strength trainers seems far wider than the CI for the proportion of non-helmet wearing students with less than 5 hours sleep.</span></label><label><input type="radio" autocomplete="off" name="radio_FTKUOSSJEL" value=""></input> <span>The proportion of non-helmet wearing strength trainers probably equals the proportion of non-helmet wearing students that gets less than 5 hours sleep.</span></label><label><input type="radio" autocomplete="off" name="radio_FTKUOSSJEL" value=""></input> <span>We can make no comparisons between the two groups whatsoever at this stage of the analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_FTKUOSSJEL" value="answer"></input> <span>The proportion of non helmet wearing strength trainers is probably much greater than the proportion of non-helmet wearing people with less than 5 hours sleep, since the CI is far above.</span></label>
-</div>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Look at where the first proportion's CI ends compared to where the second proportion's CI begins.</p>
 </div>
 <p><br></p>
 
