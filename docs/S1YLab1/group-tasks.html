@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Group Tasks | S1Y Lab 1</title>
   <meta name="description" content="4 Group Tasks | S1Y Lab 1" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Group Tasks | S1Y Lab 1" />
   <meta property="og:type" content="book" />
@@ -53,8 +53,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -150,30 +151,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html"><i class="fa fa-check"></i><b>2</b> Getting started using RStudio</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#packages"><i class="fa fa-check"></i><b>2.1</b> Packages and functions</a>
+<li class="chapter" data-level="2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#objects-and-the-assign---operator-optional"><i class="fa fa-check"></i><b>2.1</b> Objects and the assign (<code>&lt;-</code>) operator (optional)</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#install-package"><i class="fa fa-check"></i><b>2.1.1</b> Installing a package</a></li>
-<li class="chapter" data-level="2.1.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#loading-a-package"><i class="fa fa-check"></i><b>2.1.2</b> Loading a package</a></li>
-<li class="chapter" data-level="2.1.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#using-a-function"><i class="fa fa-check"></i><b>2.1.3</b> Using a function</a></li>
-<li class="chapter" data-level="2.1.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tidyverse"><i class="fa fa-check"></i><b>2.1.4</b> Tidyverse</a></li>
-<li class="chapter" data-level="2.1.5" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#function-help"><i class="fa fa-check"></i><b>2.1.5</b> Function Help</a></li>
-<li class="chapter" data-level="2.1.6" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#arguments"><i class="fa fa-check"></i><b>2.1.6</b> Arguments</a></li>
-<li class="chapter" data-level="2.1.7" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#argument-names"><i class="fa fa-check"></i><b>2.1.7</b> Argument names</a></li>
-<li class="chapter" data-level="2.1.8" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tab-auto-complete"><i class="fa fa-check"></i><b>2.1.8</b> Tab auto-complete</a></li>
+<li class="chapter" data-level="2.1.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#the-operator"><i class="fa fa-check"></i><b>2.1.1</b> The $ operator</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#code-comments"><i class="fa fa-check"></i><b>2.1.2</b> Code comments</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#objects-and-the-assign---operator-optional"><i class="fa fa-check"></i><b>2.2</b> Objects and the assign (<code>&lt;-</code>) operator (optional)</a>
+<li class="chapter" data-level="2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#packages"><i class="fa fa-check"></i><b>2.2</b> Packages and functions</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#the-operator"><i class="fa fa-check"></i><b>2.2.1</b> The $ operator</a></li>
-<li class="chapter" data-level="2.2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#code-comments"><i class="fa fa-check"></i><b>2.2.2</b> Code comments</a></li>
-<li class="chapter" data-level="2.2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#pipes"><i class="fa fa-check"></i><b>2.2.3</b> Pipes (<code>%&gt;%</code>)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#install-package"><i class="fa fa-check"></i><b>2.2.1</b> Installing a package</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#loading-a-package"><i class="fa fa-check"></i><b>2.2.2</b> Loading a package</a></li>
+<li class="chapter" data-level="2.2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#using-a-function"><i class="fa fa-check"></i><b>2.2.3</b> Using a function</a></li>
+<li class="chapter" data-level="2.2.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tidyverse"><i class="fa fa-check"></i><b>2.2.4</b> Tidyverse</a></li>
+<li class="chapter" data-level="2.2.5" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#function-help"><i class="fa fa-check"></i><b>2.2.5</b> Function Help</a></li>
+<li class="chapter" data-level="2.2.6" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#arguments"><i class="fa fa-check"></i><b>2.2.6</b> Arguments</a></li>
+<li class="chapter" data-level="2.2.7" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#argument-names"><i class="fa fa-check"></i><b>2.2.7</b> Argument names</a></li>
+<li class="chapter" data-level="2.2.8" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tab-auto-complete"><i class="fa fa-check"></i><b>2.2.8</b> Tab auto-complete</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#help"><i class="fa fa-check"></i><b>2.3</b> Getting help</a>
+<li class="chapter" data-level="2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#pipes"><i class="fa fa-check"></i><b>2.3</b> Pipes (<code>%&gt;%</code>)</a></li>
+<li class="chapter" data-level="2.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#help"><i class="fa fa-check"></i><b>2.4</b> Getting help</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#package-reference-manuals"><i class="fa fa-check"></i><b>2.3.1</b> Package reference manuals</a></li>
-<li class="chapter" data-level="2.3.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#googling"><i class="fa fa-check"></i><b>2.3.2</b> Googling</a></li>
-<li class="chapter" data-level="2.3.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#vignettes"><i class="fa fa-check"></i><b>2.3.3</b> Vignettes</a></li>
+<li class="chapter" data-level="2.4.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#package-reference-manuals"><i class="fa fa-check"></i><b>2.4.1</b> Package reference manuals</a></li>
+<li class="chapter" data-level="2.4.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#googling"><i class="fa fa-check"></i><b>2.4.2</b> Googling</a></li>
+<li class="chapter" data-level="2.4.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#vignettes"><i class="fa fa-check"></i><b>2.4.3</b> Vignettes</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#resources-intro"><i class="fa fa-check"></i><b>2.4</b> Further Resources</a></li>
+<li class="chapter" data-level="2.5" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#resources-intro"><i class="fa fa-check"></i><b>2.5</b> Further Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html"><i class="fa fa-check"></i><b>3</b> Part 2 - Analyzing Data</a>
 <ul>
@@ -183,11 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#reading-data-in"><i class="fa fa-check"></i><b>3.2.1</b> Reading data in</a></li>
 <li class="chapter" data-level="3.2.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#looking-at-data"><i class="fa fa-check"></i><b>3.2.2</b> Looking at data</a></li>
 <li class="chapter" data-level="3.2.3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#exploring-data"><i class="fa fa-check"></i><b>3.2.3</b> Exploring data</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#dplyr-functions-for-data-wrangling"><i class="fa fa-check"></i><b>3.3</b> <code>dplyr</code> functions for data wrangling</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-a-new-variable-and-adding-it-to-a-data-object"><i class="fa fa-check"></i><b>3.3.1</b> Creating a new variable and adding it to a data object</a></li>
-<li class="chapter" data-level="3.3.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-summaries-of-data"><i class="fa fa-check"></i><b>3.3.2</b> Creating summaries of data</a></li>
+<li class="chapter" data-level="3.2.4" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-summaries-of-data"><i class="fa fa-check"></i><b>3.2.4</b> Creating summaries of data</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="group-tasks.html"><a href="group-tasks.html"><i class="fa fa-check"></i><b>4</b> Group Tasks</a>
@@ -219,13 +216,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey of 350,000 people in the United States. As its name implies, the BRFSS is designed to identify risk factors in the adult population and report emerging health trends. For example, respondents are asked about their diet and weekly physical activity, possible tobacco use, and even their level of healthcare coverage. The <a href="http://www.cdc.gov/brfss">BRFSS Web site</a> contains a complete description of the survey, including the research questions that motivate the study and many interesting results derived from the data.</p>
 <p>You will focus on a random sample of 20,000 people from the BRFSS survey conducted in 2000. While there are over 200 variables in this data set, you will work with a small subset.</p>
 <p>Load the data set of 20,000 observations into the object <code>cdc</code> and look at what it contains by running the following code. It may take a couple of minutes for the data to load, depending on your internet connection, so be patient!</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="group-tasks.html#cb44-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)</span>
-<span id="cb44-2"><a href="group-tasks.html#cb44-2" tabindex="-1"></a><span class="fu">str</span>(cdc)</span></code></pre></div>
+<p><em>Remember to create a new R Script to run your code!</em></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="group-tasks.html#cb38-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)</span>
+<span id="cb38-2"><a href="group-tasks.html#cb38-2" tabindex="-1"></a><span class="fu">str</span>(cdc)</span></code></pre></div>
 <ol style="list-style-type: decimal">
+<li><p>Observe the structure of the data. How many variables are numerical? How many are categorical?</p></li>
 <li><p>Find the mean, maximum and minimum values of weight (<code>weight</code>).</p></li>
-<li><p>Find the mean, maximum and minimum values of weight (<code>weight</code>), this time grouped by those who have smoked at least 100 cigarettes in their lifetime or not (<code>smoke100</code>).</p></li>
-<li><p>Let's consider a new variable: the difference between desired weight (<code>wtdesire</code>) and current weight (<code>weight</code>). Create this new variable by subtracting the two columns in the data frame and assigning them to a new object called <code>wdiff</code>.</p></li>
-<li><p>What type of data is <code>wdiff</code>? If an observation wdiff is 0, what does this mean about the person's weight and desired weight. What if <code>wdiff</code> is positive or negative?</p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>For this task you can use <code>summarise()</code> as we did in Section 3.2.4.2.</p>
+</div>
+<p>3a. Let's consider a new variable: the difference between desired weight (<code>wtdesire</code>) and current weight (<code>weight</code>). Create this new variable by subtracting the two columns in the data frame and assigning them to a new object called <code>wdiff</code>.</p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>You can access columns using the <code>$</code> operator.</p>
+</div>
+<div class="webex-solution">
+<button>
+Hint 2
+</button>
+<p>To create the new column recall the assign operator: <code>&lt;-</code></p>
+</div>
+<p>3b. Create the same object, <code>wdiff</code>, but this time add it to the <code>cdc</code> data set.</p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Recall the <code>mutate</code> function</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>What type of data is <code>wdiff</code>? If an observation wdiff is 0, what does this mean about the person's weight and desired weight. What if <code>wdiff</code> is positive or negative?</li>
 </ol>
 <!-- 6.  Now it's time to get creative. Find the mean and standard deviation of weight and determine what proportion of the weights are within one standard deviation of the mean. -->
 
@@ -422,41 +447,41 @@ window.onload = function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["main.pdf", "main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true
-},
-"info": true
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["main.pdf", "main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  },
+  "info": true
 });
 });
 </script>
