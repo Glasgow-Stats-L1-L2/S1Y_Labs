@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Group Exercises | S1Y Lab 2</title>
   <meta name="description" content="2 Group Exercises | S1Y Lab 2" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Group Exercises | S1Y Lab 2" />
   <meta property="og:type" content="book" />
@@ -53,8 +53,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -147,8 +148,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#counting-categories"><i class="fa fa-check"></i><b>1.4</b> Counting categories</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#bar-plot"><i class="fa fa-check"></i><b>1.4.1</b> Bar plot</a></li>
-<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#column-plot"><i class="fa fa-check"></i><b>1.4.2</b> Column plot</a></li>
-<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-understanding"><i class="fa fa-check"></i><b>1.4.3</b> <strong>Test your understanding</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#one-numerical-variable"><i class="fa fa-check"></i><b>1.5</b> One numerical variable</a>
 <ul>
@@ -157,15 +156,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#grouped-numerical-variables"><i class="fa fa-check"></i><b>1.6</b> Grouped numerical variables</a>
 <ul>
 <li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#subdividing-distributions"><i class="fa fa-check"></i><b>1.6.1</b> Subdividing distributions</a></li>
-<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#violin-plot"><i class="fa fa-check"></i><b>1.6.2</b> Violin plot</a></li>
-<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#boxplot"><i class="fa fa-check"></i><b>1.6.3</b> Boxplot</a></li>
-<li class="chapter" data-level="1.6.4" data-path="index.html"><a href="index.html#test-your-understanding-1"><i class="fa fa-check"></i><b>1.6.4</b> Test your understanding</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#boxplot"><i class="fa fa-check"></i><b>1.6.2</b> Boxplot</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#test-your-understanding"><i class="fa fa-check"></i><b>1.6.3</b> Test your understanding</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#two-numerical-variables"><i class="fa fa-check"></i><b>1.7</b> Two numerical variables</a>
 <ul>
 <li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#scatterplot"><i class="fa fa-check"></i><b>1.7.1</b> Scatterplot</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#two-numerical-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>1.8</b> Two numerical variables and a categorical variable</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#optional-two-numerical-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>1.8</b> Optional: Two numerical variables and a categorical variable</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="group-exercises.html"><a href="group-exercises.html"><i class="fa fa-check"></i><b>2</b> Group Exercises</a>
 <ul>
@@ -196,13 +194,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey of 350,000 people in the United States. As its name implies, the BRFSS is designed to identify risk factors in the adult population and report emerging health trends. For example, respondents are asked about their diet and weekly physical activity, possible tobacco use, and even their level of healthcare coverage. The <a href="http://www.cdc.gov/brfss">BRFSS Web site</a> contains a complete description of the survey, including the research questions that motivate the study and many interesting results derived from the data.</p>
 <p>You will focus on a random sample of 20,000 people from the BRFSS survey conducted in 2000. While there are over 200 variables in this data set, you will work with a small subset.</p>
 <p>Load the data set of 20,000 observations into the object <code>cdc</code> and look at what it contains by running the following code. It may take a couple of minutes for the data to load, depending on your internet connection, so be patient!</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="group-exercises.html#cb28-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)</span>
-<span id="cb28-2"><a href="group-exercises.html#cb28-2" tabindex="-1"></a><span class="fu">str</span>(cdc)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="group-exercises.html#cb23-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)</span>
+<span id="cb23-2"><a href="group-exercises.html#cb23-2" tabindex="-1"></a><span class="fu">str</span>(cdc)</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Make a scatterplot of weight (in pounds) versus desired weight (in pounds). Describe the relationship between these two variables. It may be helpful to add the command <code>+geom_abline()</code> onto the end of your plot code, which adds in the y=x line.</p></li>
 <li><p>Make a histogram of age. Choose a suitable number of bins for your plot. Describe the distribution of age.</p></li>
-<li><p>Consider a new variable: the difference between desired weight (<code>wtdesire</code>) and current weight (<code>weight</code>). Create this new variable by subtracting the two columns in the data frame and assigning them to a new object called <code>wdiff</code>.</p></li>
-<li><p>Using a side-by-side box plot, determine if men tend to view their weight differently than women.</p></li>
+<li><p>During Lab 1, we created a new variable <code>wdiff</code>, defined as the difference between desired weight, <code>wtdesired</code>, and <code>weight</code>.
+Add again this variable to the data frame ( if you don't remember how to do it, feel free to briefly revisit Lab 1).
+Now, using a side-by-side box plot, determine if there is a difference in <code>wdiff</code> between men and women.</p></li>
 </ol>
 <!-- 6.  Now it's time to get creative. Find the mean and standard deviation of weight and determine what proportion of the weights are within one standard deviation of the mean. -->
 
@@ -399,41 +398,41 @@ window.onload = function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["main.pdf", "main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true
-},
-"info": true
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["main.pdf", "main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  },
+  "info": true
 });
 });
 </script>
