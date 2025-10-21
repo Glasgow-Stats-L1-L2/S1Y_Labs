@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Part 1 - Exploring crime data | S1Y Lab 3: Probability and the normal distribution</title>
   <meta name="description" content="Chapter 2 Part 1 - Exploring crime data | S1Y Lab 3: Probability and the normal distribution" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Part 1 - Exploring crime data | S1Y Lab 3: Probability and the normal distribution" />
   <meta property="og:type" content="book" />
@@ -53,8 +53,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -150,19 +151,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="part-2---probability.html"><a href="part-2---probability.html#discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Discrete distributions</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="part-2---probability.html"><a href="part-2---probability.html#binomial"><i class="fa fa-check"></i><b>3.2.1</b> Binomial</a></li>
-<li class="chapter" data-level="3.2.2" data-path="part-2---probability.html"><a href="part-2---probability.html#geometric"><i class="fa fa-check"></i><b>3.2.2</b> Geometric</a></li>
-<li class="chapter" data-level="3.2.3" data-path="part-2---probability.html"><a href="part-2---probability.html#negative-binomial"><i class="fa fa-check"></i><b>3.2.3</b> Negative binomial</a></li>
-<li class="chapter" data-level="3.2.4" data-path="part-2---probability.html"><a href="part-2---probability.html#poisson"><i class="fa fa-check"></i><b>3.2.4</b> Poisson</a></li>
+<li class="chapter" data-level="3.2.2" data-path="part-2---probability.html"><a href="part-2---probability.html#poisson"><i class="fa fa-check"></i><b>3.2.2</b> Poisson</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="part-2---probability.html"><a href="part-2---probability.html#using-the-normal-distribution-to-approximate-a-binomial-distribution"><i class="fa fa-check"></i><b>3.3</b> Using the normal distribution to approximate a binomial distribution</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="part-2---probability.html"><a href="part-2---probability.html#graphical-exploration"><i class="fa fa-check"></i><b>3.3.1</b> Graphical exploration</a></li>
-</ul></li>
+<li class="chapter" data-level="3.3" data-path="part-2---probability.html"><a href="part-2---probability.html#optional-using-the-normal-distribution-to-approximate-a-binomial-distribution"><i class="fa fa-check"></i><b>3.3</b> Optional: Using the normal distribution to approximate a binomial distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="group-exercises.html"><a href="group-exercises.html"><i class="fa fa-check"></i><b>4</b> Group Exercises</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="group-exercises.html"><a href="group-exercises.html#checking-the-normality-assumption"><i class="fa fa-check"></i><b>4.1</b> Checking the normality assumption</a></li>
-<li class="chapter" data-level="4.2" data-path="group-exercises.html"><a href="group-exercises.html#heights-in-the-scottish-population"><i class="fa fa-check"></i><b>4.2</b> Heights in the Scottish population</a></li>
+<li class="chapter" data-level="4.2" data-path="group-exercises.html"><a href="group-exercises.html#swizzels-box"><i class="fa fa-check"></i><b>4.2</b> Swizzels box</a></li>
 </ul></li>
 </ul>
 
@@ -208,8 +204,8 @@ Hint
 </button>
 <p>Here, age is recorded in full years.</p>
 </div>
-<div id="radio_UGZFIVELTC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UGZFIVELTC" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_UGZFIVELTC" value="answer"></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_UGZFIVELTC" value=""></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_UGZFIVELTC" value=""></input> <span>Categorical, ordinal</span></label>
+<div id="radio_EBQJCGPFGS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EBQJCGPFGS" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_EBQJCGPFGS" value="answer"></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_EBQJCGPFGS" value=""></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_EBQJCGPFGS" value=""></input> <span>Categorical, ordinal</span></label>
 </div>
 <p><br></p>
 <p><strong>What type of variable is ethnicity?</strong></p>
@@ -219,8 +215,8 @@ Hint
 </button>
 <p>There are different groups of ethnicities and it is not plausible to put them in a particular ranking.</p>
 </div>
-<div id="radio_TKMTGURXRQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TKMTGURXRQ" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_TKMTGURXRQ" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_TKMTGURXRQ" value="answer"></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_TKMTGURXRQ" value=""></input> <span>Categorical, ordinal</span></label>
+<div id="radio_YABRPZROWE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YABRPZROWE" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_YABRPZROWE" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_YABRPZROWE" value="answer"></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_YABRPZROWE" value=""></input> <span>Categorical, ordinal</span></label>
 </div>
 <p><br></p>
 <p><strong>What type of variable is years_in_area?</strong></p>
@@ -230,8 +226,8 @@ Hint
 </button>
 <p>There are different groups, and they can be ranked (for example, someone who lived in an area "10 years but less than 20 years" has lived there longer than someone who has lived there "2 years but less than 3 years").</p>
 </div>
-<div id="radio_GAVBIYMRIZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GAVBIYMRIZ" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_GAVBIYMRIZ" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_GAVBIYMRIZ" value=""></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_GAVBIYMRIZ" value="answer"></input> <span>Categorical, ordinal</span></label>
+<div id="radio_GDITXHAGXV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GDITXHAGXV" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_GDITXHAGXV" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_GDITXHAGXV" value=""></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_GDITXHAGXV" value="answer"></input> <span>Categorical, ordinal</span></label>
 </div>
 <p><br></p>
 <p><strong>What type of variable is sex?</strong></p>
@@ -241,8 +237,8 @@ Hint
 </button>
 <p>There are two sexes (female, male) and it is not plausible to put them in a particular ranking.</p>
 </div>
-<div id="radio_TQCIZWJHIS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TQCIZWJHIS" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_TQCIZWJHIS" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_TQCIZWJHIS" value="answer"></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_TQCIZWJHIS" value=""></input> <span>Categorical, ordinal</span></label>
+<div id="radio_XRZLPNSECC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XRZLPNSECC" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_XRZLPNSECC" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_XRZLPNSECC" value="answer"></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_XRZLPNSECC" value=""></input> <span>Categorical, ordinal</span></label>
 </div>
 <p><br></p>
 <p><strong>What type of variable is walkdark?</strong></p>
@@ -252,24 +248,30 @@ Hint
 </button>
 <p>There are different groups and they can be ranked. For example, someone who feels "very unsafe" walking alone after dark feels less safe than someone who feels "a bit unsafe".</p>
 </div>
-<div id="radio_VMELATKNJD" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VMELATKNJD" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_VMELATKNJD" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_VMELATKNJD" value=""></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_VMELATKNJD" value="answer"></input> <span>Categorical, ordinal</span></label>
+<div id="radio_PQYKVBYWUN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PQYKVBYWUN" value=""></input> <span>Numerical, continuous</span></label><label><input type="radio" autocomplete="off" name="radio_PQYKVBYWUN" value=""></input> <span>Numerical, discrete</span></label><label><input type="radio" autocomplete="off" name="radio_PQYKVBYWUN" value=""></input> <span>Categorical, nominal</span></label><label><input type="radio" autocomplete="off" name="radio_PQYKVBYWUN" value="answer"></input> <span>Categorical, ordinal</span></label>
 </div>
 <p><br></p>
 <p>The data contain 10,427 observations, which are responses from individuals to 11 questions. Since the dataset is fairly large, you can create plots to get an impression of the data and then compute frequencies as a best guess to the true population proportions for a first informal check of possible associations between variables.</p>
 <div id="plotting-the-data" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Plotting the data<a href="part-1---exploring-crime-data.html#plotting-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You might be interested in how safe people feel walking alone after dark. You can create a barplot for that variable by writing the code below:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="part-1---exploring-crime-data.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(walkdark)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;How safe do you feel about walking alone after dark?&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="part-1---exploring-crime-data.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(walkdark)) <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="part-1---exploring-crime-data.html#cb4-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
+<span id="cb4-3"><a href="part-1---exploring-crime-data.html#cb4-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;How safe do you feel about walking alone after dark?&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="part-1---exploring-crime-data.html#cb4-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/plot_walkdark-1.png" width="672" /></p>
 <p>A lot of people seem to feel at least fairly safe when walking alone after dark, but how does that response look like for different groups of people? Below is an example showing you how to separate the responses by sex:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="part-1---exploring-crime-data.html#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(walkdark,<span class="at">fill=</span>sex)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;How safe do you feel about walking alone after dark?&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="part-1---exploring-crime-data.html#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(walkdark,<span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="part-1---exploring-crime-data.html#cb5-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="part-1---exploring-crime-data.html#cb5-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;How safe do you feel about walking alone after dark?&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="part-1---exploring-crime-data.html#cb5-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/plot_walkdark_sex-1.png" width="672" /></p>
 <p>Note that in the code above, the function <code>geom_bar()</code> creates a barplot and the argument <code>position="dodge"</code> specifies that the bars are supposed to appear side-by-side. Choosing <code>position="fill"</code> would give you a stacked barplot instead.</p>
 <p><br></p>
 <p><strong>How do you interpret the barplot of responses to walking alone after dark, by females and males?</strong></p>
-<div id="radio_CQHYVGYIAW" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CQHYVGYIAW" value="answer"></input> <span>Females tend to feel less safe than males walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_CQHYVGYIAW" value=""></input> <span>Males tend to feel less safe than females walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_CQHYVGYIAW" value=""></input> <span>The two sexes seem to feel similar about walking alone after dark.</span></label>
+<div id="radio_PFJODVPNLD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PFJODVPNLD" value="answer"></input> <span>Females tend to feel less safe than males walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_PFJODVPNLD" value=""></input> <span>Males tend to feel less safe than females walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_PFJODVPNLD" value=""></input> <span>The two sexes seem to feel similar about walking alone after dark.</span></label>
 </div>
 <p><br></p>
 <p>Note that the plot shows the counts for each sex side-by-side. Since the number of female and male respondents might not be the same, it would be useful to know how many of each sex responded to the survey. You can find out via the function <code>table()</code>, as presented below:</p>
@@ -277,150 +279,277 @@ Hint
 <pre><code>## 
 ##   male female 
 ##   4743   5684</code></pre>
-<p>The survey contains quite a few more responses from females than males. Hence, the following plot might give a better insight to how the two sexes feel about walking alone after dark:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-1---exploring-crime-data.html#cb8-1" tabindex="-1"></a><span class="co">#the argument position=&quot;fill&quot; gives you a stacked barplot</span></span>
-<span id="cb8-2"><a href="part-1---exploring-crime-data.html#cb8-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(sex,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>)</span></code></pre></div>
+<p>The survey contains quite a few more responses from females than males. Hence, we might want to see how the response to <code>walkdark</code> is split within the males and females.</p>
+<p>To do so we use the following plot:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-1---exploring-crime-data.html#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(sex,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="part-1---exploring-crime-data.html#cb8-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="part-1---exploring-crime-data.html#cb8-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="part-1---exploring-crime-data.html#cb8-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb8-5"><a href="part-1---exploring-crime-data.html#cb8-5" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb8-6"><a href="part-1---exploring-crime-data.html#cb8-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/plot_walkdark_sex2-1.png" width="672" /></p>
+<ul>
+<li><p>The argument <code>position = "fill"</code> gives you a stacked barplot</p></li>
+<li><p>The line labs<code>labs(fill='')</code> remove the name of the variable <code>walkdark</code> from the legend.</p></li>
+</ul>
 <p><br></p>
-<p>Now, you can repeat the steps above for the variables <code>deprivation_quintile</code>, <code>years_in_area</code>, <code>marital_status</code> and <code>urban_rural</code>, then answer the questions below.</p>
+<p>Now, you can repeat the steps above for the variables <code>deprivation_quintile</code> and <code>years_in_area</code>, then answer the questions below.</p>
 <p><br></p>
 <p><strong>How would you describe a possible relationship between the deprivation quantiles and how safe people feel walking alone after dark?</strong></p>
-<div id="radio_AJJSWNYFBC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_AJJSWNYFBC" value=""></input> <span>There is no apparent relationship between deprivation and how safe people feel walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_AJJSWNYFBC" value=""></input> <span>It seems that the less deprived an area is, the more unsafe people feel about walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_AJJSWNYFBC" value="answer"></input> <span>It seems that the more deprived an area is, the more unsafe people feel about walking alone after dark.</span></label>
+<div id="radio_ETKBKGHZIJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ETKBKGHZIJ" value="answer"></input> <span>It seems that the more deprived an area is, the more unsafe people feel about walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_ETKBKGHZIJ" value=""></input> <span>There is no apparent relationship between deprivation and how safe people feel walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_ETKBKGHZIJ" value=""></input> <span>It seems that the less deprived an area is, the more unsafe people feel about walking alone after dark.</span></label>
 </div>
 <p><br></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="part-1---exploring-crime-data.html#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(deprivation_quintile,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="part-1---exploring-crime-data.html#cb9-2" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Deprivation Quintile&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="part-1---exploring-crime-data.html#cb9-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="part-1---exploring-crime-data.html#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(deprivation_quintile,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="part-1---exploring-crime-data.html#cb9-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="part-1---exploring-crime-data.html#cb9-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Deprivation Quintile&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="part-1---exploring-crime-data.html#cb9-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="part-1---exploring-crime-data.html#cb9-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb9-6"><a href="part-1---exploring-crime-data.html#cb9-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>How would you describe a possible relationship between the number of years people have lived in an area and how safe they feel walking alone after dark?</strong></p>
-<div id="radio_OSFOCUKQBP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_OSFOCUKQBP" value=""></input> <span>It seems that the longer a person has lived in an area, the less safe they feel about walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_OSFOCUKQBP" value=""></input> <span>It seems that the longer a person has lived in an area, the more safe they feel about walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_OSFOCUKQBP" value="answer"></input> <span>There is no apparent relationship between the number of years lived in an area and how safe people feel walking alone after dark.</span></label>
+<div id="radio_UKBCSLGVKN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UKBCSLGVKN" value=""></input> <span>It seems that the longer a person has lived in an area, the less safe they feel about walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_UKBCSLGVKN" value=""></input> <span>It seems that the longer a person has lived in an area, the more safe they feel about walking alone after dark.</span></label><label><input type="radio" autocomplete="off" name="radio_UKBCSLGVKN" value="answer"></input> <span>There is no apparent relationship between the number of years lived in an area and how safe people feel walking alone after dark.</span></label>
 </div>
 <p><br></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="part-1---exploring-crime-data.html#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(years_in_area,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="part-1---exploring-crime-data.html#cb10-2" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Years in the area&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="part-1---exploring-crime-data.html#cb10-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="part-1---exploring-crime-data.html#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(years_in_area,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="part-1---exploring-crime-data.html#cb10-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="part-1---exploring-crime-data.html#cb10-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Years in the area&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="part-1---exploring-crime-data.html#cb10-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="part-1---exploring-crime-data.html#cb10-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb10-6"><a href="part-1---exploring-crime-data.html#cb10-6" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>)</span></code></pre></div>
 </div>
 <p><br></p>
-<p><strong>What can you say about possible relationships between a person's marital status and how safe they feel walking alone after dark?</strong></p>
-<div id="radio_VXWRZHHKYV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VXWRZHHKYV" value="answer"></input> <span>It seems that widowed people might feel more unsafe than the other groups.</span></label><label><input type="radio" autocomplete="off" name="radio_VXWRZHHKYV" value=""></input> <span>It seems that single people feel more safe than the other groups.</span></label><label><input type="radio" autocomplete="off" name="radio_VXWRZHHKYV" value=""></input> <span>It seems that married people feel more unsafe than single people.</span></label><label><input type="radio" autocomplete="off" name="radio_VXWRZHHKYV" value=""></input> <span>There are no apparent differences by marital status for how safe people feel walking alone after dark.</span></label>
+<!-- **What can you say about possible relationships between a person's marital status and how safe they feel walking alone after dark?** 
+
+
+
+<div class='webex-radiogroup' id='radio_BSRBECIQHU'><label><input type="radio" autocomplete="off" name="radio_BSRBECIQHU" value="answer"></input> <span>It seems that widowed people might feel more unsafe than the other groups.</span></label><label><input type="radio" autocomplete="off" name="radio_BSRBECIQHU" value=""></input> <span>It seems that single people feel more safe than the other groups.</span></label><label><input type="radio" autocomplete="off" name="radio_BSRBECIQHU" value=""></input> <span>It seems that married people feel more unsafe than single people.</span></label><label><input type="radio" autocomplete="off" name="radio_BSRBECIQHU" value=""></input> <span>There are no apparent differences by marital status for how safe people feel walking alone after dark.</span></label></div>
+
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+``` r
+ggplot(data=crimedata,aes(marital_status,fill=walkdark)) + geom_bar(position="fill") +
+  xlab("Marital Status") + ylab("Proportion") +
+  labs(fill='') + ggtitle("How safe do you feel walking alone after dark?")
+```
+
 </div>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="part-1---exploring-crime-data.html#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(marital_status,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="part-1---exploring-crime-data.html#cb11-2" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Marital Status&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="part-1---exploring-crime-data.html#cb11-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>)</span></code></pre></div>
+
+
+<br>
+
+**How do urban and rural areas compare for how safe people feel walking alone after dark?**
+
+
+
+<div class='webex-radiogroup' id='radio_XJXKNLAGBD'><label><input type="radio" autocomplete="off" name="radio_XJXKNLAGBD" value="answer"></input> <span>It seems that people in rural areas feel more safe.</span></label><label><input type="radio" autocomplete="off" name="radio_XJXKNLAGBD" value=""></input> <span>It seems that people in urban areas feel more safe.</span></label><label><input type="radio" autocomplete="off" name="radio_XJXKNLAGBD" value=""></input> <span>People in urban and rural areas feel similarly safe walking alone after dark.</span></label></div>
+
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+``` r
+ggplot(data=crimedata,aes(urban_rural,fill=walkdark)) + geom_bar(position="fill") +
+  xlab("Urban/Rural") + ylab("Proportion") +
+  labs(fill='') + ggtitle("How safe do you feel walking alone after dark?")
+```
+
 </div>
-<p><br></p>
-<p><strong>How do urban and rural areas compare for how safe people feel walking alone after dark?</strong></p>
-<div id="radio_VIZMJGFFBI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VIZMJGFFBI" value="answer"></input> <span>It seems that people in rural areas feel more safe.</span></label><label><input type="radio" autocomplete="off" name="radio_VIZMJGFFBI" value=""></input> <span>It seems that people in urban areas feel more safe.</span></label><label><input type="radio" autocomplete="off" name="radio_VIZMJGFFBI" value=""></input> <span>People in urban and rural areas feel similarly safe walking alone after dark.</span></label>
-</div>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="part-1---exploring-crime-data.html#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>crimedata,<span class="fu">aes</span>(urban_rural,<span class="at">fill=</span>walkdark)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="part-1---exploring-crime-data.html#cb12-2" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Urban/Rural&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="part-1---exploring-crime-data.html#cb12-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;How safe do you feel walking alone after dark?&quot;</span>)</span></code></pre></div>
-</div>
-<p><br></p>
-<p>To compare responses by group, it might be helpful to obtain numerical summaries. For example, the code below shows you the number of males and females who live in urban and rural areas, respectively.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="part-1---exploring-crime-data.html#cb13-1" tabindex="-1"></a><span class="fu">table</span>(crimedata<span class="sc">$</span>sex,crimedata<span class="sc">$</span>urban_rural)</span></code></pre></div>
-<pre><code>##         
+
+
+<br>
+
+To compare responses by group, it might be helpful to obtain numerical summaries. For example, the code below shows you the number of males and females who live in urban and rural areas, respectively.
+
+
+``` r
+table(crimedata$sex,crimedata$urban_rural)
+```
+
+```
+##         
 ##          urban rural
 ##   male    3604  1139
-##   female  4342  1342</code></pre>
-<p>You can compute frequencies from the table above using the following code:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="part-1---exploring-crime-data.html#cb15-1" tabindex="-1"></a>sexurb <span class="ot">&lt;-</span> <span class="fu">table</span>(crimedata<span class="sc">$</span>sex,crimedata<span class="sc">$</span>urban_rural)</span>
-<span id="cb15-2"><a href="part-1---exploring-crime-data.html#cb15-2" tabindex="-1"></a><span class="co">#proportion of males living in urban areas: </span></span>
-<span id="cb15-3"><a href="part-1---exploring-crime-data.html#cb15-3" tabindex="-1"></a><span class="co">#value from first row and column, divided by sum of first row</span></span>
-<span id="cb15-4"><a href="part-1---exploring-crime-data.html#cb15-4" tabindex="-1"></a>sexurb[<span class="dv">1</span>,<span class="dv">1</span>]<span class="sc">/</span><span class="fu">sum</span>(sexurb[<span class="dv">1</span>,])</span></code></pre></div>
-<pre><code>## [1] 0.7598566</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="part-1---exploring-crime-data.html#cb17-1" tabindex="-1"></a><span class="co">#proportion of females living in urban areas:</span></span>
-<span id="cb17-2"><a href="part-1---exploring-crime-data.html#cb17-2" tabindex="-1"></a>sexurb[<span class="dv">2</span>,<span class="dv">1</span>]<span class="sc">/</span><span class="fu">sum</span>(sexurb[<span class="dv">2</span>,])</span></code></pre></div>
-<pre><code>## [1] 0.7638987</code></pre>
-<p>Alternatively, you can first split the data into different groups and then compute the frequencies for the different datasets:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-1---exploring-crime-data.html#cb19-1" tabindex="-1"></a><span class="co">#create a dataset for females only</span></span>
-<span id="cb19-2"><a href="part-1---exploring-crime-data.html#cb19-2" tabindex="-1"></a>fem <span class="ot">&lt;-</span> crimedata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sex<span class="sc">==</span><span class="st">&quot;female&quot;</span>)</span>
-<span id="cb19-3"><a href="part-1---exploring-crime-data.html#cb19-3" tabindex="-1"></a><span class="co">#then divide the number of females living in urban areas by the number of females in total</span></span>
-<span id="cb19-4"><a href="part-1---exploring-crime-data.html#cb19-4" tabindex="-1"></a><span class="fu">sum</span>(fem<span class="sc">$</span>urban_rural<span class="sc">==</span><span class="st">&quot;urban&quot;</span>)<span class="sc">/</span><span class="fu">nrow</span>(fem)</span></code></pre></div>
-<pre><code>## [1] 0.7638987</code></pre>
-<p><br></p>
-<p><strong>You randomly select an individual from the crime data. What is the probability that the individual is married? (Round to 4 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Since you select the individual randomly, this probability can be computed as the number of married individuals divided by the total number of individuals.</p>
+##   female  4342  1342
+```
+
+You can compute frequencies from the table above using the following code:
+
+
+``` r
+sexurb <- table(crimedata$sex,crimedata$urban_rural)
+#proportion of males living in urban areas: 
+#value from first row and column, divided by sum of first row
+sexurb[1,1]/sum(sexurb[1,])
+```
+
+```
+## [1] 0.7598566
+```
+
+``` r
+#proportion of females living in urban areas:
+sexurb[2,1]/sum(sexurb[2,])
+```
+
+```
+## [1] 0.7638987
+```
+
+Alternatively, you can first split the data into different groups and then compute the frequencies for the different datasets:
+
+
+``` r
+#create a dataset for females only
+fem <- crimedata %>% filter(sex=="female")
+#then divide the number of females living in urban areas by the number of females in total
+sum(fem$urban_rural=="urban")/nrow(fem)
+```
+
+```
+## [1] 0.7638987
+```
+
+<br>
+
+**You randomly select an individual from the crime data. What is the probability that the individual is married? (Round to 4 decimal places)**
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+Since you select the individual randomly, this probability can be computed as the number of married individuals divided by the total number of individuals.
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='6' data-answer='["0.4753",".4753"]'/></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="part-1---exploring-crime-data.html#cb21-1" tabindex="-1"></a><span class="co">#solution</span></span>
-<span id="cb21-2"><a href="part-1---exploring-crime-data.html#cb21-2" tabindex="-1"></a>marital <span class="ot">&lt;-</span> <span class="fu">table</span>(crimedata<span class="sc">$</span>marital_status)</span>
-<span id="cb21-3"><a href="part-1---exploring-crime-data.html#cb21-3" tabindex="-1"></a><span class="co">#probability of randomly selected individual being married:</span></span>
-<span id="cb21-4"><a href="part-1---exploring-crime-data.html#cb21-4" tabindex="-1"></a>marital[<span class="dv">1</span>]<span class="sc">/</span><span class="fu">sum</span>(marital)</span></code></pre></div>
-<pre><code>##   married 
-## 0.4753045</code></pre>
+
+
+<input class='webex-solveme nospaces' size='6' data-answer='["0.4753",".4753"]'/>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+#solution
+marital <- table(crimedata$marital_status)
+#probability of randomly selected individual being married:
+marital[1]/sum(marital)
+```
+
+```
+##   married 
+## 0.4753045
+```
+
+
 </div>
-<p><br></p>
-<p><strong>You randomly select a female from the crime data. What is the probability she is feeling very unsafe walking alone after dark?</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>You randomly select an individual and you already know that the individual is female. Hence, the probability of her feeling very unsafe is the same as the proportion of females who feel very unsafe walking alone after dark.</p>
+
+
+<br>
+
+**You randomly select a female from the crime data. What is the probability she is feeling very unsafe walking alone after dark?**
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+You randomly select an individual and you already know that the individual is female. Hence, the probability of her feeling very unsafe is the same as the proportion of females who feel very unsafe walking alone after dark.
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='6' data-answer='["0.1728",".1728"]'/></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="part-1---exploring-crime-data.html#cb23-1" tabindex="-1"></a><span class="co">#solution</span></span>
-<span id="cb23-2"><a href="part-1---exploring-crime-data.html#cb23-2" tabindex="-1"></a>femdark <span class="ot">&lt;-</span> <span class="fu">table</span>(crimedata<span class="sc">$</span>sex,crimedata<span class="sc">$</span>walkdark)</span>
-<span id="cb23-3"><a href="part-1---exploring-crime-data.html#cb23-3" tabindex="-1"></a><span class="co">#probability of randomly selected female feeling very unsafe:</span></span>
-<span id="cb23-4"><a href="part-1---exploring-crime-data.html#cb23-4" tabindex="-1"></a>femdark[<span class="dv">2</span>,<span class="dv">1</span>]<span class="sc">/</span><span class="fu">sum</span>(femdark[<span class="dv">2</span>,])</span></code></pre></div>
-<pre><code>## [1] 0.1727657</code></pre>
+
+
+<input class='webex-solveme nospaces' size='6' data-answer='["0.1728",".1728"]'/>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+#solution
+femdark <- table(crimedata$sex,crimedata$walkdark)
+#probability of randomly selected female feeling very unsafe:
+femdark[2,1]/sum(femdark[2,])
+```
+
+```
+## [1] 0.1727657
+```
+
+
 </div>
-<p><br></p>
-<p><strong>Compute the proportions of widowed females and widowed males who feel very unsafe walking alone after dark. Without performing a formal hypothesis test, would you suggest that these proportions differ substantially?</strong></p>
-<div id="radio_MBUNUXLHZJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MBUNUXLHZJ" value="answer"></input> <span>Yes, the proportion of people who feel very unsafe walking alone after dark appears to be higher in widowed females than widowed males.</span></label><label><input type="radio" autocomplete="off" name="radio_MBUNUXLHZJ" value=""></input> <span>Yes, the proportion of people who feel very unsafe walking alone after dark appears to be higher in widowed males than widowed females.</span></label><label><input type="radio" autocomplete="off" name="radio_MBUNUXLHZJ" value=""></input> <span>No, the proportions are about the same.</span></label>
+
+
+<br>
+
+
+<div class='webex-solution'><button>Optional:extra task</button>
+
+**Compute the proportions of widowed females and widowed males who feel very unsafe walking alone after dark. Without performing a formal hypothesis test, would you suggest that these proportions differ substantially?**
+
+
+
+<div class='webex-radiogroup' id='radio_ZEXWKENOCJ'><label><input type="radio" autocomplete="off" name="radio_ZEXWKENOCJ" value="answer"></input> <span>Yes, the proportion of people who feel very unsafe walking alone after dark appears to be higher in widowed females than widowed males.</span></label><label><input type="radio" autocomplete="off" name="radio_ZEXWKENOCJ" value=""></input> <span>Yes, the proportion of people who feel very unsafe walking alone after dark appears to be higher in widowed males than widowed females.</span></label><label><input type="radio" autocomplete="off" name="radio_ZEXWKENOCJ" value=""></input> <span>No, the proportions are about the same.</span></label></div>
+
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+#solution to the multiple choice question above
+femwidowed <- crimedata %>% filter(sex=="female" & marital_status=="widowed")
+#proportions of widowed females feeling very unsafe walking alone after dark
+sum(femwidowed$walkdark=="very unsafe")/nrow(femwidowed)
+```
+
+```
+## [1] 0.3033839
+```
+
+``` r
+malwidowed <- crimedata %>% filter(sex=="male" & marital_status=="widowed")
+#proportions of widowed females feeling very unsafe walking alone after dark
+sum(malwidowed$walkdark=="very unsafe")/nrow(malwidowed)
+```
+
+```
+## [1] 0.09459459
+```
+
+
 </div>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="part-1---exploring-crime-data.html#cb25-1" tabindex="-1"></a><span class="co">#solution to the multiple choice question above</span></span>
-<span id="cb25-2"><a href="part-1---exploring-crime-data.html#cb25-2" tabindex="-1"></a>femwidowed <span class="ot">&lt;-</span> crimedata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sex<span class="sc">==</span><span class="st">&quot;female&quot;</span> <span class="sc">&amp;</span> marital_status<span class="sc">==</span><span class="st">&quot;widowed&quot;</span>)</span>
-<span id="cb25-3"><a href="part-1---exploring-crime-data.html#cb25-3" tabindex="-1"></a><span class="co">#proportions of widowed females feeling very unsafe walking alone after dark</span></span>
-<span id="cb25-4"><a href="part-1---exploring-crime-data.html#cb25-4" tabindex="-1"></a><span class="fu">sum</span>(femwidowed<span class="sc">$</span>walkdark<span class="sc">==</span><span class="st">&quot;very unsafe&quot;</span>)<span class="sc">/</span><span class="fu">nrow</span>(femwidowed)</span></code></pre></div>
-<pre><code>## [1] 0.3033839</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="part-1---exploring-crime-data.html#cb27-1" tabindex="-1"></a>malwidowed <span class="ot">&lt;-</span> crimedata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sex<span class="sc">==</span><span class="st">&quot;male&quot;</span> <span class="sc">&amp;</span> marital_status<span class="sc">==</span><span class="st">&quot;widowed&quot;</span>)</span>
-<span id="cb27-2"><a href="part-1---exploring-crime-data.html#cb27-2" tabindex="-1"></a><span class="co">#proportions of widowed females feeling very unsafe walking alone after dark</span></span>
-<span id="cb27-3"><a href="part-1---exploring-crime-data.html#cb27-3" tabindex="-1"></a><span class="fu">sum</span>(malwidowed<span class="sc">$</span>walkdark<span class="sc">==</span><span class="st">&quot;very unsafe&quot;</span>)<span class="sc">/</span><span class="fu">nrow</span>(malwidowed)</span></code></pre></div>
-<pre><code>## [1] 0.09459459</code></pre>
+
+
+
 </div>
-<p><br></p>
+
+
+<br>-->
 <p>Hopefully, this part of the lab gave you some good ideas how to use plots to gain insights for a given dataset. If you want, you can explore the crime data further by checking possible associations between other variables in the data.</p>
 </div>
 </div>
@@ -615,45 +744,45 @@ window.onload = function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true,
-"edit": null
-},
-"info": true
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true,
+    "edit": null
+  },
+  "info": true
 });
 });
 </script>

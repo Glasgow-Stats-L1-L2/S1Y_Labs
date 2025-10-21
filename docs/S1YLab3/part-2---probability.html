@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution</title>
   <meta name="description" content="Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Part 2 - Probability | S1Y Lab 3: Probability and the normal distribution" />
   <meta property="og:type" content="book" />
@@ -53,8 +53,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -150,19 +151,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="part-2---probability.html"><a href="part-2---probability.html#discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Discrete distributions</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="part-2---probability.html"><a href="part-2---probability.html#binomial"><i class="fa fa-check"></i><b>3.2.1</b> Binomial</a></li>
-<li class="chapter" data-level="3.2.2" data-path="part-2---probability.html"><a href="part-2---probability.html#geometric"><i class="fa fa-check"></i><b>3.2.2</b> Geometric</a></li>
-<li class="chapter" data-level="3.2.3" data-path="part-2---probability.html"><a href="part-2---probability.html#negative-binomial"><i class="fa fa-check"></i><b>3.2.3</b> Negative binomial</a></li>
-<li class="chapter" data-level="3.2.4" data-path="part-2---probability.html"><a href="part-2---probability.html#poisson"><i class="fa fa-check"></i><b>3.2.4</b> Poisson</a></li>
+<li class="chapter" data-level="3.2.2" data-path="part-2---probability.html"><a href="part-2---probability.html#poisson"><i class="fa fa-check"></i><b>3.2.2</b> Poisson</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="part-2---probability.html"><a href="part-2---probability.html#using-the-normal-distribution-to-approximate-a-binomial-distribution"><i class="fa fa-check"></i><b>3.3</b> Using the normal distribution to approximate a binomial distribution</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="part-2---probability.html"><a href="part-2---probability.html#graphical-exploration"><i class="fa fa-check"></i><b>3.3.1</b> Graphical exploration</a></li>
-</ul></li>
+<li class="chapter" data-level="3.3" data-path="part-2---probability.html"><a href="part-2---probability.html#optional-using-the-normal-distribution-to-approximate-a-binomial-distribution"><i class="fa fa-check"></i><b>3.3</b> Optional: Using the normal distribution to approximate a binomial distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="group-exercises.html"><a href="group-exercises.html"><i class="fa fa-check"></i><b>4</b> Group Exercises</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="group-exercises.html"><a href="group-exercises.html#checking-the-normality-assumption"><i class="fa fa-check"></i><b>4.1</b> Checking the normality assumption</a></li>
-<li class="chapter" data-level="4.2" data-path="group-exercises.html"><a href="group-exercises.html#heights-in-the-scottish-population"><i class="fa fa-check"></i><b>4.2</b> Heights in the Scottish population</a></li>
+<li class="chapter" data-level="4.2" data-path="group-exercises.html"><a href="group-exercises.html#swizzels-box"><i class="fa fa-check"></i><b>4.2</b> Swizzels box</a></li>
 </ul></li>
 </ul>
 
@@ -191,13 +187,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p>In the lecture, you were introduced to the normal distribution and how to use the Z-table to look up cumulative proabilities or percentiles of the standard normal distribution <span class="math inline">\(N(\mu=0,\sigma=1)\)</span>. These tables were particularly useful before computers were invented or whenever they are unavailable to you (for example, when you are stranded on an island... or when you are sitting a closed-book exam).</p>
 <p>In <code>R</code>, you can compute cumulative probabilities and percentiles directly from the normal distribution, rather than having to approximate them using the tables. You can get an overview of the different functions available by calling the help function:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-2---probability.html#cb29-1" tabindex="-1"></a>?Normal</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="part-2---probability.html#cb11-1" tabindex="-1"></a>?Normal</span></code></pre></div>
+<p>Let's go through them.</p>
 <p>If you want to compute the cumulative probability of a variable <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=3,\sigma=2)\)</span>, e.g. <span class="math inline">\(P(X \leq 2)\)</span>, this can be done using the following line of code:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="part-2---probability.html#cb30-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">2</span>,<span class="at">mean=</span><span class="dv">3</span>,<span class="at">sd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="part-2---probability.html#cb12-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">2</span>,<span class="at">mean=</span><span class="dv">3</span>,<span class="at">sd=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3085375</code></pre>
 <p>To confirm this result, you can compute the Z-score <span class="math inline">\(\left(Z=\frac{X-\mu}{\sigma}\right)\)</span> of <span class="math inline">\(X=2\)</span> and look up the cumulative probability in the Z-table.</p>
 <p>If you want to find the 95th percentile of the variable <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=3,\sigma=2)\)</span>, you can do so by typing the following:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="part-2---probability.html#cb32-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">3</span>,<span class="at">sd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="part-2---probability.html#cb14-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">3</span>,<span class="at">sd=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 6.289707</code></pre>
 <p>Again, you can confirm the result by looking up the Z-score belonging to the 95th percentile of the standard normal distribution and back-transform to obtain the corresponding value of <span class="math inline">\(X\)</span>.</p>
 <p><br></p>
@@ -214,8 +211,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="part-2---probability.html#cb34-1" tabindex="-1"></a><span class="co">#P(X&lt;90)=P(X≤90) for continuous variables</span></span>
-<span id="cb34-2"><a href="part-2---probability.html#cb34-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">90</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="part-2---probability.html#cb16-1" tabindex="-1"></a><span class="co">#P(X&lt;90)=P(X≤90) for continuous variables</span></span>
+<span id="cb16-2"><a href="part-2---probability.html#cb16-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">90</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.873451</code></pre>
 </div>
 <p><br></p>
@@ -239,11 +236,11 @@ Hint 2
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="part-2---probability.html#cb36-1" tabindex="-1"></a><span class="co">#P(X&gt;73)=1-P(X&lt;73)=1-P(X≤73)</span></span>
-<span id="cb36-2"><a href="part-2---probability.html#cb36-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="part-2---probability.html#cb18-1" tabindex="-1"></a><span class="co">#P(X&gt;73)=1-P(X&lt;73)=1-P(X≤73)</span></span>
+<span id="cb18-2"><a href="part-2---probability.html#cb18-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9007286</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="part-2---probability.html#cb38-1" tabindex="-1"></a><span class="co">#or alternatively, you can specify lower.tail=FALSE to compute P(X&gt;73) directly:</span></span>
-<span id="cb38-2"><a href="part-2---probability.html#cb38-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="part-2---probability.html#cb20-1" tabindex="-1"></a><span class="co">#or alternatively, you can specify lower.tail=FALSE to compute P(X&gt;73) directly:</span></span>
+<span id="cb20-2"><a href="part-2---probability.html#cb20-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9007286</code></pre>
 </div>
 <p><br></p>
@@ -260,29 +257,47 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="part-2---probability.html#cb40-1" tabindex="-1"></a><span class="co">#P(73&lt;X&lt;90)</span></span>
-<span id="cb40-2"><a href="part-2---probability.html#cb40-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">90</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="part-2---probability.html#cb22-1" tabindex="-1"></a><span class="co">#P(73&lt;X&lt;90)</span></span>
+<span id="cb22-2"><a href="part-2---probability.html#cb22-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">90</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="at">q=</span><span class="dv">73</span>,<span class="at">mean=</span><span class="dv">82</span>,<span class="at">sd=</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7741796</code></pre>
 </div>
 <p><br></p>
-<p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=12,\sigma=3)\)</span>, what is the 95th percentile? (Round to 2 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>qnorm(p=?,mean=?,sd=?)</p>
+<!--**For $X$~$N(\mu=12,\sigma=3)$, what is the 95th percentile? (Round to 2 decimal places)**
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+qnorm(p=?,mean=?,sd=?)
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='5' data-answer='["16.93"]'/></p>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="part-2---probability.html#cb42-1" tabindex="-1"></a><span class="co">#95th percentile</span></span>
-<span id="cb42-2"><a href="part-2---probability.html#cb42-2" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">12</span>,<span class="at">sd=</span><span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] 16.93456</code></pre>
+
+
+<input class='webex-solveme nospaces' size='5' data-answer='["16.93"]'/>
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+#95th percentile
+qnorm(p=0.95,mean=12,sd=3)
+```
+
+```
+## [1] 16.93456
+```
+
+
 </div>
-<p><br></p>
+
+
+<br>
+-->
 <p><strong>For <span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu=12,\sigma=3)\)</span>, what is the 10th percentile? (Round to 2 decimal places)</strong></p>
 <div class="webex-solution">
 <button>
@@ -296,17 +311,23 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="part-2---probability.html#cb44-1" tabindex="-1"></a><span class="co">#10th percentile</span></span>
-<span id="cb44-2"><a href="part-2---probability.html#cb44-2" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.1</span>,<span class="at">mean=</span><span class="dv">12</span>,<span class="at">sd=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="part-2---probability.html#cb24-1" tabindex="-1"></a><span class="co">#10th percentile</span></span>
+<span id="cb24-2"><a href="part-2---probability.html#cb24-2" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p=</span><span class="fl">0.1</span>,<span class="at">mean=</span><span class="dv">12</span>,<span class="at">sd=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 8.155345</code></pre>
 </div>
 </div>
 <div id="discrete-distributions" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Discrete distributions<a href="part-2---probability.html#discrete-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><br></p>
-<p>Similar to the normal distribution, you can use <code>R</code> to compute cumulative probabilities and percentiles for the binomial and Poisson distributions. Additionally, you can evaluate the probability mass functions of these distributions for particular values that the random variables might take on. The probability mass functions are evaluated with the functions <code>dbinom()</code> and <code>dpois()</code>. The cumulative probabilities are computed with <code>pbinom()</code> and <code>ppois()</code>, and the percentiles are computed with <code>qbinom()</code> and <code>qpois()</code>. You can call the help functions below to get additional info on how to use these functions:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="part-2---probability.html#cb46-1" tabindex="-1"></a>?Binomial</span>
-<span id="cb46-2"><a href="part-2---probability.html#cb46-2" tabindex="-1"></a>?Poisson</span></code></pre></div>
+<p>Similar to the normal distribution, you can use <code>R</code> to compute cumulative probabilities and percentiles for the binomial and Poisson distributions. Additionally, you can evaluate the probability mass functions of these distributions for particular values that the random variables might take on.</p>
+<ul>
+<li><p>The probability mass functions are evaluated with the functions <code>dbinom()</code> and <code>dpois()</code>. For example, <code>dbinom(x=2, size=10, prob=0.2)</code> gives the probability of 2 success in 10 draws, where the probability of success is 0.2.</p></li>
+<li><p>The cumulative probabilities are computed with <code>pbinom()</code> and <code>ppois()</code>. For example, <code>ppois(x=2, lambda=4)</code> gives you the probability that a random variable following a Poisson distribution with <code>lambda=4</code> is less than 2.</p></li>
+<li><p>The percentiles are computed with <code>qbinom()</code> and <code>qpois()</code>.</p></li>
+</ul>
+<p>You can call the help functions below to get additional info on how to use these functions:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="part-2---probability.html#cb26-1" tabindex="-1"></a>?Binomial</span>
+<span id="cb26-2"><a href="part-2---probability.html#cb26-2" tabindex="-1"></a>?Poisson</span></code></pre></div>
 <p>Note that functions for the geometric and negative binomial distributions exist in the standard <code>R</code> package. However, in <code>R</code>, these distributions are defined slightly differently from how we covered them in the lecture. Hence, we recommend you <strong>do not</strong> use the built-in function and instead use the lines of code provided in the exercises below.</p>
 <p><br></p>
 <div id="binomial" class="section level3 hasAnchor" number="3.2.1">
@@ -327,8 +348,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="part-2---probability.html#cb47-1" tabindex="-1"></a><span class="co">#P(X=4)</span></span>
-<span id="cb47-2"><a href="part-2---probability.html#cb47-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="part-2---probability.html#cb27-1" tabindex="-1"></a><span class="co">#P(X=4)</span></span>
+<span id="cb27-2"><a href="part-2---probability.html#cb27-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1770659</code></pre>
 </div>
 <p><br></p>
@@ -345,8 +366,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="part-2---probability.html#cb49-1" tabindex="-1"></a><span class="co">#P(X&lt;5)=P(X≤4) for discrete variables</span></span>
-<span id="cb49-2"><a href="part-2---probability.html#cb49-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-2---probability.html#cb29-1" tabindex="-1"></a><span class="co">#P(X&lt;5)=P(X≤4) for discrete variables</span></span>
+<span id="cb29-2"><a href="part-2---probability.html#cb29-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.8497317</code></pre>
 </div>
 <p><br></p>
@@ -370,8 +391,8 @@ Hint 2
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="part-2---probability.html#cb51-1" tabindex="-1"></a><span class="co">#P(X&gt;1)=1-P(X≤1)</span></span>
-<span id="cb51-2"><a href="part-2---probability.html#cb51-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="part-2---probability.html#cb31-1" tabindex="-1"></a><span class="co">#P(X&gt;1)=1-P(X≤1)</span></span>
+<span id="cb31-2"><a href="part-2---probability.html#cb31-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.8506917</code></pre>
 </div>
 <p><br></p>
@@ -388,8 +409,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="part-2---probability.html#cb53-1" tabindex="-1"></a><span class="co">#P(1&lt;X&lt;5)</span></span>
-<span id="cb53-2"><a href="part-2---probability.html#cb53-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)<span class="sc">-</span><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="part-2---probability.html#cb33-1" tabindex="-1"></a><span class="co">#P(1&lt;X&lt;5)</span></span>
+<span id="cb33-2"><a href="part-2---probability.html#cb33-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)<span class="sc">-</span><span class="fu">pbinom</span>(<span class="at">q=</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7004233</code></pre>
 </div>
 <p><br></p>
@@ -406,121 +427,224 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="part-2---probability.html#cb55-1" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="at">p=</span><span class="fl">0.9</span>,<span class="at">size=</span><span class="dv">40</span>,<span class="at">prob=</span><span class="fl">0.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="part-2---probability.html#cb35-1" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="at">p=</span><span class="fl">0.9</span>,<span class="at">size=</span><span class="dv">40</span>,<span class="at">prob=</span><span class="fl">0.2</span>)</span></code></pre></div>
 <pre><code>## [1] 11</code></pre>
 </div>
 <p><br></p>
+<!--### Geometric
+
+<br>
+
+<img src="images/Geometric.png" width="500"/>
+
+<br>
+
+The geometric distribution is defined differently in `R` than in our course. Hence, I recommend you compute probabilities from the geometric distribution using the formulas in the notes rather than the built-in functions. Luckily, the PMF and CDF of the geometric distribution are quickly computed without any built-in functions.
+
+**For $X \sim \mbox{Geom}(\theta=0.2)$, what is $P(X=3)$? (Round to 3 decimal places)** 
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+Recall the PMF of a geometric random variable $X$: $P(X=x)=(1-\theta)^{(x-1)}\times \theta$
+
+
 </div>
-<div id="geometric" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Geometric<a href="part-2---probability.html#geometric" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><br></p>
-<p><img src="images/Geometric.png" width="500"/></p>
-<p><br></p>
-<p>The geometric distribution is defined differently in <code>R</code> than in our course. Hence, I recommend you compute probabilities from the geometric distribution using the formulas in the notes rather than the built-in functions. Luckily, the PMF and CDF of the geometric distribution are quickly computed without any built-in functions.</p>
-<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.2)\)</span>, what is <span class="math inline">\(P(X=3)\)</span>? (Round to 3 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Recall the PMF of a geometric random variable <span class="math inline">\(X\)</span>: <span class="math inline">\(P(X=x)=(1-\theta)^{(x-1)}\times \theta\)</span></p>
+
+
+<input class='webex-solveme nospaces' size='5' data-answer='["0.128",".128"]'/>
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+0.8^2*0.2
+```
+
+```
+## [1] 0.128
+```
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='5' data-answer='["0.128",".128"]'/></p>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="part-2---probability.html#cb57-1" tabindex="-1"></a><span class="fl">0.8</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fl">0.2</span></span></code></pre></div>
-<pre><code>## [1] 0.128</code></pre>
+
+
+<br>
+
+**For $X \sim \mbox{Geom}(\theta=0.02)$, what is $P(X>4)$? (Round to 4 decimal places)** 
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+Recall that for a geometric random variable $X$, you can compute $P(X>x)=(1-\theta)^{x}$.
+
+
 </div>
-<p><br></p>
-<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.02)\)</span>, what is <span class="math inline">\(P(X&gt;4)\)</span>? (Round to 4 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Recall that for a geometric random variable <span class="math inline">\(X\)</span>, you can compute <span class="math inline">\(P(X&gt;x)=(1-\theta)^{x}\)</span>.</p>
+
+
+<input class='webex-solveme nospaces' size='6' data-answer='["0.9224",".9224"]'/>
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+(1-0.02)^4
+```
+
+```
+## [1] 0.9223682
+```
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='6' data-answer='["0.9224",".9224"]'/></p>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="part-2---probability.html#cb59-1" tabindex="-1"></a>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">4</span></span></code></pre></div>
-<pre><code>## [1] 0.9223682</code></pre>
+
+
+<br>
+
+
+**For $X \sim \mbox{Geom}(\theta=0.02)$, what is $P(X<20)$? (Round to 4 decimal places)** 
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+For a geometric random variable $X$, it is easier to compute the probability of $X$ being greater than some value $x$: $P(X>x)=(1-\theta)^{x}$. Now, you can compute $P(X<20)=1-P(X>19)$.
+
+
 </div>
-<p><br></p>
-<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.02)\)</span>, what is <span class="math inline">\(P(X&lt;20)\)</span>? (Round to 4 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>For a geometric random variable <span class="math inline">\(X\)</span>, it is easier to compute the probability of <span class="math inline">\(X\)</span> being greater than some value <span class="math inline">\(x\)</span>: <span class="math inline">\(P(X&gt;x)=(1-\theta)^{x}\)</span>. Now, you can compute <span class="math inline">\(P(X&lt;20)=1-P(X&gt;19)\)</span>.</p>
+
+
+<input class='webex-solveme nospaces' size='6' data-answer='["0.3188",".3188"]'/>
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+1-(1-0.02)^19
+```
+
+```
+## [1] 0.3187674
+```
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='6' data-answer='["0.3188",".3188"]'/></p>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="part-2---probability.html#cb61-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">19</span></span></code></pre></div>
-<pre><code>## [1] 0.3187674</code></pre>
+
+
+<br>
+
+**For $X \sim \mbox{Geom}(\theta=0.02)$, what is $P(4<X<20)$? (Round to 4 decimal places)** 
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+$P(4<X<20)=P(X<20)-P(X \leq 4)=(1-P(X>19))-(1-P(X>4))$
+
+
 </div>
-<p><br></p>
-<p><strong>For <span class="math inline">\(X \sim \mbox{Geom}(\theta=0.02)\)</span>, what is <span class="math inline">\(P(4&lt;X&lt;20)\)</span>? (Round to 4 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p><span class="math inline">\(P(4&lt;X&lt;20)=P(X&lt;20)-P(X \leq 4)=(1-P(X&gt;19))-(1-P(X&gt;4))\)</span></p>
+
+
+<input class='webex-solveme nospaces' size='6' data-answer='["0.2411",".2411"]'/>
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+(1-(1-0.02)^19)-(1-(1-0.02)^4)
+```
+
+```
+## [1] 0.2411355
+```
+
+
 </div>
-<p><input class='webex-solveme nospaces' size='6' data-answer='["0.2411",".2411"]'/></p>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="part-2---probability.html#cb63-1" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">19</span>)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="fl">-0.02</span>)<span class="sc">^</span><span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## [1] 0.2411355</code></pre>
+
+
+<br>
+
+### Negative binomial
+
+<br>
+
+Recall that for a negative binomial random variable $X \sim \mbox{Neg.Bin.}(\theta,k)$, the PMF can be written as \begin{align*}
+  P(X=x)&=\binom{x-1}{k-1}(1-\theta)^{(x-k)}\theta^{k}\\
+  &=\binom{x-1}{k-1}(1-\theta)^{(x-k)}\theta^{k-1} \times \theta\\
+  &=P(X_{1}=(k-1)) \times P(X_{2}=1),
+\end{align*}
+
+where $X_{1} \sim \mbox{Bin}(n=(x-1),\theta)$ and $X_{2} \sim \mbox{Bern}(\theta)$. You can use that trick to compute probabilities from the negative binomial distribution in `R`.
+
+<br>
+
+**For $X \sim \mbox{Neg.Bin.}(\theta=0.1,k=4)$, what is $P(X=10)$? (Round to 4 decimal places)** 
+
+
+<div class='webex-solution'><button>Hint</button>
+
+
+$P(X=10)=P(X_{1}=3) \times P(X_{2}=1)$, for $X_{1}\sim \mbox{Bin}(n=(x-1),\theta)$ and $X_{2}\sim \mbox{Bern}(\theta)$.  
+
+Alternatively, you can use the formula for the negative binomial PMF.
+
+
 </div>
-<p><br></p>
+
+
+<input class='webex-solveme nospaces' size='6' data-answer='["0.0045",".0045"]'/>
+
+<br>
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+
+``` r
+#using the hint:
+dbinom(x=3,size=9,prob=0.1)*0.1
+```
+
+```
+## [1] 0.004464104
+```
+
+``` r
+#or:
+choose(9,3)*(1-0.1)^6*0.1^4
+```
+
+```
+## [1] 0.004464104
+```
+
+
 </div>
-<div id="negative-binomial" class="section level3 hasAnchor" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Negative binomial<a href="part-2---probability.html#negative-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><br></p>
-<p>Recall that for a negative binomial random variable <span class="math inline">\(X \sim \mbox{Neg.Bin.}(\theta,k)\)</span>, the PMF can be written as <span class="math display">\[\begin{align*}
-  P(X=x)&amp;=\binom{x-1}{k-1}(1-\theta)^{(x-k)}\theta^{k}\\
-  &amp;=\binom{x-1}{k-1}(1-\theta)^{(x-k)}\theta^{k-1} \times \theta\\
-  &amp;=P(X_{1}=(k-1)) \times P(X_{2}=1),
-\end{align*}\]</span></p>
-<p>where <span class="math inline">\(X_{1} \sim \mbox{Bin}(n=(x-1),\theta)\)</span> and <span class="math inline">\(X_{2} \sim \mbox{Bern}(\theta)\)</span>. You can use that trick to compute probabilities from the negative binomial distribution in <code>R</code>.</p>
-<p><br></p>
-<p><strong>For <span class="math inline">\(X \sim \mbox{Neg.Bin.}(\theta=0.1,k=4)\)</span>, what is <span class="math inline">\(P(X=10)\)</span>? (Round to 4 decimal places)</strong></p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p><span class="math inline">\(P(X=10)=P(X_{1}=3) \times P(X_{2}=1)\)</span>, for <span class="math inline">\(X_{1}\sim \mbox{Bin}(n=(x-1),\theta)\)</span> and <span class="math inline">\(X_{2}\sim \mbox{Bern}(\theta)\)</span>.</p>
-<p>Alternatively, you can use the formula for the negative binomial PMF.</p>
+
+
+<br>-->
 </div>
-<p><input class='webex-solveme nospaces' size='6' data-answer='["0.0045",".0045"]'/></p>
-<p><br></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="part-2---probability.html#cb65-1" tabindex="-1"></a><span class="co">#using the hint:</span></span>
-<span id="cb65-2"><a href="part-2---probability.html#cb65-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x=</span><span class="dv">3</span>,<span class="at">size=</span><span class="dv">9</span>,<span class="at">prob=</span><span class="fl">0.1</span>)<span class="sc">*</span><span class="fl">0.1</span></span></code></pre></div>
-<pre><code>## [1] 0.004464104</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="part-2---probability.html#cb67-1" tabindex="-1"></a><span class="co">#or:</span></span>
-<span id="cb67-2"><a href="part-2---probability.html#cb67-2" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">9</span>,<span class="dv">3</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.1</span>)<span class="sc">^</span><span class="dv">6</span><span class="sc">*</span><span class="fl">0.1</span><span class="sc">^</span><span class="dv">4</span></span></code></pre></div>
-<pre><code>## [1] 0.004464104</code></pre>
-</div>
-<p><br></p>
-</div>
-<div id="poisson" class="section level3 hasAnchor" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> Poisson<a href="part-2---probability.html#poisson" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="poisson" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Poisson<a href="part-2---probability.html#poisson" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><br></p>
 <p><strong>For <span class="math inline">\(X \sim \mbox{Pois}(\lambda=3)\)</span>, what is what is <span class="math inline">\(P(X=2)\)</span>? (Round to 3 decimal places)</strong></p>
 <div class="webex-solution">
@@ -535,7 +659,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="part-2---probability.html#cb69-1" tabindex="-1"></a><span class="fu">dpois</span>(<span class="at">x=</span><span class="dv">2</span>,<span class="at">lambda=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="part-2---probability.html#cb37-1" tabindex="-1"></a><span class="fu">dpois</span>(<span class="at">x=</span><span class="dv">2</span>,<span class="at">lambda=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2240418</code></pre>
 </div>
 <p><br></p>
@@ -552,8 +676,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="part-2---probability.html#cb71-1" tabindex="-1"></a><span class="co">#P(X&lt;12)=P(X≤11) for discrete variables</span></span>
-<span id="cb71-2"><a href="part-2---probability.html#cb71-2" tabindex="-1"></a><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">11</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="part-2---probability.html#cb39-1" tabindex="-1"></a><span class="co">#P(X&lt;12)=P(X≤11) for discrete variables</span></span>
+<span id="cb39-2"><a href="part-2---probability.html#cb39-2" tabindex="-1"></a><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">11</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 0.6967761</code></pre>
 </div>
 <p><br></p>
@@ -570,8 +694,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="part-2---probability.html#cb73-1" tabindex="-1"></a><span class="co">#P(X&gt;7)=1-P(X≤7)</span></span>
-<span id="cb73-2"><a href="part-2---probability.html#cb73-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">7</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="part-2---probability.html#cb41-1" tabindex="-1"></a><span class="co">#P(X&gt;7)=1-P(X≤7)</span></span>
+<span id="cb41-2"><a href="part-2---probability.html#cb41-2" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">7</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7797794</code></pre>
 </div>
 <p><br></p>
@@ -588,8 +712,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="part-2---probability.html#cb75-1" tabindex="-1"></a><span class="co">#P(7&lt;X&lt;12)</span></span>
-<span id="cb75-2"><a href="part-2---probability.html#cb75-2" tabindex="-1"></a><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">11</span>,<span class="at">lambda=</span><span class="dv">10</span>)<span class="sc">-</span><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">7</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="part-2---probability.html#cb43-1" tabindex="-1"></a><span class="co">#P(7&lt;X&lt;12)</span></span>
+<span id="cb43-2"><a href="part-2---probability.html#cb43-2" tabindex="-1"></a><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">11</span>,<span class="at">lambda=</span><span class="dv">10</span>)<span class="sc">-</span><span class="fu">ppois</span>(<span class="at">q=</span><span class="dv">7</span>,<span class="at">lambda=</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 0.4765555</code></pre>
 </div>
 <p><br></p>
@@ -606,14 +730,18 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="part-2---probability.html#cb77-1" tabindex="-1"></a><span class="fu">qpois</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">lambda=</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="part-2---probability.html#cb45-1" tabindex="-1"></a><span class="fu">qpois</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="at">lambda=</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="using-the-normal-distribution-to-approximate-a-binomial-distribution" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Using the normal distribution to approximate a binomial distribution<a href="part-2---probability.html#using-the-normal-distribution-to-approximate-a-binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="optional-using-the-normal-distribution-to-approximate-a-binomial-distribution" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Optional: Using the normal distribution to approximate a binomial distribution<a href="part-2---probability.html#optional-using-the-normal-distribution-to-approximate-a-binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="webex-solution">
+<button>
+Optional additional task
+</button>
 <p><br></p>
 <p>In lecture 16, you saw that the binomial distribution can be approximated by a normal distribution. Specifically, if <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span>, then <span class="math inline">\(X \sim \mbox{Bin}(n,\theta)\)</span> can be approximated by
 <span class="math display">\[\begin{align*}
@@ -627,8 +755,8 @@ Hint
 </button>
 <p>Check if the assumptions <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span> hold.</p>
 </div>
-<div id="radio_GYWGYHWPZX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GYWGYHWPZX" value=""></input> <span>Sure, why not?!</span></label><label><input type="radio" autocomplete="off" name="radio_GYWGYHWPZX" value=""></input> <span>No, because we can't assume the binomial and normal distributions to be independent.</span></label><label><input type="radio" autocomplete="off" name="radio_GYWGYHWPZX" value="answer"></input> <span>No, the expected number of successes is too small, so the normal approximation should not be used.</span></label>
+<div id="radio_URJSKZRSJN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_URJSKZRSJN" value=""></input> <span>Sure, why not?!</span></label><label><input type="radio" autocomplete="off" name="radio_URJSKZRSJN" value=""></input> <span>No, because we can't assume the binomial and normal distributions to be independent.</span></label><label><input type="radio" autocomplete="off" name="radio_URJSKZRSJN" value="answer"></input> <span>No, the expected number of successes is too small, so the normal approximation should not be used.</span></label>
 </div>
 <p><br></p>
 <p><strong>For <span class="math inline">\(X \sim \mbox{Bin}(n=400,\theta=0.1)\)</span>, fill in the blanks for the Normal approximation you would use:</strong></p>
@@ -651,23 +779,27 @@ Solution
 <h3><span class="header-section-number">3.3.1</span> Graphical exploration<a href="part-2---probability.html#graphical-exploration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><br></p>
 <p>For the random variable <span class="math inline">\(X \sim \mbox{Bin}(n=600,\theta=0.4)\)</span>, you get <span class="math inline">\(n \times \theta=240&gt;10\)</span> and <span class="math inline">\(n \times (1-\theta)=360&gt;10\)</span>, so it is appropriate to approximate the distribution using a normal distribution with mean <span class="math inline">\(\mu=n \times \theta=240\)</span> and standard deviation <span class="math inline">\(\sigma=\sqrt{n \times \theta \times (1-\theta)}=\sqrt{144}=12\)</span>. To get a visual idea for how well the normal distribution approximates the binomial, you can create a plot that overlays the cumulative densities of the two distributions. You will need a sequence of numbers at which to evaluate the respective cumulative density functions (CDFs). This can be done using the <code>seq()</code> function, as demonstrated below:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="part-2---probability.html#cb79-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">10</span>,<span class="at">by=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="part-2---probability.html#cb47-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">10</span>,<span class="at">by=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
 <p>You can then compute the CDF at all possible values in the range of the binomial variable, for both the binomial and normal distributions and place them on the same plot:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="part-2---probability.html#cb81-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">600</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb81-2"><a href="part-2---probability.html#cb81-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">600</span>,<span class="at">prob=</span><span class="fl">0.4</span>)</span>
-<span id="cb81-3"><a href="part-2---probability.html#cb81-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">240</span>,<span class="at">sd=</span><span class="dv">12</span>)</span>
-<span id="cb81-4"><a href="part-2---probability.html#cb81-4" tabindex="-1"></a></span>
-<span id="cb81-5"><a href="part-2---probability.html#cb81-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
-<span id="cb81-6"><a href="part-2---probability.html#cb81-6" tabindex="-1"></a></span>
-<span id="cb81-7"><a href="part-2---probability.html#cb81-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="part-2---probability.html#cb49-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">600</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb49-2"><a href="part-2---probability.html#cb49-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">600</span>,<span class="at">prob=</span><span class="fl">0.4</span>)</span>
+<span id="cb49-3"><a href="part-2---probability.html#cb49-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">240</span>,<span class="at">sd=</span><span class="dv">12</span>)</span>
+<span id="cb49-4"><a href="part-2---probability.html#cb49-4" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="part-2---probability.html#cb49-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
+<span id="cb49-6"><a href="part-2---probability.html#cb49-6" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="part-2---probability.html#cb49-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> </span>
+<span id="cb49-8"><a href="part-2---probability.html#cb49-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb49-9"><a href="part-2---probability.html#cb49-9" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb49-10"><a href="part-2---probability.html#cb49-10" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb49-11"><a href="part-2---probability.html#cb49-11" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/normal_binom_approx-1.png" width="672" /></p>
 <p>Visually, the CDFs appear to be very close to each other. You can compute their maximum difference to get a better idea how much they differ:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="part-2---probability.html#cb82-1" tabindex="-1"></a><span class="co">#what&#39;s the biggest difference between the two CDFs?</span></span>
-<span id="cb82-2"><a href="part-2---probability.html#cb82-2" tabindex="-1"></a><span class="fu">max</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf))</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="part-2---probability.html#cb50-1" tabindex="-1"></a><span class="co">#what&#39;s the biggest difference between the two CDFs?</span></span>
+<span id="cb50-2"><a href="part-2---probability.html#cb50-2" tabindex="-1"></a><span class="fu">max</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf))</span></code></pre></div>
 <pre><code>## [1] 0.01772144</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="part-2---probability.html#cb84-1" tabindex="-1"></a><span class="co">#for what value of x do they differ the most?</span></span>
-<span id="cb84-2"><a href="part-2---probability.html#cb84-2" tabindex="-1"></a>x_vals[<span class="fu">which</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf)<span class="sc">==</span><span class="fu">max</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf)))]</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="part-2---probability.html#cb52-1" tabindex="-1"></a><span class="co">#for what value of x do they differ the most?</span></span>
+<span id="cb52-2"><a href="part-2---probability.html#cb52-2" tabindex="-1"></a>x_vals[<span class="fu">which</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf)<span class="sc">==</span><span class="fu">max</span>(<span class="fu">abs</span>(bin_cdf<span class="sc">-</span>norm_cdf)))]</span></code></pre></div>
 <pre><code>## [1] 240</code></pre>
 <p>Hence, the two CDFs are furthest apart for <span class="math inline">\(x=240\)</span>, with an absolute difference of 0.0177.</p>
 <p>Now, try to approximate the variable <span class="math inline">\(X \sim \mbox{Bin}(n=30,\theta=0.2)\)</span> with the distribution <span class="math inline">\(Y \sim N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)\)</span>. Compute the CDFs as in the code chunk above, and place the two CDFs on the same plot to answer the question that is to follow.</p>
@@ -676,20 +808,24 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="part-2---probability.html#cb86-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">30</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb86-2"><a href="part-2---probability.html#cb86-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.2</span>)</span>
-<span id="cb86-3"><a href="part-2---probability.html#cb86-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">6</span>,<span class="at">sd=</span><span class="fl">2.19089</span>)</span>
-<span id="cb86-4"><a href="part-2---probability.html#cb86-4" tabindex="-1"></a></span>
-<span id="cb86-5"><a href="part-2---probability.html#cb86-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
-<span id="cb86-6"><a href="part-2---probability.html#cb86-6" tabindex="-1"></a></span>
-<span id="cb86-7"><a href="part-2---probability.html#cb86-7" tabindex="-1"></a><span class="co">#Now use these to make the appropriate plot.</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="part-2---probability.html#cb54-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">30</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb54-2"><a href="part-2---probability.html#cb54-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.2</span>)</span>
+<span id="cb54-3"><a href="part-2---probability.html#cb54-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">6</span>,<span class="at">sd=</span><span class="fl">2.19089</span>)</span>
+<span id="cb54-4"><a href="part-2---probability.html#cb54-4" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="part-2---probability.html#cb54-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
+<span id="cb54-6"><a href="part-2---probability.html#cb54-6" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="part-2---probability.html#cb54-7" tabindex="-1"></a><span class="co">#Now use these to make the appropriate plot.</span></span></code></pre></div>
 </div>
 <p><br></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="part-2---probability.html#cb87-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="part-2---probability.html#cb55-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> </span>
+<span id="cb55-2"><a href="part-2---probability.html#cb55-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb55-3"><a href="part-2---probability.html#cb55-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb55-4"><a href="part-2---probability.html#cb55-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb55-5"><a href="part-2---probability.html#cb55-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 <p><br></p>
@@ -700,8 +836,8 @@ Hint
 </button>
 <p>Is one of the coloured lines consistently higher than the other? If so, which one?</p>
 </div>
-<div id="radio_GJLXCSJUCX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GJLXCSJUCX" value="answer"></input> <span>The binomial CDF returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_GJLXCSJUCX" value=""></input> <span>The binomial CDF returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_GJLXCSJUCX" value=""></input> <span>While the approximation is not very accurate, sometimes the binomial CDF returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
+<div id="radio_DEPRNNFEWF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DEPRNNFEWF" value="answer"></input> <span>The binomial CDF returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_DEPRNNFEWF" value=""></input> <span>The binomial CDF returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_DEPRNNFEWF" value=""></input> <span>While the approximation is not very accurate, sometimes the binomial CDF returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
 </div>
 <p><br></p>
 <p>Let's see how the probability of success <span class="math inline">\(\theta\)</span> influences the dynamic of the normal approximation. Try to approximate the variable <span class="math inline">\(X \sim \mbox{Bin}(n=30,\theta=0.8)\)</span> by <span class="math inline">\(Y \sim N\left(\mu=n \times \theta,\sigma=\sqrt{n \times \theta \times (1-\theta)}\right)\)</span> and answer the question that is to follow.</p>
@@ -710,20 +846,24 @@ Hint
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="part-2---probability.html#cb88-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">30</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb88-2"><a href="part-2---probability.html#cb88-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.8</span>)</span>
-<span id="cb88-3"><a href="part-2---probability.html#cb88-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">24</span>,<span class="at">sd=</span><span class="fl">2.19089</span>)</span>
-<span id="cb88-4"><a href="part-2---probability.html#cb88-4" tabindex="-1"></a></span>
-<span id="cb88-5"><a href="part-2---probability.html#cb88-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
-<span id="cb88-6"><a href="part-2---probability.html#cb88-6" tabindex="-1"></a></span>
-<span id="cb88-7"><a href="part-2---probability.html#cb88-7" tabindex="-1"></a><span class="co">#Now use these to make the appropriate plot.</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="part-2---probability.html#cb56-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>,<span class="at">to=</span><span class="dv">30</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb56-2"><a href="part-2---probability.html#cb56-2" tabindex="-1"></a>bin_cdf <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="at">q=</span>x_vals,<span class="at">size=</span><span class="dv">30</span>,<span class="at">prob=</span><span class="fl">0.8</span>)</span>
+<span id="cb56-3"><a href="part-2---probability.html#cb56-3" tabindex="-1"></a>norm_cdf <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="at">q=</span>x_vals,<span class="at">mean=</span><span class="dv">24</span>,<span class="at">sd=</span><span class="fl">2.19089</span>)</span>
+<span id="cb56-4"><a href="part-2---probability.html#cb56-4" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="part-2---probability.html#cb56-5" tabindex="-1"></a>cdfs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(x_vals,bin_cdf,norm_cdf))</span>
+<span id="cb56-6"><a href="part-2---probability.html#cb56-6" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="part-2---probability.html#cb56-7" tabindex="-1"></a><span class="co">#Now use these to make the appropriate plot.</span></span></code></pre></div>
 </div>
 <p><br></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="part-2---probability.html#cb89-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="part-2---probability.html#cb57-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>cdfs) <span class="sc">+</span> </span>
+<span id="cb57-2"><a href="part-2---probability.html#cb57-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,bin_cdf),<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb57-3"><a href="part-2---probability.html#cb57-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x_vals,norm_cdf),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb57-4"><a href="part-2---probability.html#cb57-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb57-5"><a href="part-2---probability.html#cb57-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;P(X≤x)&quot;</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <p><br></p>
@@ -734,13 +874,14 @@ Hint
 </button>
 <p>Is one of the coloured lines consistently higher than the other? If so, which one?</p>
 </div>
-<div id="radio_LUDJTGGSXW" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LUDJTGGSXW" value="answer"></input> <span>The binomial CDF still returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_LUDJTGGSXW" value=""></input> <span>The binomial CDF now returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_LUDJTGGSXW" value=""></input> <span>While the approximation is still not very accurate, now the binomial CDF sometimes returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
+<div id="radio_PVAEDWDPET" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PVAEDWDPET" value="answer"></input> <span>The binomial CDF still returns higher probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_PVAEDWDPET" value=""></input> <span>The binomial CDF now returns lower probabilities than the normal CDF for most values of x.</span></label><label><input type="radio" autocomplete="off" name="radio_PVAEDWDPET" value=""></input> <span>While the approximation is still not very accurate, now the binomial CDF sometimes returns higher probabilities than the normal CDF, and sometimes it is the other way around.</span></label>
 </div>
 <p><br></p>
 <p>Sometimes, when computations become increasingly expensive, it can be quite useful to approximate the binomial distribution by a normal distribution. Hopefully, this part of the lab helped you understand why the normal approximation is only appropriate when the number of observations <span class="math inline">\(n\)</span> is sufficiently large for a given probability of success <span class="math inline">\(\theta\)</span>. Keeping this in mind, you should always check the assumptions <span class="math inline">\(n \times \theta \geq 10\)</span> and <span class="math inline">\(n \times (1-\theta) \geq 10\)</span> before applying the normal approximation and compute the binomial probabilities directly if the assumptions do not hold.</p>
-<p><br></p>
 </div>
+</div>
+<p><br></p>
 </div>
 </div>
 <script>
@@ -934,45 +1075,45 @@ window.onload = function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true,
-"edit": null
-},
-"info": true
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true,
+    "edit": null
+  },
+  "info": true
 });
 });
 </script>

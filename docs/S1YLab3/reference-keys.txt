@@ -6,11 +6,9 @@ part-2---probability
 the-normal-distribution
 discrete-distributions
 binomial
-geometric
-negative-binomial
 poisson
-using-the-normal-distribution-to-approximate-a-binomial-distribution
+optional-using-the-normal-distribution-to-approximate-a-binomial-distribution
 graphical-exploration
 group-exercises
 checking-the-normality-assumption
-heights-in-the-scottish-population
+swizzels-box
