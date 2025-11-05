@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Part 2 - Confidence Intervals | S1Y Lab 4</title>
   <meta name="description" content="Part 2 - Confidence Intervals | S1Y Lab 4" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Part 2 - Confidence Intervals | S1Y Lab 4" />
   <meta property="og:type" content="book" />
@@ -53,8 +53,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -149,25 +150,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
 <li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
-<li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#sample-size-and-sampling-distribution"><i class="fa fa-check"></i>Sample Size and Sampling Distribution</a></li>
 <li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#effect-of-sample-size-on-sampling-distribution"><i class="fa fa-check"></i>Effect of Sample Size on Sampling Distribution</a>
 <ul>
-<li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#exercise-5"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="part-1---sampling-distributions.html"><a href="part-1---sampling-distributions.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html"><i class="fa fa-check"></i>Part 2 - Confidence Intervals</a>
 <ul>
 <li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#data-1"><i class="fa fa-check"></i>Data</a>
 <ul>
-<li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#exercise-6"><i class="fa fa-check"></i>Exercise 6</a></li>
-<li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#exercise-7"><i class="fa fa-check"></i>Exercise 7</a></li>
+<li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#exercise-5"><i class="fa fa-check"></i>Exercise 5</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#computing-confidence-intervals"><i class="fa fa-check"></i>Computing Confidence Intervals</a></li>
 <li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#confidence-levels"><i class="fa fa-check"></i>Confidence Levels</a>
 <ul>
-<li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#exercise-8"><i class="fa fa-check"></i>Exercise 8</a></li>
+<li class="chapter" data-level="" data-path="part-2---confidence-intervals.html"><a href="part-2---confidence-intervals.html#optional-changing-the-level-of-confidence"><i class="fa fa-check"></i>Optional: changing the level of confidence</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html"><i class="fa fa-check"></i>Group Tasks</a>
@@ -176,10 +175,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html#task-1"><i class="fa fa-check"></i>Task 1</a></li>
 <li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html#task-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="group-tasks.html"><a href="group-tasks.html#task-4"><i class="fa fa-check"></i>Task 4</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -210,73 +210,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Source:</strong> <a href="https://www.pewresearch.org/fact-tank/2019/12/02/most-americans-say-climate-change-impacts-their-community-but-effects-vary-by-region/">Most Americans say climate change impacts their community, but effects vary by region</a></p>
 </blockquote>
 <p>In this part of the lab, we will assume this 62% is a true population proportion and learn about how sample proportions can vary from sample to sample by taking smaller samples from the population. We will first create our population assuming a population size of 100,000 (which is unrealistic, but it keeps the computing time down to a reasonable level for this lab). This means 62,000 (62%) of the adult population think climate change impacts their community, and the remaining 38,000 do not think so.</p>
-<p>We used the code below to construct the data frame for this problem. The data frame is constructed as before using the <code>tibble</code> function; (refer to the start of this lab to understand what the code is doing).</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-2---confidence-intervals.html#cb19-1" tabindex="-1"></a>us_adults <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb19-2"><a href="part-2---confidence-intervals.html#cb19-2" tabindex="-1"></a>  <span class="at">climate_change_affects =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Yes&quot;</span>, <span class="dv">62000</span>), <span class="fu">rep</span>(<span class="st">&quot;No&quot;</span>, <span class="dv">38000</span>)))</span></code></pre></div>
+<p>We used the code below to construct the data frame for this problem. The data frame is constructed as before using the <code>tibble</code> function; refer to start of Lab 3 to understand what the code is doing.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="part-2---confidence-intervals.html#cb20-1" tabindex="-1"></a>us_adults <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb20-2"><a href="part-2---confidence-intervals.html#cb20-2" tabindex="-1"></a>  <span class="at">climate_change_affects =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Yes&quot;</span>, <span class="dv">62000</span>), <span class="fu">rep</span>(<span class="st">&quot;No&quot;</span>, <span class="dv">38000</span>)))</span></code></pre></div>
 <p>The name of the data frame is <code>us_adults</code> and the name of the variable that contains responses to the question <em>"Do you think climate change is affecting your local community?"</em> is <code>climate_change_affects</code>.</p>
 <p>Similar to before, run the following code to obtain summary statistics to confirm we constructed the data frame correctly and to visualise the distribution of these responses using a bar plot.</p>
 <p><br></p>
-<div id="exercise-6" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 6<a href="part-2---confidence-intervals.html#exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Using the code seen earlier in the lab in Part 1, write code to produce summary statistics and produce a plot of the data showing how many people think climate change is affecting their local community and those who do not.</p>
+<!--### Exercise 6 {-}
+
+Using the code seen earlier in the lab, write code to produce summary statistics and produce a plot of the data showing how many people think climate change is affecting their local community and those who do not.
+
+
+<div class='webex-solution'><button>Hint</button>
+
+Calculate the proportion of people who think climate change is affecting their local community `p` using `count` and `mutate`. Then create a barplot using `geom_bar`.
+
+</div>
+
+
+<!--```{r ex6_solution, webex.hide="Solution"}
+us_adults %>% 
+  count(climate_change_affects) %>% 
+  mutate(p = n /sum(n))
+
+ggplot(us_adults, aes(x = climate_change_affects)) + 
+  geom_bar(fill = "lightblue", width = 0.5) + 
+  labs(x = "", 
+       y = "", 
+       title = "Do you think climate change is affecting your local community?" ) +
+  coord_flip()
+```
+
+We'll start with a simple random sample of size 60 from the population.
+
+<br>-->
+<div id="exercise-5" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 5<a href="part-2---confidence-intervals.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a sample of size 60 from the data and compute the percent of the adults in the sample think climate change affects their local community.</p>
 <div class="webex-solution">
 <button>
 Hint
 </button>
-<p>Calculate the proportion of people who think climate change is affecting their local community <code>p</code> using <code>count</code> and <code>mutate</code>. Then create a barplot using <code>geom_bar</code>.</p>
+<p>Think about using code from earlier in the lab. Use <code>sample_n()</code> to draw a sample of size 60 and then calculate <code>p_hat</code> using <code>count</code> and <code>mutate</code>.</p>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="part-2---confidence-intervals.html#cb20-1" tabindex="-1"></a>us_adults <span class="sc">%&gt;%</span> </span>
-<span id="cb20-2"><a href="part-2---confidence-intervals.html#cb20-2" tabindex="-1"></a>  <span class="fu">count</span>(climate_change_affects) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-3"><a href="part-2---confidence-intervals.html#cb20-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> n <span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div>
-<pre><code>## # A tibble: 2 × 3
-##   climate_change_affects     n     p
-##   &lt;chr&gt;                  &lt;int&gt; &lt;dbl&gt;
-## 1 No                     38000  0.38
-## 2 Yes                    62000  0.62</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="part-2---confidence-intervals.html#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(us_adults, <span class="fu">aes</span>(<span class="at">x =</span> climate_change_affects)) <span class="sc">+</span> </span>
-<span id="cb22-2"><a href="part-2---confidence-intervals.html#cb22-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb22-3"><a href="part-2---confidence-intervals.html#cb22-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
-<span id="cb22-4"><a href="part-2---confidence-intervals.html#cb22-4" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>, </span>
-<span id="cb22-5"><a href="part-2---confidence-intervals.html#cb22-5" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Do you think climate change is affecting your local community?&quot;</span> ) <span class="sc">+</span></span>
-<span id="cb22-6"><a href="part-2---confidence-intervals.html#cb22-6" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
-<p><img src="main_files/figure-html/ex6_solution-1.png" width="672" /></p>
-</div>
-<p>We'll start with a simple random sample of size 60 from the population.</p>
-<p><br></p>
-</div>
-<div id="exercise-7" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 7<a href="part-2---confidence-intervals.html#exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Create a sample of size 60 from the data and compute the percent of the adults in the sample think climate change affects their local community?</p>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Think about using code from earlier in the lab (just prior to Exercise 1). Use <code>sample_n()</code> to draw a sample of size 60 and then calculate <code>p_hat</code> using <code>count</code> and <code>mutate</code>.</p>
-</div>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="part-2---confidence-intervals.html#cb23-1" tabindex="-1"></a>sample <span class="ot">&lt;-</span> us_adults <span class="sc">%&gt;%</span> </span>
-<span id="cb23-2"><a href="part-2---confidence-intervals.html#cb23-2" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">60</span>)</span>
-<span id="cb23-3"><a href="part-2---confidence-intervals.html#cb23-3" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="part-2---confidence-intervals.html#cb23-4" tabindex="-1"></a>sample <span class="sc">%&gt;%</span> </span>
-<span id="cb23-5"><a href="part-2---confidence-intervals.html#cb23-5" tabindex="-1"></a>  <span class="fu">count</span>(climate_change_affects) <span class="sc">%&gt;%</span> </span>
-<span id="cb23-6"><a href="part-2---confidence-intervals.html#cb23-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p_hat =</span> n <span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="part-2---confidence-intervals.html#cb21-1" tabindex="-1"></a>sample <span class="ot">&lt;-</span> us_adults <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="part-2---confidence-intervals.html#cb21-2" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">60</span>)</span>
+<span id="cb21-3"><a href="part-2---confidence-intervals.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="part-2---confidence-intervals.html#cb21-4" tabindex="-1"></a>sample <span class="sc">%&gt;%</span> </span>
+<span id="cb21-5"><a href="part-2---confidence-intervals.html#cb21-5" tabindex="-1"></a>  <span class="fu">count</span>(climate_change_affects) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-6"><a href="part-2---confidence-intervals.html#cb21-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p_hat =</span> n <span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   climate_change_affects     n p_hat
 ##   &lt;chr&gt;                  &lt;int&gt; &lt;dbl&gt;
-## 1 No                        18   0.3
-## 2 Yes                       42   0.7</code></pre>
+## 1 No                        23 0.383
+## 2 Yes                       37 0.617</code></pre>
 </div>
 <p><br></p>
 <strong>What would you expect another student's proportion to be?</strong>
-<div id="radio_NWJPQSETNT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NWJPQSETNT" value=""></input> <span>Identical</span></label><label><input type="radio" autocomplete="off" name="radio_NWJPQSETNT" value=""></input> <span>Very different</span></label><label><input type="radio" autocomplete="off" name="radio_NWJPQSETNT" value="answer"></input> <span>Slightly similar</span></label>
+<div id="radio_ZNRYHTNINU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZNRYHTNINU" value=""></input> <span>Identical</span></label><label><input type="radio" autocomplete="off" name="radio_ZNRYHTNINU" value="answer"></input> <span>Slightly similar</span></label><label><input type="radio" autocomplete="off" name="radio_ZNRYHTNINU" value=""></input> <span>Very different</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -290,25 +286,25 @@ Hint
 <div id="computing-confidence-intervals" class="section level2 unnumbered hasAnchor">
 <h2>Computing Confidence Intervals<a href="part-2---confidence-intervals.html#computing-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Returning to the motivation for this lab: based on this sample, what can you infer about the population? With just one sample, the best estimate of the proportion of US adults who think climate change affects their local community would be the sample proportion, usually denoted as <span class="math inline">\(\hat{p}\)</span> (here we are calling it <code>p_hat</code>). That serves as a good <strong>point estimate</strong>, but it would be useful to also communicate how uncertain we are of that estimate. This uncertainty can be quantified using a <strong>confidence interval</strong>, which is an example of an <strong>interval estimate</strong>. See Section 5.2 Page 181-183 <a href="https://www.openintro.org/redirect.php?go=os4_tablet&referrer=/stat/os4.php#page=181" target="_blank">OpenIntro Page 181</a></p>
-<p>Remembering that the <strong>standard error (SE)</strong> of a point estimate is the same as the standard deviation of the point estimate, we calculate a 95% confidence interval for a sample proportion by adding and subtracting 1.96 <span class="math inline">\(\times\)</span> <strong>standard error (SE)</strong> to the point estimate.</p>
+<p>Remembering that the <strong>standard error (SE)</strong> of a point estimate is the same as the standard deviation of the sample divided by the square root of the sample size, we calculate a 95% confidence interval for a sample proportion by adding and subtracting 1.96 <span class="math inline">\(\times\)</span> <strong>standard error (SE)</strong> to the point estimate.</p>
 <p><span class="math display">\[ \hat{p} \pm 1.96 * SE \]</span></p>
 <p>Or simply in R using:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="part-2---confidence-intervals.html#cb25-1" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(sample) <span class="sc">/</span> <span class="fu">sqrt</span>(n) <span class="co"># Create the standard error from our data</span></span>
-<span id="cb25-2"><a href="part-2---confidence-intervals.html#cb25-2" tabindex="-1"></a>lower <span class="ot">&lt;-</span> p_hat <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> SE <span class="co"># Compute the lower bound of the interval</span></span>
-<span id="cb25-3"><a href="part-2---confidence-intervals.html#cb25-3" tabindex="-1"></a>upper <span class="ot">&lt;-</span> p_hat <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> SE <span class="co"># Compute the upper bound of the interval</span></span>
-<span id="cb25-4"><a href="part-2---confidence-intervals.html#cb25-4" tabindex="-1"></a><span class="fu">c</span>(lower, upper)  <span class="co"># Join both the lower and upper bound values and print these</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="part-2---confidence-intervals.html#cb23-1" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(sample) <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb23-2"><a href="part-2---confidence-intervals.html#cb23-2" tabindex="-1"></a>lower <span class="ot">&lt;-</span> p_hat <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> SE</span>
+<span id="cb23-3"><a href="part-2---confidence-intervals.html#cb23-3" tabindex="-1"></a>upper <span class="ot">&lt;-</span> p_hat <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> SE</span>
+<span id="cb23-4"><a href="part-2---confidence-intervals.html#cb23-4" tabindex="-1"></a><span class="fu">c</span>(lower, upper) </span></code></pre></div>
 <p>This is an important inference that we've just made: even though we don't know what the full population looks like, we're 95% confident that the true population proportion lies between the lower and upper values.</p>
 <p>However, some conditions need to be made for the confidence interval to be valid.</p>
 <p><br></p>
 <strong>What conditions must be met for this confidence to be valid?</strong>
-<div id="radio_ZKVOQIHZWA" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZKVOQIHZWA" value=""></input> <span>The distribution is skewed but it is allowed with a small sample size</span></label><label><input type="radio" autocomplete="off" name="radio_ZKVOQIHZWA" value=""></input> <span>Data comes from a binomial distribution</span></label><label><input type="radio" autocomplete="off" name="radio_ZKVOQIHZWA" value="answer"></input> <span>Independence assumption is valid</span></label>
+<div id="radio_COCASXQMVV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_COCASXQMVV" value="answer"></input> <span>Independence assumption is valid</span></label><label><input type="radio" autocomplete="off" name="radio_COCASXQMVV" value=""></input> <span>Data comes from a binomial distribution</span></label><label><input type="radio" autocomplete="off" name="radio_COCASXQMVV" value=""></input> <span>The distribution is skewed but it is allowed with a small sample size</span></label>
 </div>
-<div id="radio_NHQHLROUNS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NHQHLROUNS" value="answer"></input> <span>Data comes from a normal distribution</span></label>
+<div id="radio_NTOHMAKXJU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NTOHMAKXJU" value="answer"></input> <span>Data comes from a normal distribution</span></label>
 </div>
-<div id="radio_QJRTWUXLUR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QJRTWUXLUR" value="answer"></input> <span>The disribution is skewed but it is allowed with a large sample size</span></label>
+<div id="radio_GUQHUONNNP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GUQHUONNNP" value="answer"></input> <span>The disribution is skewed but it is allowed with a large sample size</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -323,24 +319,24 @@ Hint
 <p>In the last section, we used the phrase "95% confident" - but what does this mean?</p>
 <p>In this case we have the luxury of knowing the true population proportion since we constructed the data on the entire population.</p>
 <p>Run the following code to create a confidence interval from a sample of size 60.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="part-2---confidence-intervals.html#cb26-1" tabindex="-1"></a>sample <span class="ot">&lt;-</span> us_adults <span class="sc">%&gt;%</span> <span class="co"># Create a sample of size 60 from our population</span></span>
-<span id="cb26-2"><a href="part-2---confidence-intervals.html#cb26-2" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">60</span>)</span>
-<span id="cb26-3"><a href="part-2---confidence-intervals.html#cb26-3" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="part-2---confidence-intervals.html#cb26-4" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> <span class="fu">proportions</span>(<span class="fu">table</span>(sample)) <span class="co"># This function calculates the proportions</span></span>
-<span id="cb26-5"><a href="part-2---confidence-intervals.html#cb26-5" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> sample_pro[<span class="dv">2</span>] <span class="co"># Select the &#39;Yes&#39; proportion of answers</span></span>
-<span id="cb26-6"><a href="part-2---confidence-intervals.html#cb26-6" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="part-2---confidence-intervals.html#cb26-7" tabindex="-1"></a>sample_se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sample_pro <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> sample_pro) <span class="sc">/</span> <span class="dv">60</span>) <span class="co"># Compute standard error</span></span>
-<span id="cb26-8"><a href="part-2---confidence-intervals.html#cb26-8" tabindex="-1"></a></span>
-<span id="cb26-9"><a href="part-2---confidence-intervals.html#cb26-9" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se <span class="co"># Calculate lower and upper bounds</span></span>
-<span id="cb26-10"><a href="part-2---confidence-intervals.html#cb26-10" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se </span>
-<span id="cb26-11"><a href="part-2---confidence-intervals.html#cb26-11" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="part-2---confidence-intervals.html#cb26-12" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
-<span id="cb26-13"><a href="part-2---confidence-intervals.html#cb26-13" tabindex="-1"></a></span>
-<span id="cb26-14"><a href="part-2---confidence-intervals.html#cb26-14" tabindex="-1"></a>ci</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="part-2---confidence-intervals.html#cb24-1" tabindex="-1"></a>sample <span class="ot">&lt;-</span> us_adults <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="part-2---confidence-intervals.html#cb24-2" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">60</span>)</span>
+<span id="cb24-3"><a href="part-2---confidence-intervals.html#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="part-2---confidence-intervals.html#cb24-4" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> <span class="fu">proportions</span>(<span class="fu">table</span>(sample))</span>
+<span id="cb24-5"><a href="part-2---confidence-intervals.html#cb24-5" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> sample_pro[<span class="dv">2</span>]</span>
+<span id="cb24-6"><a href="part-2---confidence-intervals.html#cb24-6" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="part-2---confidence-intervals.html#cb24-7" tabindex="-1"></a>sample_se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sample_pro <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> sample_pro) <span class="sc">/</span> <span class="dv">60</span>)</span>
+<span id="cb24-8"><a href="part-2---confidence-intervals.html#cb24-8" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="part-2---confidence-intervals.html#cb24-9" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">60</span>) </span>
+<span id="cb24-10"><a href="part-2---confidence-intervals.html#cb24-10" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">60</span>)</span>
+<span id="cb24-11"><a href="part-2---confidence-intervals.html#cb24-11" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="part-2---confidence-intervals.html#cb24-12" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
+<span id="cb24-13"><a href="part-2---confidence-intervals.html#cb24-13" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="part-2---confidence-intervals.html#cb24-14" tabindex="-1"></a>ci</span></code></pre></div>
 <p><br></p>
 <strong>If you were to repeat this simulation again and again, would each confidence interval capture the true population proportion of US adults who think climate change affects their local community?</strong>
-<div id="radio_HKNPJSYXUT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HKNPJSYXUT" value=""></input> <span>No, each certainly wouldn't</span></label><label><input type="radio" autocomplete="off" name="radio_HKNPJSYXUT" value="answer"></input> <span>Each would with 95% confidence</span></label><label><input type="radio" autocomplete="off" name="radio_HKNPJSYXUT" value=""></input> <span>Yes, each certainly would</span></label>
+<div id="radio_CQRAHRDELQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CQRAHRDELQ" value="answer"></input> <span>Each would with 95% confidence</span></label><label><input type="radio" autocomplete="off" name="radio_CQRAHRDELQ" value=""></input> <span>No, each certainly wouldn't</span></label><label><input type="radio" autocomplete="off" name="radio_CQRAHRDELQ" value=""></input> <span>Yes, each certainly would</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -352,8 +348,8 @@ Hint
 <p>If we were to collect all the confidence intervals produced in the console above by all the students in S1Y, each student should have produced a slightly different confidence interval because they were each based on different random samples.</p>
 <p><br></p>
 <strong>What proportion of those intervals would you expect to capture the true population mean?</strong>
-<div id="radio_BJNGBPLTUB" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BJNGBPLTUB" value=""></input> <span>2.5%</span></label><label><input type="radio" autocomplete="off" name="radio_BJNGBPLTUB" value=""></input> <span>5%</span></label><label><input type="radio" autocomplete="off" name="radio_BJNGBPLTUB" value="answer"></input> <span>95%</span></label>
+<div id="radio_ADHYSXQHAZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ADHYSXQHAZ" value=""></input> <span>5%</span></label><label><input type="radio" autocomplete="off" name="radio_ADHYSXQHAZ" value="answer"></input> <span>95%</span></label><label><input type="radio" autocomplete="off" name="radio_ADHYSXQHAZ" value=""></input> <span>2.5%</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -361,49 +357,62 @@ Hint
 </button>
 <p>Think about what repeatedly sampling would do to the interval and the confidence it produces.</p>
 </div>
-<p><br></p>
-<div id="exercise-8" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 8<a href="part-2---confidence-intervals.html#exercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Run the code below and change the sample size. When running this code consider the true population proportion and if the intervals contain this value. You can change the sample size by changing the value of <code>n</code> on the first line. Feel free to also change the provided confidence levels if you wish - you can compute the z statistic using the Statistical Tables on Moodle.</p>
+<!--<br>
+
+We will now collect many samples to learn more about how sample proportions and confidence intervals constructed based on those samples vary from one sample to another. This will be done by:
+
+1.  Obtain a random sample.
+2.  Calculate the sample proportion, and use these to calculate and store the lower and upper bounds of the confidence intervals.
+3.  Repeat these steps for a large number of times.
+
+<br>-->
+<div id="optional-changing-the-level-of-confidence" class="section level3 unnumbered hasAnchor">
+<h3>Optional: changing the level of confidence<a href="part-2---confidence-intervals.html#optional-changing-the-level-of-confidence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="webex-solution">
+<button>
+Optional
+</button>
+<p>Run the code below and change the sample size and confidence level. This will show the effect these factors have on the confidence intervals. When running this code consider the true population proportion and if the intervals contain this value.</p>
 <p><strong>Note</strong> The confidence level we have been using is 95% which refers to 1.96 within the code. This is used as 95% of the area of a normal distribution is within 1.96 standard deviations of the mean, as seen on <a href="https://www.openintro.org/redirect.php?go=os4_tablet&referrer=/stat/os4.php#page=183">OpenIntro Page 183</a>. Other confidence levels can be used but commonly: 99% uses <span class="math inline">\(\pm\)</span> 2.58, 97% uses <span class="math inline">\(\pm\)</span> 2.17, 95% uses <span class="math inline">\(\pm\)</span> 1.96, 90% uses <span class="math inline">\(\pm\)</span> 1.64, 75% uses <span class="math inline">\(\pm\)</span> 0.67.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="part-2---confidence-intervals.html#cb27-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">60</span></span>
-<span id="cb27-2"><a href="part-2---confidence-intervals.html#cb27-2" tabindex="-1"></a>sample <span class="ot">&lt;-</span> us_adults <span class="sc">%&gt;%</span></span>
-<span id="cb27-3"><a href="part-2---confidence-intervals.html#cb27-3" tabindex="-1"></a>  <span class="fu">sample_n</span>(n)</span>
-<span id="cb27-4"><a href="part-2---confidence-intervals.html#cb27-4" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="part-2---confidence-intervals.html#cb27-5" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> <span class="fu">proportions</span>(<span class="fu">table</span>(sample))</span>
-<span id="cb27-6"><a href="part-2---confidence-intervals.html#cb27-6" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> sample_pro[<span class="dv">2</span>]</span>
-<span id="cb27-7"><a href="part-2---confidence-intervals.html#cb27-7" tabindex="-1"></a></span>
-<span id="cb27-8"><a href="part-2---confidence-intervals.html#cb27-8" tabindex="-1"></a>sample_se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sample_pro <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> sample_pro) <span class="sc">/</span> n)</span>
-<span id="cb27-9"><a href="part-2---confidence-intervals.html#cb27-9" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="part-2---confidence-intervals.html#cb27-10" tabindex="-1"></a><span class="co">#90% Confidence Level</span></span>
-<span id="cb27-11"><a href="part-2---confidence-intervals.html#cb27-11" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">1.64</span><span class="sc">*</span> sample_se </span>
-<span id="cb27-12"><a href="part-2---confidence-intervals.html#cb27-12" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">1.64</span> <span class="sc">*</span> sample_se </span>
-<span id="cb27-13"><a href="part-2---confidence-intervals.html#cb27-13" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
-<span id="cb27-14"><a href="part-2---confidence-intervals.html#cb27-14" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;90% CI&quot;</span>, <span class="fu">paste</span>(<span class="fu">round</span>(ci,<span class="dv">3</span>)))</span>
-<span id="cb27-15"><a href="part-2---confidence-intervals.html#cb27-15" tabindex="-1"></a></span>
-<span id="cb27-16"><a href="part-2---confidence-intervals.html#cb27-16" tabindex="-1"></a><span class="co">#95% Confidence Level</span></span>
-<span id="cb27-17"><a href="part-2---confidence-intervals.html#cb27-17" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se  </span>
-<span id="cb27-18"><a href="part-2---confidence-intervals.html#cb27-18" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se </span>
-<span id="cb27-19"><a href="part-2---confidence-intervals.html#cb27-19" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
-<span id="cb27-20"><a href="part-2---confidence-intervals.html#cb27-20" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;95% CI&quot;</span>, <span class="fu">paste</span>(<span class="fu">round</span>(ci,<span class="dv">3</span>)))</span>
-<span id="cb27-21"><a href="part-2---confidence-intervals.html#cb27-21" tabindex="-1"></a></span>
-<span id="cb27-22"><a href="part-2---confidence-intervals.html#cb27-22" tabindex="-1"></a><span class="co">#99% Confidence Level</span></span>
-<span id="cb27-23"><a href="part-2---confidence-intervals.html#cb27-23" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">2.58</span> <span class="sc">*</span> sample_se </span>
-<span id="cb27-24"><a href="part-2---confidence-intervals.html#cb27-24" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">2.58</span> <span class="sc">*</span> sample_se </span>
-<span id="cb27-25"><a href="part-2---confidence-intervals.html#cb27-25" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
-<span id="cb27-26"><a href="part-2---confidence-intervals.html#cb27-26" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;99% CI&quot;</span>, <span class="fu">paste</span>(<span class="fu">round</span>(ci,<span class="dv">3</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="part-2---confidence-intervals.html#cb25-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb25-2"><a href="part-2---confidence-intervals.html#cb25-2" tabindex="-1"></a>sample <span class="ot">&lt;-</span> us_adults <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="part-2---confidence-intervals.html#cb25-3" tabindex="-1"></a>  <span class="fu">sample_n</span>(n)</span>
+<span id="cb25-4"><a href="part-2---confidence-intervals.html#cb25-4" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="part-2---confidence-intervals.html#cb25-5" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> <span class="fu">proportions</span>(<span class="fu">table</span>(sample))</span>
+<span id="cb25-6"><a href="part-2---confidence-intervals.html#cb25-6" tabindex="-1"></a>sample_pro <span class="ot">&lt;-</span> sample_pro[<span class="dv">2</span>]</span>
+<span id="cb25-7"><a href="part-2---confidence-intervals.html#cb25-7" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="part-2---confidence-intervals.html#cb25-8" tabindex="-1"></a>sample_se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sample_pro <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> sample_pro) <span class="sc">/</span> n)</span>
+<span id="cb25-9"><a href="part-2---confidence-intervals.html#cb25-9" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="part-2---confidence-intervals.html#cb25-10" tabindex="-1"></a><span class="co">#90% Confidence Level</span></span>
+<span id="cb25-11"><a href="part-2---confidence-intervals.html#cb25-11" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">1.64</span><span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(n) </span>
+<span id="cb25-12"><a href="part-2---confidence-intervals.html#cb25-12" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">1.64</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb25-13"><a href="part-2---confidence-intervals.html#cb25-13" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
+<span id="cb25-14"><a href="part-2---confidence-intervals.html#cb25-14" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;90% CI&quot;</span>, <span class="fu">paste</span>(<span class="fu">round</span>(ci,<span class="dv">3</span>)))</span>
+<span id="cb25-15"><a href="part-2---confidence-intervals.html#cb25-15" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="part-2---confidence-intervals.html#cb25-16" tabindex="-1"></a><span class="co">#95% Confidence Level</span></span>
+<span id="cb25-17"><a href="part-2---confidence-intervals.html#cb25-17" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(n) </span>
+<span id="cb25-18"><a href="part-2---confidence-intervals.html#cb25-18" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb25-19"><a href="part-2---confidence-intervals.html#cb25-19" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
+<span id="cb25-20"><a href="part-2---confidence-intervals.html#cb25-20" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;95% CI&quot;</span>, <span class="fu">paste</span>(<span class="fu">round</span>(ci,<span class="dv">3</span>)))</span>
+<span id="cb25-21"><a href="part-2---confidence-intervals.html#cb25-21" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="part-2---confidence-intervals.html#cb25-22" tabindex="-1"></a><span class="co">#99% Confidence Level</span></span>
+<span id="cb25-23"><a href="part-2---confidence-intervals.html#cb25-23" tabindex="-1"></a>lower_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">-</span> <span class="fl">2.58</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(n) </span>
+<span id="cb25-24"><a href="part-2---confidence-intervals.html#cb25-24" tabindex="-1"></a>upper_vector <span class="ot">&lt;-</span> sample_pro <span class="sc">+</span> <span class="fl">2.58</span> <span class="sc">*</span> sample_se <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb25-25"><a href="part-2---confidence-intervals.html#cb25-25" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(lower_vector, upper_vector)</span>
+<span id="cb25-26"><a href="part-2---confidence-intervals.html#cb25-26" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;99% CI&quot;</span>, <span class="fu">paste</span>(<span class="fu">round</span>(ci,<span class="dv">3</span>)))</span></code></pre></div>
 <p><br></p>
 <strong>Which interval would you expect to be wider?</strong>
-<div id="radio_KTDLPTIDXS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KTDLPTIDXS" value="answer"></input> <span>Interval with a larger confidence level</span></label><label><input type="radio" autocomplete="off" name="radio_KTDLPTIDXS" value=""></input> <span>Interval with a larger sample size</span></label>
+<div id="radio_DASYSUCHTQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DASYSUCHTQ" value="answer"></input> <span>Interval with a larger confidence level</span></label><label><input type="radio" autocomplete="off" name="radio_DASYSUCHTQ" value=""></input> <span>Interval with a larger sample size</span></label>
 </div>
 <div class="webex-solution">
 <button>
-Hide
+Hint
 </button>
 <p>Increasing the sample size decreases the width of the confidence interval, this is because it decreases the standard error reducing the variability of the interval.</p>
 </div>
 <p><br></p>
+</div>
 
 </div>
 </div>
@@ -599,41 +608,41 @@ window.onload = function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["main.pdf", "main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section",
-"scroll_highlight": true
-},
-"info": true
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["main.pdf", "main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "scroll_highlight": true
+  },
+  "info": true
 });
 });
 </script>
